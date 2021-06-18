@@ -1,0 +1,35 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Business Rule Validation
+on:
+  workflow_dispatch:
+    inputs:
+      country_code:
+        description: 'Country Code'
+        required: true
+        default: '*'
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+    steps:
+    uses: actions/checkout@v2
+     - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15.x'
+       run: npm ci
+       run: npm run build --if-present
+       run: npm test    
+    - name: Install dependencies
+      run: npm install
+    - name: Clone Business Rule Repo
+      run: | git clone https://github.com/ehn-dcc-development/dgc-business-rules.git
+    
+
+
