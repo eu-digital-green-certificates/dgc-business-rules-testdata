@@ -1,1 +1,2 @@
-# dgc-business-rules-testdata
+# DCC Business Rules: test data
+
