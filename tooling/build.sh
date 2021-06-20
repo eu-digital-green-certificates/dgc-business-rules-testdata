@@ -3,8 +3,9 @@
 DCC_BR_REPO_NAME=dgc-business-rules
 
 # build CertLogic dependencies:
-ln -s ../../$DCC_BR_REPO_NAME .
-#git clone --depth 1 https://github.com/ehn-dcc-development/$DCC_BR_REPO_NAME.git
+git clone --depth 1 https://github.com/ehn-dcc-development/$DCC_BR_REPO_NAME.git
+# locally, use:
+#  ln -s ../../$DCC_BR_REPO_NAME .
 cd $DCC_BR_REPO_NAME/certlogic
 ./build-js.sh
 cd ../..
