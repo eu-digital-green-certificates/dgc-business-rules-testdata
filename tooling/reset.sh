@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Cleans this `tooling/` directory to clean/pre-CI state.
+
 DCC_BR_REPO_NAME=dgc-business-rules
 
 rm $DCC_BR_REPO_NAME 2> /dev/null

@@ -1,4 +1,4 @@
-import { validateFormat } from "certlogic-validation"
+import { affectedFields, validateFormat } from "certlogic-validation"
 
 import { readJson } from "./file-utils"
 import { fromRepoRoot } from "./repo-struct"
@@ -8,7 +8,7 @@ import Ajv from "ajv"
 import { ErrorObject } from "ajv"
 const ajv = new Ajv({
     allErrors: true,        // don't stop after 1st error
-    strict: false,          // TODO  define own "valueset-uri" keyword
+    strict: true,
     validateSchema: false   // prevent that AJV throws with 'no schema with key or ref "https://json-schema.org/draft/2020-12/schema"'
 })
 const addFormats = require("ajv-formats")
@@ -21,12 +21,27 @@ const schemaValidationErrorsFor = (json: any): ErrorObject[] => {
 }
 
 
+const areEqual = (leftSet: string[], rightSet: string[]): boolean =>
+    leftSet.length === rightSet.length && leftSet.every((item) => rightSet.indexOf(item) > -1)
+
+const validateAffectedFields = (rule: any) => {
+    const actual = rule.AffectedFields
+    const computed = affectedFields(rule.Logic)
+        .filter((fieldName) => fieldName.startsWith("payload."))
+        .map((fieldName) => fieldName.substring("payload.".length))
+    return areEqual(actual, computed)
+        ? null
+        : { actual, computed }
+}
+
+
 export const validateRuleFile = (ruleFile: string, ruleSetId: string) => {
     const rule = readJson(fromRepoRoot(ruleSetId, ruleFile))
     return {
         ruleId: rule.Identifier,
         schemaValidationsErrors: schemaValidationErrorsFor(rule),
-        logicValidationErrors: validateFormat(rule.Logic)
+        logicValidationErrors: validateFormat(rule.Logic),
+        affectedFields: validateAffectedFields(rule)
     }
 }
 

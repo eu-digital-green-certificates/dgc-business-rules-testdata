@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Builds the tooling, and runs the validation.
+
 DCC_BR_REPO_NAME=dgc-business-rules
 
 # build CertLogic dependencies:
@@ -12,7 +14,7 @@ cd ../..
 
 # get JSON Schema:
 curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/feat/validation-rules/src/main/resources/validation-rule.schema.json > validation-rule.schema.json
-patch validation-rule.schema.json schema-patch.json
+patch validation-rule.schema.json schema.patch
 
 # build and run validation tooling:
 npm install

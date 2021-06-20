@@ -10,6 +10,10 @@
 <       "format": "ISO 8601 Timestamp (without ms, with timezone)",
 ---
 >       "format": "date-time",
+132c132
+<       "minLength": 1
+---
+>       "minItems": 1
 140c140
 < }
 \ No newline at end of file
