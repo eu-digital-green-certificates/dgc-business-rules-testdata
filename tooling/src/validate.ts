@@ -1,6 +1,7 @@
+import { validateFormat } from "certlogic-validation"
+
 import { readJson } from "./file-utils"
 import { fromRepoRoot } from "./repo-struct"
-import { validateFormat } from "../../../dgc-business-rules/certlogic/certlogic-validation"
 
 
 import Ajv from "ajv"
