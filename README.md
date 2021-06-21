@@ -4,6 +4,7 @@
 
 <p align="center">
     <a href="#about">About</a> •
+    <a href="#organisation">Organisation</a> •
     <a href="#testing--status">Testing & Status</a> •
     <a href="#licensing">Licensing</a>
 </p>
@@ -11,16 +12,29 @@
 
 ## About
 
-This repository holds business rules to determine whether a person is deemed fit-for-travel into a country-of-arrival (CoA) based on their vaccination, test, and recovery status.
-The status of the business rules here is _unofficial_: the actual rules will be available from the DCGC Gateway.
-Business rules are specified using the format/language specified in the [DCC Business Rules GitHub repository](https://github.com/ehn-dcc-development/dgc-business-rules).
+This repository holds business rules to determine whether a person is deemed fit-for-travel into a country-of-arrival (CoA) based on their vaccination, test, and recovery status, as encoded using the Digital COVID Certificate.
+The status of the business rules here is _unofficial_: the actual rules will be available from the [DCGC Gateway](https://github.com/eu-digital-green-certificates/dgc-gateway).
+Its main purpose is to help with developing _interchangeable_ business rules.
 
-This repository is intended for development purposes only, with value provided by validation executed per Continuous Integration (CI), for any Pull Request.
+This repository performs automatic validation and testing on all the rules contributed to it.
+This validation runs on every Pull Request, but can also be run locally from the commandline, as follows:
+
+    $ (cd tooling ; sh build.sh)
+
+The “CertLogic Validation” GitHub Action performs this exact same command.
+It requires a UNIX-like shell, Git, `curl`, `patch`, and a recent Node.js (with the NPM package manager) to be installed.
+
+After having run this command once, you can just run the validation/testing as follows:
+
+    $ (cd tooling ; npm start)
+
 Validation encompasses the following:
 * The JSON file of every rule is validated against the [Rule JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/feat/validation-rules/src/main/resources/validation-rule.schema.json).
 * The `Logic` field of every rule is validated as a CertLogic expression.
-* The affected fields of the DCC `payload` accessed from the `Logic` field are compared with the `AffectedFields` field.
+* The specified `AffectedFields` field is checked against the fields of the DCC `payload` accessed from the `Logic` field.
 * ..._more validations and checks to follow_
+
+Business rules must be specified using the format/language specified in the [DCC Business Rules GitHub repository](https://github.com/ehn-dcc-development/dgc-business-rules).
 
 
 ## Organisation
@@ -29,7 +43,7 @@ This repository contains the following:
 
 * [GitHub Actions configuration](./.github)
 * [tests](./tests): testing material called by the “Business Rule Validation” GitHub Action
-* [tooling](./tooling): testing material called by the “Certlogic Validation” GitHub Action
+* [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
 * [EU](./EU): EU template rules
 * [NL](./NL), etc.: actual rules for EU Member States
 

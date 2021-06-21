@@ -1,4 +1,4 @@
-name: Certlogic Validation
+name: CertLogic Validation
 on:
   workflow_dispatch:
     inputs:
