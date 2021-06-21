@@ -7,7 +7,7 @@ const repoRootPath = join(__dirname, "../..")
 export const fromRepoRoot = (...paths: string[]) => join(repoRootPath, ...paths)
 
 const allRuleSetsDirs = readdirSync(repoRootPath)
-    .filter((path) => !path.startsWith(".") && [ "tests", "tooling" ].indexOf(path) === -1)
+    .filter((path) => !path.startsWith(".") && [ "html", "tests", "tooling" ].indexOf(path) === -1)
     .filter((path) => lstatSync(fromRepoRoot(path)).isDirectory())
 
 

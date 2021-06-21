@@ -7,6 +7,7 @@
     "build": "tsc",
     "build-watch": "tsc --watch --incremental",
     "test": "mocha dist/run.js",
+    "render": "node dist/render.js",
     "clean": "rm -rf dist/ && rm -rf node_modules/"
   },
   "author": "Meinte Boersma",
@@ -15,12 +16,18 @@
     "ajv": "^8.6.0",
     "ajv-formats": "^2.1.0",
     "certlogic-js": "./dgc-business-rules/certlogic/certlogic-js",
-    "certlogic-validation": "file:./dgc-business-rules/certlogic/certlogic-validation"
+    "certlogic-validation": "file:./dgc-business-rules/certlogic/certlogic-validation",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.1",
+    "@types/prettier": "^2.3.0",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
     "chai": "^4.3.4",
     "mocha": "^8.4.0"
   }
