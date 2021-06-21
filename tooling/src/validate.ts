@@ -1,7 +1,7 @@
 import { affectedFields, validateFormat } from "certlogic-validation"
 
 import { readJson } from "./file-utils"
-import { fromRepoRoot, readRuleJson } from "./repo-struct"
+import { fromRepoRoot } from "./repo-struct"
 
 
 import Ajv from "ajv"
@@ -35,20 +35,10 @@ const validateAffectedFields = (rule: any) => {
 }
 
 
-export const validateRuleFile = (ruleSetId: string, ruleId: string) => {
-    const rule = readRuleJson(ruleSetId, ruleId)
-    return {
+export const validateRule = (rule: any) => ({
         ruleId: rule.Identifier,
         schemaValidationsErrors: schemaValidationErrorsFor(rule),
         logicValidationErrors: validateFormat(rule.Logic),
         affectedFields: validateAffectedFields(rule)
-    }
-}
-
-
-export const validateRuleSet = (ruleSetId: string, ruleIds: string[]) =>
-    Object.fromEntries(ruleIds.map((ruleId) => {
-        const validationResult = validateRuleFile(ruleSetId, ruleId)
-        return [ validationResult.ruleId, validationResult ]
-    }))
+    })
 
