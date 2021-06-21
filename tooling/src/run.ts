@@ -8,7 +8,7 @@ const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
 const ruleSetsMap = gatherRuleSetsAsMap()
 
 for (const ruleSetId in ruleSetsMap) {
-    const ruleSetValidation = validateRuleSet(ruleSetId, ruleSetsMap[ruleSetId].ruleFiles)
+    const ruleSetValidation = validateRuleSet(ruleSetId, ruleSetsMap[ruleSetId].ruleIds)
     for (const ruleId in ruleSetValidation) {
         const ruleText = `\`rule "${ruleId}" in set "${ruleSetId}"`
         const validationResult = ruleSetValidation[ruleId]
@@ -29,6 +29,7 @@ for (const ruleSetId in ruleSetsMap) {
             console.error()
         }
     }
-    console.log(`validated rules in rule set with id "${ruleSetId}"`)
+    const nRules = Object.keys(ruleSetValidation).length
+    console.log(`validated rules in rule set with id "${ruleSetId}" (${nRules} rule${nRules === 1 ? "" : "s"})`)
 }
 

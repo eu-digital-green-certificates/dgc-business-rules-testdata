@@ -1,5 +1,6 @@
-import { lstatSync, readdirSync } from "fs"
+import { existsSync, lstatSync, readdirSync } from "fs"
 import { join } from "path"
+import { readJson } from "./file-utils"
 
 
 const repoRootPath = join(__dirname, "../..")
@@ -10,20 +11,23 @@ const allRulesDirs = readdirSync(repoRootPath)
     .filter((path) => lstatSync(fromRepoRoot(path)).isDirectory())
 
 
-export type RuleSetsMap = { [ruleSetId: string]: { ruleFiles: string[] } }
+export type RuleSetsMap = { [ruleSetId: string]: { ruleIds: string[] } }
 
+const isRuleDir = (path: string) => lstatSync(fromRepoRoot(path)).isDirectory() && existsSync(join(fromRepoRoot(path), "rule.json"))
 
 /**
  * Gathers all rules' files from all states' directories.
  */
 export const gatherRuleSetsAsMap = (): RuleSetsMap => Object.fromEntries(
-        allRulesDirs.map<[ string, { ruleFiles: string[] }]>((ruleDir) => [
+        allRulesDirs.map<[ string, { ruleIds: string[] }]>((ruleDir) => [
             ruleDir,
             {
-                ruleFiles: readdirSync(fromRepoRoot(ruleDir))
-                    .filter((subPath) => subPath.endsWith(".json")) // TODO  adjust for structuring
+                ruleIds: readdirSync(fromRepoRoot(ruleDir))
+                    .filter((subPath) => isRuleDir(join(ruleDir, subPath)))
             }
         ])
-        .filter((entry) => entry[1].ruleFiles.length > 0)
     )
+
+export const readRuleJson = (ruleSetId: string, ruleId: string) =>
+    readJson(fromRepoRoot(ruleSetId, ruleId, "rule.json"))
 
