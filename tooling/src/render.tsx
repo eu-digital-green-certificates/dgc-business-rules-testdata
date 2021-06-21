@@ -40,5 +40,6 @@ for (const ruleSetId in ruleSetsMap) {
             { parser: "html" }
         )
     )
+    console.log(`wrote HTML for rule set "${ruleSetId}"`)
 }
 
