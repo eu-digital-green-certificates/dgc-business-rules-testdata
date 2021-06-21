@@ -22,3 +22,9 @@ jobs:
           node-version: '15.x'
      - name: Run tooling build script
        run:  (cd tooling ; sh build.sh)
+     - name: Generate HTML
+       uses: actions/upload-artifact@v2
+       with:
+          name: rules-html
+          path: ${{ github.workspace }}/html
+
