@@ -1,0 +1,51 @@
+{
+  "Identifier": "VR-FI-0004",
+  "Type": "Acceptance",
+  "Country": "FI",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Date of vaccination must be before the current time."
+    }
+  ],
+  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "not-before": [
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              0,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

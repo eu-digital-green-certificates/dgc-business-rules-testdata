@@ -1,20 +1,16 @@
-26c26
-<       "pattern": "^(GR|VR|TR|RR|IR)-[A-Z]{2}-[1-9]\\d*$"
----
->       "pattern": "^(GR|VR|TR|RR|IR)-[A-Z]{2}-\\d{4}$"
-116c116
-<       "format": "ISO 8601 Timestamp (without ms, with timezone)",
----
->       "format": "date-time",
 122c122
 <       "format": "ISO 8601 Timestamp (without ms, with timezone)",
 ---
 >       "format": "date-time",
-132c132
+128c128
+<       "format": "ISO 8601 Timestamp (without ms, with timezone)",
+---
+>       "format": "date-time",
+138c138
 <       "minLength": 1
 ---
 >       "minItems": 1
-140c140
+146c146
 < }
 \ No newline at end of file
 ---
