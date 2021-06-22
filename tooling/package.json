@@ -15,12 +15,14 @@
     "ajv": "^8.6.0",
     "ajv-formats": "^2.1.0",
     "certlogic-js": "./dgc-business-rules/certlogic/certlogic-js",
-    "certlogic-validation": "file:./dgc-business-rules/certlogic/certlogic-validation"
+    "certlogic-validation": "file:./dgc-business-rules/certlogic/certlogic-validation",
+    "semver": "^7.3.5"
   },
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.1",
+    "@types/semver": "^7.3.6",
     "chai": "^4.3.4",
     "mocha": "^8.4.0"
   }
