@@ -26,7 +26,7 @@ It requires a UNIX-like shell, Git, `curl`, `patch`, and a recent Node.js (with 
 
 After having run this command once, you can just run the validation/testing as follows:
 
-    $ (cd tooling ; npm start)
+    $ (cd tooling ; npm test)
 
 Validation encompasses the following:
 * The JSON file of every rule is validated against the [Rule JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/feat/validation-rules/src/main/resources/validation-rule.schema.json).
