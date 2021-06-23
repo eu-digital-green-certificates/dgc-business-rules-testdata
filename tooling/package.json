@@ -7,7 +7,7 @@
     "build": "tsc",
     "build-watch": "tsc --watch --incremental",
     "test": "mocha dist/run.js",
-    "clean": "rm -rf dist/ && rm -rf node_modules/"
+    "clean": "rm -rf dist/ && rm -rf node_modules/ && rm -rf package-lock.json && rm -rf yarn.lock"
   },
   "author": "Meinte Boersma",
   "license": "Apache-2.0",
