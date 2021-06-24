@@ -33,6 +33,7 @@
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",
+    "t.0.sc",
     "t.0.tt"
   ],
   "Logic": {
