@@ -12,7 +12,7 @@ cd $DCC_BR_REPO_NAME/certlogic
 cd ../..
 
 # get JSON Schema:
-curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/feat/validation-rules/src/main/resources/validation-rule.schema.json > validation-rule.schema.json
+curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/main/src/main/resources/validation-rule.schema.json > validation-rule.schema.json
 
 # build and run validation and testing tooling:
 npm install
