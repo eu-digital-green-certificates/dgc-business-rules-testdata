@@ -13,7 +13,6 @@ cd ../..
 
 # get JSON Schema:
 curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/feat/validation-rules/src/main/resources/validation-rule.schema.json > validation-rule.schema.json
-patch validation-rule.schema.json schema.patch
 
 # build and run validation and testing tooling:
 npm install
