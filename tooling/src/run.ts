@@ -20,18 +20,18 @@ for (const ruleSetId in ruleSetsMap) {
                 if (ruleValidation.schemaValidationsErrors.length > 0) {
                     console.error(`${ruleText} has schema validation errors:`)
                     console.error(asPrettyText(ruleValidation.schemaValidationsErrors))
-                    fail()
+                    fail("schema validation")
                 }
                 if (ruleValidation.affectedFields) {
                     console.error(`${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed):`)
                     console.error(asPrettyText(ruleValidation.affectedFields.actual))
                     console.error(asPrettyText(ruleValidation.affectedFields.computed))
-                    fail()
+                    fail("affected fields")
                 }
                 if (ruleValidation.logicValidationErrors.length > 0) {
                     console.error(`CertLogic expression in ${ruleText} has validation errors:`)
                     console.error(asPrettyText(ruleValidation.logicValidationErrors))
-                    fail()
+                    fail("logic validation (CertLogic)")
                 }
             })
             for (const testFile of ruleSetsMap[ruleSetId][ruleId].testFiles) {
