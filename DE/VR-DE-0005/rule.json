@@ -1,0 +1,56 @@
+{
+  "Identifier": "VR-DE-0005",
+  "Type": "Acceptance",
+  "Country": "DE",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Only vaccines on the extended EU list will be accepted."
+    },
+    {
+      "lang": "de",
+      "desc": "Nur die Impfstoffe der erweiterten EU-Liste werden akzeptiert."
+    },
+    {
+      "lang": "fr",
+      "desc": "Seuls les vaccins de la liste étendue de l’UE sont acceptés."
+    },
+    {
+      "lang": "es",
+      "desc": "Solo se aceptan las vacunas de la lista ampliada de la Unión Europea."
+    },
+    {
+      "lang": "it",
+      "desc": "Saranno accettati solamente i vaccini appartenenti all’elenco esteso dell’UE."
+    }
+  ],
+  "ValidFrom": "2021-07-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.mp"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "in": [
+          {
+            "var": "payload.v.0.mp"
+          },
+          {
+            "var": "external.valueSets.vaccines-covid-19-names"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
