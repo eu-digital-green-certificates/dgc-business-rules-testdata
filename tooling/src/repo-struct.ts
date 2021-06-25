@@ -6,8 +6,10 @@ import { readJson } from "./file-utils"
 const repoRootPath = join(__dirname, "../..")
 export const fromRepoRoot = (...paths: string[]) => join(repoRootPath, ...paths)
 
+const nonRuleSetsDirs = [ "html", "tests", "tooling", "valuesets" ]
+
 const allRuleSetsDirs = readdirSync(repoRootPath)
-    .filter((path) => !path.startsWith(".") && [ "tests", "tooling" ].indexOf(path) === -1)
+    .filter((path) => !path.startsWith(".") && nonRuleSetsDirs.indexOf(path) === -1)
     .filter((path) => lstatSync(fromRepoRoot(path)).isDirectory())
 
 
