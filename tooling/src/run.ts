@@ -1,8 +1,8 @@
-import {evaluate} from "certlogic-js"
-import {gatherRuleSetsAsMap, readRuleJson, readRuleTestJson} from "./repo-struct"
-import {validateRule} from "./validate"
+import { evaluate } from "certlogic-js"
+const { deepEqual, fail, isTrue } = require("chai").assert
 
-const { deepEqual, fail } = require("chai").assert
+import { gatherRuleSetsAsMap, readRuleJson, readRuleTestJson } from "./repo-struct"
+import { validateRule } from "./validate"
 
 
 const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
@@ -16,23 +16,13 @@ for (const ruleSetId in ruleSetsMap) {
         describe(ruleText, () => {
             const rule = readRuleJson(ruleSetId, ruleId)
             it("validates against rule's JSON Schema, other checks, and CertLogic spec", () => {
-                const ruleValidation = validateRule(rule)
-                if (ruleValidation.schemaValidationsErrors.length > 0) {
-                    console.error(`${ruleText} has schema validation errors:`)
-                    console.error(asPrettyText(ruleValidation.schemaValidationsErrors))
-                    fail("schema validation")
+                const { schemaValidationsErrors, affectedFields, logicValidationErrors, metaDataErrors } = validateRule(rule)
+                isTrue(schemaValidationsErrors.length === 0, `${ruleText} has schema validation errors: ${schemaValidationsErrors.join(", ")}`)
+                if (affectedFields) {
+                    deepEqual(affectedFields.actual, affectedFields.computed, `${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed)`)
                 }
-                if (ruleValidation.affectedFields) {
-                    console.error(`${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed):`)
-                    console.error(asPrettyText(ruleValidation.affectedFields.actual))
-                    console.error(asPrettyText(ruleValidation.affectedFields.computed))
-                    fail("affected fields")
-                }
-                if (ruleValidation.logicValidationErrors.length > 0) {
-                    console.error(`CertLogic expression in ${ruleText} has validation errors:`)
-                    console.error(asPrettyText(ruleValidation.logicValidationErrors))
-                    fail("logic validation (CertLogic)")
-                }
+                isTrue(logicValidationErrors.length === 0, `CertLogic expression in ${ruleText} has validation errors: ${asPrettyText(logicValidationErrors)}`)
+                isTrue(metaDataErrors.length === 0, `meta data of ${ruleText} has validation errors: ${metaDataErrors.join(", ")}`)
             })
             for (const testFile of ruleSetsMap[ruleSetId][ruleId].testFiles) {
                 const { name, payload, external, expected } = readRuleTestJson(ruleSetId, ruleId, testFile)
