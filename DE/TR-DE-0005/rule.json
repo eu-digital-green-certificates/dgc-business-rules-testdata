@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
+      "desc": "The antigen test (e.g., rapid test) must be included in the EU’s \"Common list of COVID-19 rapid antigen tests\"."
     },
     {
       "lang": "de",
@@ -18,15 +18,15 @@
     },
     {
       "lang": "fr",
-      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
+      "desc": "Le test antigénique (p. ex. test rapide) doit figurer sur la liste commune des tests antigéniques rapides « Common list of rapid antigen tests » de l’UE."
     },
     {
       "lang": "es",
-      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
+      "desc": "La prueba de antígenos (por ejemplo, una prueba rápida) debe estar incluida en la lista \"Common list of rapid antigen tests\" de la Unión Europea."
     },
     {
       "lang": "it",
-      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
+      "desc": "Il test antigenico (ad es. test rapido) deve corrispondere a uno dei test della \"Common list of rapid antigen tests\" dell’UE."
     }
   ],
   "ValidFrom": "2021-07-01T00:00:00Z",
