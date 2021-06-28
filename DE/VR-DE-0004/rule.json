@@ -14,7 +14,7 @@
     },
     {
       "lang": "de",
-      "desc": "Die Impfung darf höchstens ein Jahr zurückliegen."
+      "desc": "Seit der Impfung darf maximal ein Jahr vergangen sein."
     },
     {
       "lang": "fr",
@@ -41,22 +41,22 @@
         "var": "payload.v.0"
       },
       {
-        "not-before": [
-          {
-            "plusTime": [
-              {
-                "var": "payload.v.0.dt"
-              },
-              365,
-              "day"
-            ]
-          },
+        "not-after": [
           {
             "plusTime": [
               {
                 "var": "external.validationClock"
               },
               0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              365,
               "day"
             ]
           }

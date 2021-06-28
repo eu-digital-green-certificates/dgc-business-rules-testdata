@@ -1,8 +1,10 @@
 {
+  "name": "tt is not rapid. ma is not included.",
   "payload": {
-    "v": [
+    "t": [
       {
-        "mp": "EpiVacCorona"
+        "tt": "LP6464-4",
+        "ma": "not_included"
       }
     ]
   },

@@ -1,9 +1,10 @@
 {
-  "name": "AstraZeneca",
+  "name": "tt is not rapid but ma is included.",
   "payload": {
-    "v": [
+    "t": [
       {
-        "mp": "EU/1/21/1529"
+        "tt": "LP6464-4",
+        "ma": "308"
       }
     ]
   },

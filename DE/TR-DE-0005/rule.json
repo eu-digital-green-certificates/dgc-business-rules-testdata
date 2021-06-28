@@ -1,5 +1,5 @@
 {
-  "Identifier": "VR-DE-0005",
+  "Identifier": "TR-DE-0005",
   "Type": "Acceptance",
   "Country": "DE",
   "Version": "1.0.0",
@@ -32,22 +32,36 @@
   "ValidFrom": "2021-07-01T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
-    "v.0",
-    "v.0.mp"
+    "t.0",
+    "t.0.ma",
+    "t.0.tt"
   ],
   "Logic": {
     "if": [
       {
-        "var": "payload.v.0"
+        "var": "payload.t.0"
       },
       {
-        "in": [
+        "if": [
           {
-            "var": "payload.v.0.mp"
+            "===": [
+              {
+                "var": "payload.t.0.tt"
+              },
+              "LP217198-3"
+            ]
           },
           {
-            "var": "external.valueSets.vaccines-covid-19-names"
-          }
+            "in": [
+              {
+                "var": "payload.t.0.ma"
+              },
+              {
+                "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
+              }
+            ]
+          },
+          true
         ]
       },
       true

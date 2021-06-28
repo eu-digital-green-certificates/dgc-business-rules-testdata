@@ -41,22 +41,22 @@
         "var": "payload.r.0"
       },
       {
-        "not-after": [
-          {
-            "plusTime": [
-              {
-                "var": "payload.r.0.fr"
-              },
-              28,
-              "day"
-            ]
-          },
+        "not-before": [
           {
             "plusTime": [
               {
                 "var": "external.validationClock"
               },
               0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.r.0.fr"
+              },
+              28,
               "day"
             ]
           }
