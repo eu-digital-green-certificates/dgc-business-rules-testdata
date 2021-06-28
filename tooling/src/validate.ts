@@ -1,5 +1,5 @@
 import { version } from "certlogic-js"
-import { affectedFields, validateFormat } from "certlogic-validation"
+import { dataAccesses, validateFormat } from "certlogic-validation"
 import { gt } from "semver"
 
 import { readJson } from "./file-utils"
@@ -28,7 +28,7 @@ const areEqual = (leftSet: string[], rightSet: string[]): boolean =>
 
 const validateAffectedFields = (rule: any): null | { actual: string[], computed: string[] } => {
     const actual = rule.AffectedFields
-    const computed = affectedFields(rule.Logic)
+    const computed = dataAccesses(rule.Logic)
         .filter((fieldName) => fieldName.startsWith("payload."))
         .map((fieldName) => fieldName.substring("payload.".length))
     return areEqual(actual, computed)
