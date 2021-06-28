@@ -1,11 +1,7 @@
 {
-  "name": "BioNTech/Pfizer",
+  "name": "t == empty array",
   "payload": {
-    "v": [
-      {
-        "mp": "EU/1/20/1528"
-      }
-    ]
+    "t": []
   },
   "expected": true,
   "external": {

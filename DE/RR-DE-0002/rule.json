@@ -10,11 +10,11 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The positive NAA test result (e.g., PCR) must be no older than 180 days."
+      "desc": "The positive NAA test result (e.g., PCR) must be no older than 6 months."
     },
     {
       "lang": "de",
-      "desc": "Der positive NAA-Test (z.B. PCR) darf höchstens 180 Tage zurückliegen."
+      "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 6 Monate zurückliegen."
     },
     {
       "lang": "fr",
@@ -41,11 +41,11 @@
         "var": "payload.r.0"
       },
       {
-        "not-before": [
+        "not-after": [
           {
             "plusTime": [
               {
-                "var": "payload.r.0.fr"
+                "var": "external.validationClock"
               },
               0,
               "day"
@@ -54,9 +54,9 @@
           {
             "plusTime": [
               {
-                "var": "external.validationClock"
+                "var": "payload.r.0.fr"
               },
-              -180,
+              183,
               "day"
             ]
           }

@@ -1,12 +1,14 @@
 {
+  "name": "tt is rapid, but ma is not included.",
   "payload": {
-    "v": [
+    "t": [
       {
-        "mp": "Convidecia"
+        "tt": "LP217198-3",
+        "ma": "not_included"
       }
     ]
   },
-  "expected": true,
+  "expected": false,
   "external": {
     "valueSets": {
       "country-2-codes": [

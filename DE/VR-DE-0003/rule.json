@@ -14,7 +14,7 @@
     },
     {
       "lang": "de",
-      "desc": "Die Impfung muss mehr als 14 Tage zurückliegen."
+      "desc": "Seit der Impfung müssen mindestens 14 Tage vergangen sein."
     },
     {
       "lang": "fr",
@@ -41,22 +41,22 @@
         "var": "payload.v.0"
       },
       {
-        "before": [
-          {
-            "plusTime": [
-              {
-                "var": "payload.v.0.dt"
-              },
-              14,
-              "day"
-            ]
-          },
+        "after": [
           {
             "plusTime": [
               {
                 "var": "external.validationClock"
               },
               0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              14,
               "day"
             ]
           }
