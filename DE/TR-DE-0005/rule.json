@@ -6,27 +6,27 @@
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
-  "CertificateType": "Vaccination",
+  "CertificateType": "Test",
   "Description": [
     {
       "lang": "en",
-      "desc": "Only vaccines on the extended EU list will be accepted."
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
     },
     {
       "lang": "de",
-      "desc": "Nur die Impfstoffe der erweiterten EU-Liste werden akzeptiert."
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
     },
     {
       "lang": "fr",
-      "desc": "Seuls les vaccins de la liste étendue de l’UE sont acceptés."
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
     },
     {
       "lang": "es",
-      "desc": "Solo se aceptan las vacunas de la lista ampliada de la Unión Europea."
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
     },
     {
       "lang": "it",
-      "desc": "Saranno accettati solamente i vaccini appartenenti all’elenco esteso dell’UE."
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
     }
   ],
   "ValidFrom": "2021-07-01T00:00:00Z",
