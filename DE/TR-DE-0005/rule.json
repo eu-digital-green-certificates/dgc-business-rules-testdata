@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
+      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
     },
     {
       "lang": "de",
@@ -18,15 +18,15 @@
     },
     {
       "lang": "fr",
-      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
+      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
     },
     {
       "lang": "es",
-      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
+      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
     },
     {
       "lang": "it",
-      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"Common list of rapid antigen tests\" der EU enthalten sein."
+      "desc": "The antigen test (e.g., rapid test) must have been in EU list \"Common list of rapid antigen tests\"."
     }
   ],
   "ValidFrom": "2021-07-01T00:00:00Z",
