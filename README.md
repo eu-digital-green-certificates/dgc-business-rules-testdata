@@ -22,7 +22,7 @@ This validation runs on every Pull Request, but can also be run locally from the
     $ (cd tooling ; sh build.sh)
 
 The “CertLogic Validation” GitHub Action performs this exact same command.
-It requires a UNIX-like shell, Git, `curl`, `patch`, and a recent Node.js (with the NPM package manager) to be installed.
+It requires a UNIX-like shell, Git, `curl`, and a recent Node.js (with the NPM package manager) to be installed.
 
 After having run this command once, you can just run the validation/testing as follows:
 
