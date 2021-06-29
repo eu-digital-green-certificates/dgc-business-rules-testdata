@@ -1,2 +1,5 @@
 # IntelliJ/IDEA:
 /.idea
+
+# OS files
+.DS_Store
