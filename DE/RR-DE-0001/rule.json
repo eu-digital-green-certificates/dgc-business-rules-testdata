@@ -29,7 +29,7 @@
       "desc": "Il NAAT positivo (ad es. test PRC) deve risalire minimo a 28 giorni fa."
     }
   ],
-  "ValidFrom": "2021-07-01T00:00:00Z",
+  "ValidFrom": "2021-07-03T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

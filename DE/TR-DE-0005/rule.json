@@ -29,7 +29,7 @@
       "desc": "Il test antigenico (ad es. test rapido) deve corrispondere a uno dei test della \"Common list of rapid antigen tests\" dell’UE."
     }
   ],
-  "ValidFrom": "2021-07-01T00:00:00Z",
+  "ValidFrom": "2021-07-03T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",
