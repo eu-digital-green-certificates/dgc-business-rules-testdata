@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Only vaccines in the allowed valueset that have been approved by the EMA are allowed."
+      "desc": "Only the following vaccines are accepted: AstraZeneca, Biontech, Janssen, Moderna."
     },
     {
       "lang": "de",
@@ -18,15 +18,15 @@
     },
     {
       "lang": "fr",
-      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Seuls les vaccins suivants sont acceptés : AstraZeneca, Biontech, Janssen, Moderna."
     },
     {
       "lang": "es",
-      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Solo se aceptan las siguientes vacunas: AstraZeneca, Biontech, Janssen y Moderna."
     },
     {
       "lang": "it",
-      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Janssen, Moderna."
     }
   ],
   "ValidFrom": "2021-07-03T00:00:00Z",
