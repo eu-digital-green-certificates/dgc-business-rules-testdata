@@ -6,31 +6,39 @@ import { gatherRuleSetsAsMap, readRuleJson } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
 
 
-const ruleSetId = "EU"
-const ruleIds = Object.keys(gatherRuleSetsAsMap()[ruleSetId])
-const rules = ruleIds.map((ruleId) => readRuleJson(ruleSetId, ruleId))
+function mapValues<U, V>(map: { [key: string]: U }, mapper: (key: string, u: U) => V) {
+    return Object.fromEntries(
+        Object.entries(map).map(([ key, u ]) => [ key, mapper(key, u) ])
+    )
+}
+
+
+const ruleSets = mapValues(gatherRuleSetsAsMap(), (ruleSetId, ruleMap) => Object.keys(ruleMap).map((ruleId) => readRuleJson(ruleSetId, ruleId)))
+
 
 const valueSets = require(fromRepoRoot("valuesets/valueSets.json"))
 
 
-const createRulesRunner = (rules: any[]) => (testJson: any) => {
-    const result: any = Object.fromEntries(
-        rules.map((rule) => [
-            rule.Identifier,
-            evaluate(rule.Logic as CertLogicExpression, {
-                payload: testJson.JSON,
-                external: {
-                    valueSets,
-                    validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
-                }
-            })
-        ])
+writeJson(
+    fromRepoRoot("out", "rules-on-testData.json"),
+    mapOverTestFiles((testJson: any) =>
+        mapValues(ruleSets, (ruleSetId, rules: any[]) => {
+            const result = Object.fromEntries(
+                rules.map((rule) => [
+                    rule.Identifier,
+                    evaluate(rule.Logic as CertLogicExpression, {
+                        payload: testJson.JSON,
+                        external: {
+                            valueSets,
+                            validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
+                        }
+                    })
+                ])
+            )
+            result.allSatisfied = Object.values(result).reduce((acc, x) => acc && !!x, true)
+            return result
+        })
     )
-    result.allSatisfied = Object.values(result).reduce((acc, x) => acc && !!x, true)
-    return result
-}
-
-
-writeJson(fromRepoRoot("out", "EU-rules-on-testData.json"), mapOverTestFiles(createRulesRunner(rules)))
-console.log(`executed EU rules on test data`)
+)
+console.log(`executed all rules on test data`)
 
