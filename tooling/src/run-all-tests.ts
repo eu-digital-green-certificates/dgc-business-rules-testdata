@@ -1,7 +1,7 @@
 import { evaluate } from "certlogic-js"
 const { deepEqual, fail, isTrue } = require("chai").assert
 
-import { gatherRuleSetsAsMap, readRuleJson, readRuleTestJson } from "./repo-struct"
+import { gatherRuleSetsAsMap, readRuleJson, readRuleTestJson } from "./rule-sets"
 import { validateRule } from "./validate"
 
 
@@ -28,7 +28,7 @@ for (const ruleSetId in ruleSetsMap) {
                 const { name, payload, external, expected } = readRuleTestJson(ruleSetId, ruleId, testFile)
                 it(`${(name || "<no name>")} (test-file=${testFile})`, () => {
                     try {
-                        const actual = evaluate(rule.Logic, {payload, external})
+                        const actual = evaluate(rule.Logic, { payload, external })
                         deepEqual(actual, expected, `test in file "${testFile}" of ${ruleText} doesn't evaluate to expected value`)
                     } catch (e) {
                         fail(`exception occurred during evaluation of CertLogic expression: ${e}`)

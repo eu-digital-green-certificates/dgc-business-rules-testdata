@@ -1,5 +1,9 @@
 # IntelliJ/IDEA:
 /.idea
 
-# OS files
+# macOS files:
 .DS_Store
+
+# temporary/output files:
+/out
+

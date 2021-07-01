@@ -1,4 +1,4 @@
-import { PathLike, readFileSync } from "fs"
+import { PathLike, readFileSync, writeFileSync } from "fs"
 
 
 export const readJson = (path: PathLike) => {
@@ -8,5 +8,10 @@ export const readJson = (path: PathLike) => {
         console.error(`couldn't read JSON file with path "${path}", due to: ${e}`)
         throw e
     }
+}
+
+
+export const writeJson = (path: PathLike, json: any) => {
+    writeFileSync(path, JSON.stringify(json, null, 2), "utf8")
 }
 

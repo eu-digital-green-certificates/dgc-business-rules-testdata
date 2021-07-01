@@ -1,7 +1,7 @@
-/dgc-business-rules
+/dgc-testdata
 /dist
 /node_modules
 /package-lock.json
-/validation-rule.schema.json*
+/*.schema.json
 /yarn.lock
 /yarn-error.log

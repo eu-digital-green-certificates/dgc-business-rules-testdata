@@ -2,9 +2,7 @@ import { existsSync, lstatSync, readdirSync } from "fs"
 import { join } from "path"
 import { readJson } from "./file-utils"
 
-
-const repoRootPath = join(__dirname, "../..")
-export const fromRepoRoot = (...paths: string[]) => join(repoRootPath, ...paths)
+import { fromRepoRoot, repoRootPath } from "./paths"
 
 const nonRuleSetsDirs = [ "html", "tests", "tooling", "valuesets" ]
 
