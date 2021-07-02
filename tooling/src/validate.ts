@@ -3,24 +3,11 @@ import { dataAccesses, validateFormat } from "certlogic-validation"
 import { gt } from "semver"
 
 import { readJson } from "./file-utils"
-import { fromRepoRoot } from "./repo-struct"
+import { fromRepoRoot } from "./paths"
+import { createSchemaValidator } from "./schema-validator"
 
 
-import Ajv from "ajv"
-import { ErrorObject } from "ajv"
-const ajv = new Ajv({
-    allErrors: true,        // don't stop after 1st error
-    strict: true,
-    validateSchema: false   // prevent that AJV throws with 'no schema with key or ref "https://json-schema.org/draft/2020-12/schema"'
-})
-const addFormats = require("ajv-formats")
-addFormats(ajv)
-const schemaValidator = ajv.compile(readJson(fromRepoRoot("tooling/validation-rule.schema.json")))
-
-const schemaValidationErrorsFor = (json: any): ErrorObject[] => {
-    const valid = schemaValidator(json)
-    return valid ? [] : schemaValidator.errors!!
-}
+const ruleSchemaValidator = createSchemaValidator(readJson(fromRepoRoot("tooling/schemas/validation-rule.schema.json")))
 
 
 const areEqual = (leftSet: string[], rightSet: string[]): boolean =>
@@ -66,7 +53,7 @@ const validateMetaData = (rule: any) => {
 
 export const validateRule = (rule: any) => ({
         ruleId: rule.Identifier,
-        schemaValidationsErrors: schemaValidationErrorsFor(rule),
+        schemaValidationsErrors: ruleSchemaValidator(rule),
         logicValidationErrors: validateFormat(rule.Logic),
         affectedFields: validateAffectedFields(rule),
         metaDataErrors: validateMetaData(rule)

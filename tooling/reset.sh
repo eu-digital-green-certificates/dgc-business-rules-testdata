@@ -8,7 +8,7 @@ rm $DCC_BR_REPO_NAME 2> /dev/null
 
 npm run clean
 
-rm validation-rule.schema.json 2> /dev/null
+rm schemas/validation-rule.schema.json 2> /dev/null
 
 rm package-lock.json 2> /dev/null
 rm yarn.lock 2> /dev/null
