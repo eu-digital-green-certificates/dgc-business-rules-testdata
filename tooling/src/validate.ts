@@ -7,7 +7,7 @@ import { fromRepoRoot } from "./paths"
 import { createSchemaValidator } from "./schema-validator"
 
 
-const ruleSchemaValidator = createSchemaValidator(readJson(fromRepoRoot("tooling/validation-rule.schema.json")))
+const ruleSchemaValidator = createSchemaValidator(readJson(fromRepoRoot("tooling/schemas/validation-rule.schema.json")))
 
 
 const areEqual = (leftSet: string[], rightSet: string[]): boolean =>
