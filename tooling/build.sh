@@ -15,6 +15,7 @@ npm run clean
 npm install
 npm run build
 
-echo "Running all tests (as Mocha unit tests)..."
-npm test
+rm ../html/*.html
+echo "Running all tests (as Mocha unit tests), and generating HTML..."
+npm start
 

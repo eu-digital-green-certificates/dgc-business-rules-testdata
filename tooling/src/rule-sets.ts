@@ -4,7 +4,7 @@ import { readJson } from "./file-utils"
 
 import { fromRepoRoot, repoRootPath } from "./paths"
 
-const nonRuleSetsDirs = [ "html", "tests", "tooling", "valuesets" ]
+const nonRuleSetsDirs = [ "html", "out", "tests", "tooling", "valuesets" ]
 
 const allRuleSetsDirs = readdirSync(repoRootPath)
     .filter((path) => !path.startsWith(".") && nonRuleSetsDirs.indexOf(path) === -1)

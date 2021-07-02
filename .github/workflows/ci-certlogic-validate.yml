@@ -27,3 +27,8 @@ jobs:
        with:
          name: rules-on-testData.json
          path: ${{ github.workspace }}/out/rules-on-testData.json
+     - name: Publish generated HTML
+       uses: actions/upload-artifact@v2
+       with:
+          name: rules-html
+          path: ${{ github.workspace }}/html
