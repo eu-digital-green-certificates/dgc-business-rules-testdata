@@ -19,26 +19,30 @@ const ruleSets = mapValues(gatherRuleSetsAsMap(), (ruleSetId, ruleMap) => Object
 const valueSets = require(fromRepoRoot("valuesets/valueSets.json"))
 
 
-writeJson(
-    fromRepoRoot("out", "rules-on-testData.json"),
-    mapOverTestFiles((testJson: any) =>
-        mapValues(ruleSets, (ruleSetId, rules: any[]) => {
-            const result = Object.fromEntries(
-                rules.map((rule) => [
-                    rule.Identifier,
-                    evaluate(rule.Logic as CertLogicExpression, {
-                        payload: testJson.JSON,
-                        external: {
-                            valueSets,
-                            validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
-                        }
-                    })
-                ])
-            )
-            result.allSatisfied = Object.values(result).reduce((acc, x) => acc && !!x, true)
-            return result
-        })
+describe("execute all rules on test data", () => {
+
+    writeJson(
+        fromRepoRoot("out", "rules-on-testData.json"),
+        mapOverTestFiles((testJson: any) =>
+            mapValues(ruleSets, (ruleSetId, rules: any[]) => {
+                const result = Object.fromEntries(
+                    rules.map((rule) => [
+                        rule.Identifier,
+                        evaluate(rule.Logic as CertLogicExpression, {
+                            payload: testJson.JSON,
+                            external: {
+                                valueSets,
+                                validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
+                            }
+                        })
+                    ])
+                )
+                result.allSatisfied = Object.values(result).reduce((acc, x) => acc && !!x, true)
+                return result
+            })
+        )
     )
-)
-console.log(`executed all rules on test data`)
+    it("done", () => {})
+
+})
 
