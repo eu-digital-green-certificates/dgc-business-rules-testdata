@@ -1,11 +1,11 @@
-import { writeFileSync } from "fs"
-import { format as prettify } from "prettier"
 import * as React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
 import { CertLogicRendering } from "./CertLogic"
-import { gatherRuleSets, RuleSet } from "./rule-sets"
-import { Rule } from "./typings"
+import { writeHtml } from "./file-utils"
+import { ruleSets } from "./rule-sets"
+import { fromRepoRoot } from "./paths"
+import { Rule, RuleSet } from "./typings"
 
 
 const RuleRendering = ({ rule }: { rule: Rule }) => <div className="row">
@@ -41,17 +41,14 @@ const RuleSetRendering = ({ ruleSetId, ruleSet }: { ruleSetId: string, ruleSet: 
 }
 
 
-const ruleSets = gatherRuleSets()
-
-for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
-    const htmlPath = `../html/${ruleSetId}.html`
-    writeFileSync(
-        htmlPath,
-        prettify(
-            "<!DOCTYPE html>" + renderToStaticMarkup(<RuleSetRendering ruleSetId={ruleSetId} ruleSet={ruleSet} />),
-            { parser: "html" }
-        )
-    )
-    console.log(`wrote HTML for rule set "${ruleSetId}"`)
-}
+describe(`writing HTML for rule sets`, () => {
+    for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
+        it(`${ruleSetId}`, () => {
+            writeHtml(
+                fromRepoRoot("html", `${ruleSetId}.html`),
+                renderToStaticMarkup(<RuleSetRendering ruleSetId={ruleSetId} ruleSet={ruleSet} />)
+            )
+        })
+    }
+})
 

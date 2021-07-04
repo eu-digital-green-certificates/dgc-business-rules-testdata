@@ -3,7 +3,7 @@ import { join } from "path"
 
 import { readJson, writeJson } from "./file-utils"
 import { fromRepoRoot, repoRootPath } from "./paths"
-import { Rule } from "./typings"
+import { RuleSet, RuleSets, RuleWithTests } from "./typings"
 
 
 const nonRuleSetsDirs = [ "html", "out", "tests", "tooling", "valuesets" ]
@@ -15,27 +15,12 @@ const allRuleSetsDirs = readdirSync(repoRootPath)
 const isRuleDir = (path: string) => lstatSync(fromRepoRoot(path)).isDirectory() && existsSync(fromRepoRoot(path, "rule.json"))
 
 
-export type RuleSets = { [ruleSetId: string]: RuleSet }
-
-export type RuleSet = { [ruleId: string]: RuleWithTests}
-
-export type RuleWithTests = {
-    def: Rule
-    tests: { [testId: string]: RuleTest }
-}
-
-export type RuleTest = {
-    name?: string
-    payload: any
-    external: any
-    expected: any
-}
 
 
 /**
  * Gathers all rules' files from all states' directories, including their tests.
  */
-export const gatherRuleSets = (): RuleSets => Object.fromEntries(
+const gatherRuleSets = (): RuleSets => Object.fromEntries(
         allRuleSetsDirs.map((ruleSetDir) => [
             ruleSetDir,
             gatherRuleSet(ruleSetDir)
@@ -66,5 +51,6 @@ const gatherRule = (ruleSetDir: string, ruleId: string): RuleWithTests =>
     })
 
 
-writeJson(fromRepoRoot("out", "all-rule-sets-with-tests.json"), gatherRuleSets())
+export const ruleSets = gatherRuleSets()
+writeJson(fromRepoRoot("out", "all-rule-sets-with-tests.json"), ruleSets)
 

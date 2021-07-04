@@ -1,22 +1,13 @@
 import { CertLogicExpression, evaluate } from "certlogic-js"
 
 import { writeJson } from "./file-utils"
+import { mapValues } from "./func-utils"
 import { mapOverTestFiles } from "./test-data"
-import { gatherRuleSets } from "./rule-sets"
+import { ruleSets } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
 
 
-function mapValues<U, V>(map: { [key: string]: U }, mapper: (key: string, u: U) => V) {
-    return Object.fromEntries(
-        Object.entries(map).map(([ key, u ]) => [ key, mapper(key, u) ])
-    )
-}
-
-
-const ruleSets = gatherRuleSets()
-
-
-const valueSets = require(fromRepoRoot("valuesets/valueSets.json"))
+const valueSets = require(fromRepoRoot("valuesets", "valueSets.json"))
 
 
 describe("execute all rules on test data", () => {

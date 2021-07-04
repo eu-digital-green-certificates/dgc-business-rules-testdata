@@ -89,3 +89,7 @@ div.header {
     background-color: lightskyblue;
 }
 
+div.cell.identifier {
+    width: 6em;
+}
+
