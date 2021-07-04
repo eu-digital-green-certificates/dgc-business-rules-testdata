@@ -2,7 +2,7 @@ import { CertLogicExpression, evaluate } from "certlogic-js"
 
 import { writeJson } from "./file-utils"
 import { mapOverTestFiles } from "./test-data"
-import { gatherRuleSetsAsMap, readRuleJson } from "./rule-sets"
+import { gatherRuleSets } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
 
 
@@ -13,7 +13,7 @@ function mapValues<U, V>(map: { [key: string]: U }, mapper: (key: string, u: U) 
 }
 
 
-const ruleSets = mapValues(gatherRuleSetsAsMap(), (ruleSetId, ruleMap) => Object.keys(ruleMap).map((ruleId) => readRuleJson(ruleSetId, ruleId)))
+const ruleSets = gatherRuleSets()
 
 
 const valueSets = require(fromRepoRoot("valuesets/valueSets.json"))
@@ -24,11 +24,12 @@ describe("execute all rules on test data", () => {
     writeJson(
         fromRepoRoot("out", "rules-on-testData.json"),
         mapOverTestFiles((testJson: any) =>
-            mapValues(ruleSets, (ruleSetId, rules: any[]) => {
+            mapValues(ruleSets, (ruleSetId, ruleSet) => {
                 const result = Object.fromEntries(
-                    rules.map((rule) => [
-                        rule.Identifier,
-                        evaluate(rule.Logic as CertLogicExpression, {
+                    Object.values(ruleSet)
+                        .map((rule) => [
+                        rule.def.Identifier,
+                        evaluate(rule.def.Logic as CertLogicExpression, {
                             payload: testJson.JSON,
                             external: {
                                 valueSets,

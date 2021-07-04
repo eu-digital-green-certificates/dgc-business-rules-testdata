@@ -1,20 +1,18 @@
 import { evaluate } from "certlogic-js"
 const { deepEqual, fail, isTrue } = require("chai").assert
 
-import { gatherRuleSetsAsMap, readRuleJson, readRuleTestJson } from "./rule-sets"
+import { gatherRuleSets } from "./rule-sets"
 import { validateRule } from "./validate"
 
 
 const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
 
 
-const ruleSetsMap = gatherRuleSetsAsMap()
-
-for (const ruleSetId in ruleSetsMap) {
-    for (const ruleId in ruleSetsMap[ruleSetId]) {
+for (const [ ruleSetId, ruleSet ] of Object.entries(gatherRuleSets())) {
+    for (const [ ruleId, ruleWithTests ] of Object.entries(ruleSet)) {
         const ruleText = `rule "${ruleId}" in set "${ruleSetId}"`
         describe(ruleText, () => {
-            const rule = readRuleJson(ruleSetId, ruleId)
+            const rule = ruleWithTests.def
             it("validates against rule's JSON Schema, other checks, and CertLogic spec", () => {
                 const { schemaValidationsErrors, affectedFields, logicValidationErrors, metaDataErrors } = validateRule(rule)
                 isTrue(schemaValidationsErrors.length === 0, `${ruleText} has schema validation errors: ${schemaValidationsErrors.join(", ")}`)
@@ -24,12 +22,12 @@ for (const ruleSetId in ruleSetsMap) {
                 isTrue(logicValidationErrors.length === 0, `CertLogic expression in ${ruleText} has validation errors: ${asPrettyText(logicValidationErrors)}`)
                 isTrue(metaDataErrors.length === 0, `meta data of ${ruleText} has validation errors: ${metaDataErrors.join(", ")}`)
             })
-            for (const testFile of ruleSetsMap[ruleSetId][ruleId].testFiles) {
-                const { name, payload, external, expected } = readRuleTestJson(ruleSetId, ruleId, testFile)
-                it(`${(name || "<no name>")} (test-file=${testFile})`, () => {
+            for (const [ testId, test ] of Object.entries(ruleWithTests.tests)) {
+                const { name, payload, external, expected } = test
+                it(`${(name || "<no name>")} (test-ID=${testId})`, () => {
                     try {
                         const actual = evaluate(rule.Logic, { payload, external })
-                        deepEqual(actual, expected, `test in file "${testFile}" of ${ruleText} doesn't evaluate to expected value`)
+                        deepEqual(actual, expected, `test with ID "${testId}" of ${ruleText} doesn't evaluate to expected value`)
                     } catch (e) {
                         fail(`exception occurred during evaluation of CertLogic expression: ${e}`)
                     }
