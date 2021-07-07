@@ -1,4 +1,4 @@
-import { evaluate } from "certlogic-js"
+import { evaluate, dateFromString } from "certlogic-js"
 const { deepEqual, fail, isTrue } = require("chai").assert
 
 import { gatherRuleSetsAsMap, readRuleJson, readRuleTestJson } from "./rule-sets"
@@ -26,7 +26,14 @@ for (const ruleSetId in ruleSetsMap) {
             })
             for (const testFile of ruleSetsMap[ruleSetId][ruleId].testFiles) {
                 const { name, payload, external, expected } = readRuleTestJson(ruleSetId, ruleId, testFile)
+                const validationClock = external.validationClock
                 it(`${(name || "<no name>")} (test-file=${testFile})`, () => {
+                    if (validationClock) {
+                        const now = dateFromString(validationClock)
+                        if (!(dateFromString(rule.ValidFrom) <= now && now < dateFromString(rule.ValidTo))) {
+                            fail(`${ruleText} can't pertain to the test in file "${testFile}" because ${validationClock} is not in the rule's validity range [ ${rule.ValidFrom}, ${rule.ValidTo} ) - please change either the value of external.validationClock or the rule's validity range`)
+                        }
+                    }
                     try {
                         const actual = evaluate(rule.Logic, { payload, external })
                         deepEqual(actual, expected, `test in file "${testFile}" of ${ruleText} doesn't evaluate to expected value`)
