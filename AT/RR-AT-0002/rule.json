@@ -1,0 +1,56 @@
+{
+  "Identifier": "RR-AT-0002",
+  "Type": "Acceptance",
+  "Country": "AT",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Recovery",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The positive NAA test result (e.g., PCR) must be no older than 180 days."
+    },
+    {
+      "lang": "de",
+      "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen."
+    }
+  ],
+  "ValidFrom": "2021-07-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.fr"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.r.0"
+      },
+      {
+        "not-after": [
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.r.0.fr"
+              },
+              180,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

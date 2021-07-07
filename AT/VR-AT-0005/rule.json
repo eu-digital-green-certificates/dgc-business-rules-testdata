@@ -1,0 +1,77 @@
+{
+	"Identifier": "VR-AT-0005",
+	"Type": "Acceptance",
+	"Country": "AT",
+	"Version": "1.0.0",
+	"SchemaVersion": "1.0.0",
+	"Engine": "CERTLOGIC",
+	"EngineVersion": "0.7.5",
+	"CertificateType": "Vaccination",
+	"Description": [
+		{
+			"lang": "en",
+			"desc": "If (sequencenumber >= total number of doses) (AT: 'Zweitimpfung') Verification Datetime must be less than 270 days after vaccination date (and vaccination date not in the past)."
+		}
+	],
+	"ValidFrom": "2021-06-01T00:00:00Z",
+	"ValidTo": "2030-06-01T00:00:00Z",
+	"AffectedFields": [
+		"v.0",
+		"v.0.dn",
+		"v.0.sd",
+		"v.0.dt"
+	],
+	"Logic": {
+		"if": [
+			{
+				"and": [
+					{
+						"var": "payload.v.0"
+					},
+					{
+						">=": [
+							{
+								"var": "payload.v.0.dn"
+							},
+							{
+								"var": "payload.v.0.sd"
+							}
+						]
+					}
+				]
+			},
+			{
+				"not-after": [
+					{
+						"plusTime": [
+							{
+								"var": "payload.v.0.dt"
+							},
+							0,
+							"day"
+						]
+					},
+					{
+						"plusTime": [
+							{
+								"var": "external.validationClock"
+							},
+							0,
+							"day"
+						]
+					},
+					{
+						"plusTime": [
+							{
+								"var": "payload.v.0.dt"
+							},
+							270,
+							"day"
+						]
+					}
+				]
+			},
+			true
+		]
+	}
+}
