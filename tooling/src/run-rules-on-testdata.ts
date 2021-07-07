@@ -28,11 +28,21 @@ describe("execute all rules on test data", () => {
                 const result = Object.fromEntries(
                     rules.map((rule) => [
                         rule.Identifier,
-                        evaluate(rule.Logic as CertLogicExpression, {
-                            payload: testJson.JSON,
-                            external: {
-                                valueSets,
-                                validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
+                        (() => {
+                            try {
+                                return {
+                                    result: evaluate(
+                                        rule.Logic as CertLogicExpression,
+                                        {
+                                            payload: testJson.JSON,
+                                            external: {
+                                                valueSets,
+                                                validationClock: testJson["TESTCTX"]["VALIDATIONCLOCK"]
+                                            }
+                                        })
+                                }
+                            } catch (e) {
+                                return { errorMessage: e.message }
                             }
                         })
                     ])
