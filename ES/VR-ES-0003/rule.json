@@ -1,0 +1,78 @@
+{
+  "Identifier": "VR-ES-0003",
+  "Type": "Acceptance",
+  "Country": "ES",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Verification Datetime must be more than 14 days and less than 365 days after the last date of vaccination."
+    },
+    {
+      "lang": "de",
+      "desc": "Der Zeitpunkt der Verifizierung muss mehr als 14 Tage und weniger als 365 Tage nach dem letzten Impfdatum liegen."
+    },
+    {
+      "lang": "fr",
+      "desc": "La date de vérification doit être supérieure à 14 jours et inférieure à 365 jours après la dernière date de vaccination."
+    },
+    {
+      "lang": "es",
+      "desc": "La fecha de verificación debe ser superior a 14 días e inferior a 365 días después de la última fecha de vacunación."
+    },
+    {
+      "lang": "it",
+      "desc": "La data di verifica deve essere più di 14 giorni e meno di 365 giorni dopo l'ultima data di vaccinazione."
+    }
+  ],
+  "ValidFrom": "2021-07-05T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dt"
+  ]
+,
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "not-after": [
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              14,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              365,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
