@@ -3,13 +3,13 @@
   "payload": {
     "r": [
       {
-        "fr": "2020-12-21"
+        "fr": "2021-12-21"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-06-23T00:00:00Z",
+    "validationClock": "2022-06-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
