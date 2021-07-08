@@ -2,6 +2,7 @@ import { existsSync, lstatSync, readdirSync } from "fs"
 import { join } from "path"
 
 import { readJson, writeJson } from "./file-utils"
+import { mapValues } from "./func-utils"
 import { fromRepoRoot, repoRootPath, jsonOutPath } from "./paths"
 import { RuleSet, RuleSets, RuleWithTests } from "./typings"
 
@@ -51,4 +52,14 @@ const gatherRule = (ruleSetDir: string, ruleId: string): RuleWithTests =>
 
 export const ruleSets: RuleSets = gatherRuleSets()
 writeJson(join(jsonOutPath, "all-rule-sets-with-tests.json"), ruleSets)
+
+
+writeJson(
+    join(jsonOutPath, "all-rule-sets.json"),
+    mapValues(ruleSets, (ruleSetId, ruleSet) =>
+        mapValues(ruleSet, (ruleId, rule) =>
+            rule.def
+        )
+    )
+)
 
