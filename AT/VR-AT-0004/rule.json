@@ -24,10 +24,10 @@
 	"Logic": {
 		"if": [
 			{
-				"and": [
-					{
-						"var": "payload.v.0"
-					},
+				"var": "payload.v.0"
+			},
+			{
+				"if": [
 					{
 						"<": [
 							{
@@ -37,38 +37,39 @@
 								"var": "payload.v.0.sd"
 							}
 						]
-					}
-				]
-			},
-			{
-				"not-after": [
-					{
-						"plusTime": [
-							{
-								"var": "payload.v.0.dt"
-							},
-							22,
-							"day"
-						]
 					},
 					{
-						"plusTime": [
+						"not-after": [
 							{
-								"var": "external.validationClock"
+								"plusTime": [
+									{
+										"var": "payload.v.0.dt"
+									},
+									22,
+									"day"
+								]
 							},
-							0,
-							"day"
+							{
+								"plusTime": [
+									{
+										"var": "external.validationClock"
+									},
+									0,
+									"day"
+								]
+							},
+							{
+								"plusTime": [
+									{
+										"var": "payload.v.0.dt"
+									},
+									90,
+									"day"
+								]
+							}
 						]
 					},
-					{
-						"plusTime": [
-							{
-								"var": "payload.v.0.dt"
-							},
-							90,
-							"day"
-						]
-					}
+					true
 				]
 			},
 			true
