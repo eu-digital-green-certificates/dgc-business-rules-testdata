@@ -7,7 +7,7 @@
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
     "validationClock": "2021-07-10T00:00:00+00:00",
     "valueSets": {

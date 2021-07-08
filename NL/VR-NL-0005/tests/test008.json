@@ -1,13 +1,13 @@
 {
-  "name": "dt=2021-07-10, now=2021-07-23",
+  "name": "dt=2021-07-09, now=2021-07-23",
   "payload": {
     "v": [
       {
-        "dt": "2021-07-10"
+        "dt": "2021-07-09"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
     "validationClock": "2021-07-23T00:00:00+00:00",
     "valueSets": {
