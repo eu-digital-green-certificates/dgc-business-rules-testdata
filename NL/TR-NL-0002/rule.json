@@ -3,7 +3,7 @@
   "Type": "Acceptance",
   "Country": "NL",
   "Version": "1.0.0",
-  "SchemaVersion": "1.0.0",
+  "SchemaVersion": "1.3.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
   "CertificateType": "Test",
