@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Date of vaccination must be before the current time."
+      "desc": "Date of last vaccination (of a finished course) must be 14 days before the current time."
     }
   ],
   "ValidFrom": "2021-07-10T00:00:00Z",
@@ -25,69 +25,23 @@
         "var": "payload.v.0"
       },
       {
-        "if": [
+        "not-before": [
           {
-            "before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "external.validationClock"
               },
-              {
-                "plusTime": [
-                  "2021-07-10",
-                  0,
-                  "day"
-                ]
-              }
+              0,
+              "day"
             ]
           },
           {
-            "not-before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "payload.v.0.dt"
               },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
-              }
-            ]
-          },
-          {
-            "not-before": [
-              {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
-              },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  14,
-                  "day"
-                ]
-              }
+              14,
+              "day"
             ]
           }
         ]
