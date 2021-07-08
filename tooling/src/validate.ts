@@ -5,6 +5,7 @@ import { gt } from "semver"
 import { readJson } from "./file-utils"
 import { fromRepoRoot } from "./paths"
 import { createSchemaValidator } from "./schema-validator"
+import { Rule } from "./typings"
 
 
 const ruleSchemaValidator = createSchemaValidator(readJson(fromRepoRoot("tooling/schemas/validation-rule.schema.json")))
@@ -24,7 +25,7 @@ const validateAffectedFields = (rule: any): null | { actual: string[], computed:
 }
 
 
-const validateMetaData = (rule: any) => {
+const validateMetaData = (rule: Rule) => {
     const errors: string[] = []
 
     if (rule.Type !== "Acceptance") {

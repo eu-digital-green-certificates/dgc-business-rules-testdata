@@ -22,8 +22,8 @@ jobs:
        with:
          name: compressed-valueSets.json
          path: ${{ github.workspace }}/valuesets/valueSets.json
-     - name: Make result of executing all rules on the test data available as JSON artifact
+     - name: Publish gathered JSON
        uses: actions/upload-artifact@v2
        with:
-         name: rules-on-testData.json
-         path: ${{ github.workspace }}/out/rules-on-testData.json
+         name: gathered-JSON
+         path: ${{ github.workspace }}/out/*.json
