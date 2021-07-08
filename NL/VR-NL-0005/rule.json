@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Date of last vaccination (of a finished course) must be 14 days before the current time, from Saturday July 10 2021 onwards, and before current time otherwise."
+      "desc": "From Saturday July 10th 2021 onwards, a finished vaccination course is considered effective 14 days after the last vaccination, but effective immediately from the last vaccination before that date."
     }
   ],
   "ValidFrom": "2021-07-10T00:00:00Z",
