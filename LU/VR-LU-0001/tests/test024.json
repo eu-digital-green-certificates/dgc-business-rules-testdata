@@ -1,11 +1,11 @@
 {
-  "name": "1/2 exactly 14 days",
+  "name": "0/1 more than 14 days",
   "payload": {
     "v": [
       {
-        "dt": "2021-06-09",
-		"sd": 2,
-        "dn": 1
+        "dt": "2021-06-08",
+		"sd": 1,
+        "dn": 0
       }
     ]
   },

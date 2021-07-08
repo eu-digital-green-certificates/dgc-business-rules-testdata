@@ -1,15 +1,17 @@
 {
-  "name": "more than enough doses",
+  "name": "1/2 less than 14 days",
   "payload": {
     "v": [
       {
-        "sd": 2,
-        "dn": 3
+        "dt": "2021-06-10",
+		"sd": 2,
+        "dn": 1
       }
     ]
   },
-  "expected": true,
+  "expected": false,
   "external": {
+    "validationClock": "2021-06-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

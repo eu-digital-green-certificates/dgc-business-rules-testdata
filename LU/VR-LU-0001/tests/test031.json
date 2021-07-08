@@ -1,15 +1,15 @@
 {
-  "name": "1/2 exactly 14 days",
+  "name": "2/1 exactly 14 days",
   "payload": {
     "v": [
       {
         "dt": "2021-06-09",
-		"sd": 2,
-        "dn": 1
+		"sd": 1,
+        "dn": 2
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
     "validationClock": "2021-06-23T00:00:00Z",
     "valueSets": {
