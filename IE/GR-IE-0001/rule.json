@@ -1,0 +1,84 @@
+{
+  "Identifier": "GR-IE-0001",
+  "Type": "Acceptance",
+  "Country": "IE",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "General",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Certificate relates to a disease other than COVID-19."
+    }
+  ],
+  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.tg",
+    "t.0",
+    "t.0.tg",
+    "v.0",
+    "v.0.tg"
+  ],
+  "Logic": {
+    "and": [
+      {
+        "if": [
+          {
+            "var": "payload.r.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.r.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      },
+      {
+        "if": [
+          {
+            "var": "payload.t.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.t.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      },
+      {
+        "if": [
+          {
+            "var": "payload.v.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.v.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      }
+    ]
+  }
+}
