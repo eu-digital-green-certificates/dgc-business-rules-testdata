@@ -10,11 +10,11 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Date of vaccination must be before the current time."
+      "desc": "Date of vaccination must be before the current date."
     }
   ],
   "ValidFrom": "2021-01-01T00:00:00Z",
-  "ValidTo": "2021-07-10T00:00:00Z",
+  "ValidTo": "2021-07-17T00:00:00Z",
   "AffectedFields": [
     "v.0",
     "v.0.dt"
