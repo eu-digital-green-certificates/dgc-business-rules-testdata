@@ -1,5 +1,6 @@
 import { evaluate } from "certlogic-js"
-const { fail, isTrue } = require("chai").assert
+const assert = require("chai").assert
+const { fail, isTrue } = assert
 const deepEqual = require("deep-equal")
 import { join } from "path"
 
@@ -51,9 +52,10 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
                     schemaValidationsErrors.length === 0,
                     `${ruleText} has schema validation errors: ${schemaValidationsErrors.join(", ")}`
                 )
-                if (affectedFields) {
-                    isTrue(
-                        deepEqual(affectedFields.actual, affectedFields.computed),
+                if (affectedFields !== null) {
+                    assert.deepEqual(
+                        affectedFields.actual,
+                        affectedFields.computed,
                         `${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed)`
                     )
                 }
