@@ -10,7 +10,7 @@
 	"Description": [
 		{
 			"lang": "en",
-			"desc": "If (total number of doses > 1) and (sequencenumber >= total number of doses) (AT: 'Zweitimpfung') Verification Datetime must be less than 270 days after vaccination date (and vaccination date not in the future)."
+			"desc": "If (total number of doses = 1) and (sequencenumber >= total number of doses) (AT: 'vollst. Immunisierung bei 1/1') Verification Datetime must be more than 22 days and less than 270 days after vaccination date (and vaccination date not in the future)."
 		}
 	],
 	"ValidFrom": "2021-06-01T00:00:00Z",
@@ -29,7 +29,7 @@
 			{
 				"if": [
 					{
-						">": [
+						"<=": [
 							{
 								"var": "payload.v.0.sd"
 							},
@@ -55,7 +55,7 @@
 											{
 												"var": "payload.v.0.dt"
 											},
-											0,
+											22,
 											"day"
 										]
 									},
