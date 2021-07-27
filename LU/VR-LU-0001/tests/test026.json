@@ -3,7 +3,7 @@
   "payload": {
     "v": [
       {
-        "dt": "2021-06-10",
+        "dt": "2021-07-10",
 		"sd": 1,
         "dn": 0
       }
@@ -11,7 +11,7 @@
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-06-23T00:00:00Z",
+    "validationClock": "2021-07-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
