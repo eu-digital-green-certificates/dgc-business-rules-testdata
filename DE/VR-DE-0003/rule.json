@@ -2,7 +2,7 @@
   "Identifier": "VR-DE-0003",
   "Type": "Acceptance",
   "Country": "DE",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -29,7 +29,7 @@
       "desc": "La vaccinazione deve risalire a più di 14 giorni fa."
     }
   ],
-  "ValidFrom": "2021-07-03T00:00:00Z",
+  "ValidFrom": "2021-07-30T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -41,7 +41,7 @@
         "var": "payload.v.0"
       },
       {
-        "after": [
+        "not-before": [
           {
             "plusTime": [
               {
@@ -56,7 +56,7 @@
               {
                 "var": "payload.v.0.dt"
               },
-              14,
+              15,
               "day"
             ]
           }
