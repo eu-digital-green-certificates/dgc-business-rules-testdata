@@ -13,7 +13,7 @@
       "desc": "The validity start date must be greater than or equal to the first positive test date  +11 days and validity end date must be less than or equal to the first postive test date +180."
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2021-07-17T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",
