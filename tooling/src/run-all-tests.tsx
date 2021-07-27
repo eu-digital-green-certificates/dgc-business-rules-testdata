@@ -1,3 +1,5 @@
+import * as React from "react"
+import { renderToStaticMarkup } from "react-dom/server"
 import { evaluate } from "certlogic-js"
 import { dateFromString } from "certlogic-js/dist/internals"    // TODO  expose properly from certlogic-js
 const assert = require("chai").assert
@@ -6,12 +8,13 @@ const deepEqual = require("deep-equal")
 import { join } from "path"
 import { argv } from "process"
 
-import { writeJson } from "./file-utils"
-import {filterValues, mapValues} from "./func-utils"
-import { jsonOutPath } from "./paths"
+import { writeHtml, writeJson } from "./file-utils"
+import { filterValues, mapValues } from "./func-utils"
+import { fromRepoRoot, jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"
 import { TestResults } from "./typings"
 import { validateRule } from "./validate"
+import { AllRuleSetsWithTestsResults } from "./all-rule-sets-with-tests-results"
 
 
 const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
@@ -136,4 +139,16 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
         })
     }
 }
+
+
+describe(`writing HTML for all rules' tests`, () => {
+
+    it(`done`, () => {
+        writeHtml(
+            fromRepoRoot("html", "all-rule-sets-with-tests-results.html"),
+            renderToStaticMarkup(<AllRuleSetsWithTestsResults ruleSets={ruleSets} testResults={testResults} />)
+        )
+    })
+
+})
 
