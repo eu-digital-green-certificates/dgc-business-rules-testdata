@@ -13,7 +13,7 @@
       "desc": "Vaccination doses must be equal or greater than expected doses."
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2021-07-17T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",

@@ -13,7 +13,7 @@
       "desc": "DateTime of Sample Collection must be less than 40 hours before the Verification Datetime."
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2021-07-17T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",
