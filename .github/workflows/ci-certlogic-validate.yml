@@ -1,11 +1,6 @@
-name: CertLogic Validation
+name: Validation and Testing of Rule Sets
 on:
   workflow_dispatch:
-    inputs:
-      country_code:
-        description: 'Country Code'
-        required: true
-        default: '*'
   pull_request:
 jobs:
   build:
@@ -20,5 +15,15 @@ jobs:
        uses: actions/setup-node@v1
        with:
           node-version: '15.x'
-     - name: Run tooling build script
-       run:  (cd tooling ; sh build.sh)
+     - name: Run build script
+       run:  sh build.sh
+     - name: Make compressed value sets available as JSON
+       uses: actions/upload-artifact@v2
+       with:
+         name: compressed-valueSets.json
+         path: ${{ github.workspace }}/valuesets/valueSets.json
+     - name: Publish gathered JSON
+       uses: actions/upload-artifact@v2
+       with:
+         name: gathered-JSON
+         path: ${{ github.workspace }}/out/*.json

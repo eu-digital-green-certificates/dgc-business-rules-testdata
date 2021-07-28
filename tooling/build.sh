@@ -1,23 +1,22 @@
 #!/bin/sh
 
-# Builds the tooling, and runs the validation.
+REPO_NAME=dgc-testdata
 
-DCC_BR_REPO_NAME=dgc-business-rules
+git clone --depth 1 https://github.com/eu-digital-green-certificates/$REPO_NAME.git
+# locally, use:   ln -s ../../$REPO_NAME .
 
-# build CertLogic dependencies:
-git clone --depth 1 https://github.com/ehn-dcc-development/$DCC_BR_REPO_NAME.git
-# locally, use:
-#  ln -s ../../$DCC_BR_REPO_NAME .
-cd $DCC_BR_REPO_NAME/certlogic
-./build-js.sh
-cd ../..
+echo "Downloading JSON Schema for rules..."
+curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/main/src/main/resources/validation-rule.schema.json > schemas/validation-rule.schema.json
 
-# get JSON Schema:
-curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/feat/validation-rules/src/main/resources/validation-rule.schema.json > validation-rule.schema.json
-patch validation-rule.schema.json schema.patch
+OUT_DIR=../out
 
-# build and run validation tooling:
+echo "Cleaning..."
+npm run clean
+rm -rf $OUT_DIR
+mkdir -p $OUT_DIR
+
 npm install
-npm run build
+
+echo "Building tooling, and running all tests (as Mocha unit tests)..."
 npm start
 

@@ -16,7 +16,9 @@
   "ValidFrom": "2021-06-01T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
-    "r.0"
+    "r.0",
+    "r.0.df",
+    "r.0.du"
   ],
   "Logic": {
     "if": [

@@ -1,0 +1,82 @@
+{
+  "Identifier": "TR-DE-0002",
+  "Type": "Acceptance",
+  "Country": "DE",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The sample for an antigen test (e.g., rapid test) must have been taken no longer than 48 hours ago."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Probenahme für einen Antigen-Test (z.B. Schnelltest) darf maximal 48 Stunden zurückliegen."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le prélèvement pour un test antigénique (p. ex. test rapide) ne doit pas dater de plus de 48 heures."
+    },
+    {
+      "lang": "es",
+      "desc": "Deben haber transcurrido 48 horas como máximo desde la extracción para una prueba de antígenos (por ejemplo, un autotest rápido)."
+    },
+    {
+      "lang": "it",
+      "desc": "Il campione per il test antigenico (test rapido) deve essere stato rilevato nelle ultime 48 ore."
+    }
+  ],
+  "ValidFrom": "2021-07-03T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.sc",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "if": [
+          {
+            "===": [
+              {
+                "var": "payload.t.0.tt"
+              },
+              "LP217198-3"
+            ]
+          },
+          {
+            "not-after": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.t.0.sc"
+                  },
+                  48,
+                  "hour"
+                ]
+              }
+            ]
+          },
+          true
+        ]
+      },
+      true
+    ]
+  }
+}

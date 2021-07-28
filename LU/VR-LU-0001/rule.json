@@ -1,0 +1,106 @@
+{
+	"Identifier": "VR-LU-0001",
+	"Type": "Acceptance",
+	"Country": "LU",
+	"Version": "1.0.0",
+	"SchemaVersion": "1.0.0",
+	"Engine": "CERTLOGIC",
+	"EngineVersion": "0.7.5",
+	"CertificateType": "Vaccination",
+	"Description": [
+		{
+			"lang": "en",
+			"desc": "The vaccination schedule must be complete (e.g., 1/1, 2/2, 3/3) and be older than 14 days in the case 1/1."
+		},
+		{
+			"lang": "de",
+			"desc": "Der Impfplan muss vollständig sein (z.B. 1/1, 2/2, 3/3) und im Fall 1/1, älter als 14 Tage sein."
+		},
+		{
+			"lang": "fr",
+			"desc": "La série vaccinale doit être complète (p. ex. 1/1, 2/2; 3/3) et datant de plus de 14 jours dans le cas 1/1."
+		},
+		{
+			"lang": "es",
+			"desc": "La pauta de vacunación debe estar completa (por ejemplo, 1/1, 2/2, 3/3) y tener más de 14 días en el caso 1/1."
+		},
+		{
+			"lang": "it",
+			"desc": "Il ciclo di vaccinazione deve essere stato completato (ad es. 1/1, 2/2, 3/3) e deve essere più vecchia di 14 giorni nel caso di 1/1."
+		}
+	],
+	"ValidFrom": "2021-07-03T00:00:00Z",
+	"ValidTo": "2030-06-01T00:00:00Z",
+	"AffectedFields": [
+		"v.0",
+		"v.0.dn",
+		"v.0.sd",
+		"v.0.dt"
+	],
+	"Logic": {
+		"if": [
+			{
+				"var": "payload.v.0"
+			},
+			{
+				"if": [
+					{
+						">=": [
+							{
+								"var": "payload.v.0.dn"
+							},
+							{
+								"var": "payload.v.0.sd"
+							}
+						]
+					},
+					{
+						"if": [
+							{
+								">=": [
+									{
+										"var": "payload.v.0.sd"
+									},
+									2
+								]
+							},
+							true,
+							{
+								"if": [
+									{
+										"var": "payload.v.0"
+									},
+									{
+										"not-before": [
+											{
+												"plusTime": [
+													{
+														"var": "external.validationClock"
+													},
+													0,
+													"day"
+												]
+											},
+											{
+												"plusTime": [
+													{
+														"var": "payload.v.0.dt"
+													},
+													14,
+													"day"
+												]
+											}
+										]
+									},
+									true
+								]
+							}
+						]
+					}
+					,false
+				]
+			},
+			true
+		]
+	}
+}

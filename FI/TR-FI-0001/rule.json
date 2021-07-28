@@ -1,0 +1,40 @@
+{
+  "Identifier": "TR-FI-0001",
+  "Type": "Acceptance",
+  "Country": "FI",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The test type must be one of the value set list (RAT OR NAA)."
+    }
+  ],
+  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "in": [
+          {
+            "var": "payload.t.0.tt"
+          },
+          {
+            "var": "external.valueSets.covid-19-lab-test-type"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
