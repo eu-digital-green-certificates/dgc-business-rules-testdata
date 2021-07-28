@@ -1,41 +1,54 @@
 {
-  "Identifier": "VR-CY-0002",
-  "Type": "Acceptance",
-  "Country": "CY",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.0.0",
-  "Engine": "CERTLOGIC",
-  "EngineVersion": "0.7.5",
-  "CertificateType": "Vaccination",
-  "Description": [
-    {
-      "lang": "en",
-      "desc": "Vaccination doses must be equal or greater than expected doses."
-    }
-  ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
-  "ValidTo": "2030-06-01T00:00:00Z",
-  "AffectedFields": [
-    "v.0",
-    "v.0.dn",
-    "v.0.sd"
-  ],
-  "Logic": {
-    "if": [
-      {
-        "var": "payload.v.0"
-      },
-      {
-        ">=": [
-          {
-            "var": "payload.v.0.dn"
-          },
-          {
-            "var": "payload.v.0.sd"
-          }
-        ]
-      },
-      true
-    ]
-  }
+	"Identifier": "VR-CY-0002",
+	"Type": "Acceptance",
+	"Country": "CY",
+	"Version": "1.0.0",
+	"SchemaVersion": "1.3.0",
+	"Engine": "CERTLOGIC",
+	"EngineVersion": "0.7.5",
+	"CertificateType": "Vaccination",
+	"Description": [
+		{
+			"lang": "en",
+			"desc": "Vaccination doses must be equal or greater than expected doses when Expected Dose > 1"
+		}
+	],
+	"ValidFrom": "2021-06-01T00:00:00Z",
+	"ValidTo": "2030-06-01T00:00:00Z",
+	"AffectedFields": [
+		"v.0",
+		"v.0.dn",
+		"v.0.sd"
+	],
+	"Logic": {
+		"if": [
+			{
+				"var": "payload.v.0"
+			},
+			{
+				"if": [
+					{
+						">": [
+							{
+								"var": "payload.v.0.sd"
+							},
+							1
+						]
+					},
+					{
+						">=": [
+							{
+								"var": "payload.v.0.dn"
+							},
+							{
+								"var": "payload.v.0.sd"
+							}
+						]
+					},
+					true
+				]
+			},
+			true
+		]
+	}
 }
