@@ -19,14 +19,14 @@ Its main purpose is to help with developing _interchangeable_ business rules.
 This repository performs automatic validation and testing on all the rules, and their tests, contributed to it.
 This validation and testing runs on every Pull Request, but can also be run locally from the commandline, as follows:
 
-    $ (cd tooling ; sh build.sh)
+    $ ./build.sh
 
 The “CertLogic Validation” GitHub Action performs this exact same command.
 It requires a UNIX-like shell, Git, `curl`, and a recent Node.js (with the NPM package manager) to be installed.
 
 After having run this command once, you can just run the validation/testing as follows:
 
-    $ (cd tooling ; npm test)
+    $ (cd tooling ; npm start)
 
 Validation encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
