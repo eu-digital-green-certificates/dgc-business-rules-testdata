@@ -50,7 +50,7 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
                 } = validateRule(rule)
                 isTrue(
                     schemaValidationsErrors.length === 0,
-                    `${ruleText} has schema validation errors: ${schemaValidationsErrors.join(", ")}`
+                    `${ruleText} has schema validation errors: ${schemaValidationsErrors.map(asPrettyText).join(", ")}`
                 )
                 if (affectedFields !== null) {
                     assert.deepEqual(
