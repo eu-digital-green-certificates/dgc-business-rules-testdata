@@ -57,6 +57,11 @@ const validateMetaData = (rule: Rule) => {
             if (validFrom > validTo) {
                 errors.push(`ValidFrom ${rule.ValidFrom} must be before ValidTo ${rule.ValidTo}`)
             }
+            let validFromPlus72hours = validFrom
+            validFrom.setUTCHours(validFromPlus72hours.getUTCHours() + 72)
+            if (validFromPlus72hours >= validTo) {
+                errors.push(`validity range ${rule.ValidFrom} - ${rule.ValidTo} of rule must be at least 72 hours long`)
+            }
         }
     }
     return errors
