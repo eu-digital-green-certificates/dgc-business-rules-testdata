@@ -23,14 +23,20 @@
     "if": [
       {
         "===": [
-          "payload.t.0.tt",
+          {
+            "var": "payload.t.0.tt"
+          },
           "LP217198-3"
         ]
       },
       {
         "in": [
-          "payload.t.0.ma",
-          "external.valueSets.covid-19-lab-test-manufacturer-and-name"
+          {
+            "var": "payload.t.0.ma"
+          },
+          {
+            "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
+          }
         ]
       },
       true

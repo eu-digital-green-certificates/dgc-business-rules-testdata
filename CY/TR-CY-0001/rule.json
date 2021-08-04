@@ -26,8 +26,12 @@
       },
       {
         "in": [
-          "payload.t.0.tt",
-           "external.valueSets.covid-19-lab-test-type"
+          {
+            "var": "payload.t.0.tt"
+          },
+          {
+            "var": "external.valueSets.covid-19-lab-test-type"
+          }
         ]
       },
       true
