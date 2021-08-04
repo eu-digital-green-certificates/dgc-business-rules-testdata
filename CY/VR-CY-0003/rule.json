@@ -18,7 +18,7 @@
 	"AffectedFields": [
 		"v.0",
 		"v.0.dt",
-		"v.0.sd"
+		"v.0.dn"
 	],
 	"Logic": {
 		"if": [
@@ -30,31 +30,37 @@
 					{
 						"===": [
 							{
-								"var": "payload.v.0.sd"
+								"var": "payload.v.0.dn"
 							},
 							1
 						]
 					},
 					{
-						"not-before": [
+						"if": [
 							{
-								"plusTime": [
+								"before": [
 									{
-										"var": "external.validationClock"
+										"plusTime": [
+											{
+												"var": "external.validationClock"
+											},
+											0,
+											"day"
+										]
 									},
-									0,
-									"day"
+									{
+										"plusTime": [
+											{
+												"var": "payload.v.0.dt"
+											},
+											21,
+											"day"
+										]
+									}
 								]
 							},
-							{
-								"plusTime": [
-									{
-										"var": "payload.v.0.dt"
-									},
-									21,
-									"day"
-								]
-							}
+							false,
+							true
 						]
 					},
 					true

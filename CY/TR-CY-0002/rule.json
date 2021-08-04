@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "If the test type is \"RAT\" then the \"test product and manufacturer\" MUST be in the valueset list, if it's NAA return true."
+      "desc": "If the test type is RAT then the test product and manufacturer MUST be in the valueset list, if it's NAA return true."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
@@ -23,20 +23,14 @@
     "if": [
       {
         "===": [
-          {
-            "var": "payload.t.0.tt"
-          },
+          "payload.t.0.tt",
           "LP217198-3"
         ]
       },
       {
         "in": [
-          {
-            "var": "payload.t.0.ma"
-          },
-          {
-            "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
-          }
+          "payload.t.0.ma",
+          "external.valueSets.covid-19-lab-test-manufacturer-and-name"
         ]
       },
       true
