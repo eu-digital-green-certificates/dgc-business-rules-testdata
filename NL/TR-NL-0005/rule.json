@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The sample for an NAA test (e.g., PCR) must have been taken no longer than 48 hours ago."
+      "desc": "The sample for a NAA test (e.g., PCR) must have been taken no longer than 48 hours ago."
     },
     {
       "lang": "de",
@@ -30,7 +30,7 @@
     },
     {
       "lang": "nl",
-      "desc": "Een NAA test (bijv. PCR) mag niet langer dan 48 uur geleden zijn afgenomen."
+      "desc": "Een NAAT-test (bijv. PCR) mag niet langer dan 48 uur geleden zijn afgenomen."
     }
   ],
   "ValidFrom": "2021-08-08T00:00:00Z",
