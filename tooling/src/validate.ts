@@ -1,5 +1,5 @@
 import { version } from "certlogic-js"
-import { dataAccesses, validateFormat } from "certlogic-validation"
+import { dataAccesses, validateFormat } from "certlogic-js/dist/validation"
 import { gt } from "semver"
 
 import { readJson } from "./file-utils"
