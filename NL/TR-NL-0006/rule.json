@@ -1,0 +1,86 @@
+{
+  "Identifier": "TR-NL-0006",
+  "Type": "Acceptance",
+  "Country": "NL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The sample for an antigen test (e.g., rapid test) must have been taken no longer than 24 hours ago."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Probenahme für einen Antigen-Test (z.B. Schnelltest) darf maximal 24 Stunden zurücckliegen."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le prélèvement pour un test antigénique (p. ex. test rapide) ne doit pas dater de plus de 24 heures."
+    },
+    {
+      "lang": "es",
+      "desc": "Deben haber transcurrido 24 horas como máximo desde la extracción para una prueba de antígenos (por ejemplo, un autotest rápido)."
+    },
+    {
+      "lang": "it",
+      "desc": "Il campione per il test antigenico (test rapido) deve essere stato rilevato nelle ultime 24 ore."
+    },
+    {
+      "lang": "nl",
+      "desc": "Een Rapid Antigen Test (RAT, sneltest, antigentest) mag niet langer dan 24 uur geleden zijn afgenomen."
+    }
+  ],
+  "ValidFrom": "2021-08-08T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.sc",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "if": [
+          {
+            "===": [
+              {
+                "var": "payload.t.0.tt"
+              },
+              "LP217198-3"
+            ]
+          },
+          {
+            "not-after": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.t.0.sc"
+                  },
+                  24,
+                  "hour"
+                ]
+              }
+            ]
+          },
+          true
+        ]
+      },
+      true
+    ]
+  }
+}

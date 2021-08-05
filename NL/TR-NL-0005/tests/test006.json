@@ -1,15 +1,15 @@
 {
-  "name": "exactly 40 hours ago",
   "payload": {
     "t": [
       {
+        "tt": "LP6464-4",
         "sc": "2021-09-01T00:00:00+00:00"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2021-09-02T16:00:00+00:00",
+    "validationClock": "2021-09-03T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
