@@ -1,14 +1,16 @@
 {
+  "name": "RAT instead of a NAAT (PCR)",
   "payload": {
     "t": [
       {
+        "tt": "LP217198-3",
         "sc": "2021-09-01T00:00:00+00:00"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2021-09-04T13:00:00+00:00",
+    "validationClock": "2021-09-05T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
