@@ -28,23 +28,25 @@ const validateAffectedFields = (rule: any): null | { actual: string[], computed:
 const validateMetaData = (rule: Rule) => {
     const errors: string[] = []
 
-    if (rule.Type !== "Acceptance") {
-        errors.push(`don't know what to do with a rule of Type other than "Acceptance"`)
+    const ruleTypes = [ "Acceptance", "Invalidation" ]
+    const wrap = (str: string) => `"${str}"`
+    if (ruleTypes.indexOf(rule.Type) === -1) {
+        errors.push(`Type "${rule.Type}" must be one of [ ${ruleTypes.map(wrap).join(", ")} ]`)
     }
     if (rule.Engine !== "CERTLOGIC") {
-        errors.push(`don't know what to do with a rule for Engine other than "CERTLOGIC"`)
+        errors.push(`Engine "${rule.Engine}" must be "CERTLOGIC"`)
     }
     if (gt(rule.EngineVersion, version)) {
-        errors.push(`don't know what to do with a rule for engine with EngineVersion ${rule.EngineVersion} which is newer than ${version}`)
+        errors.push(`EngineVersion ${rule.EngineVersion} is newer than the currently supported version ${version}`)
     }
     if (gt("0.7.5", rule.EngineVersion)) {
-        errors.push(`EngineVersion must be 0.7.5 or newer`)
+        errors.push(`EngineVersion ${rule.EngineVersion} must be 0.7.5 or newer`)
     }
     if (rule.ValidTo) {
         const validFrom = new Date(rule.ValidFrom)
         const validTo = new Date(rule.ValidTo)
         if (validFrom > validTo) {
-            errors.push(`ValidFrom must be before after ValidTo`)
+            errors.push(`ValidFrom ${rule.ValidFrom} must be before ValidTo ${rule.ValidTo}`)
         }
     }
 

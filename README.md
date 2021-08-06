@@ -48,8 +48,10 @@ This repository contains the following:
 * [GitHub Actions configuration](./.github)
 * [tests](./tests): testing material called by the “Business Rule Validation” GitHub Action
 * [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
+* [valuesets](./valuesets): “compress” the value sets for use with validation rule evaluation - see that [README](./valuesets/README.md)
 * [EU](./EU): EU template/recommendation rules
 * [DE](./DE), [FI](./FI), [NL](./NL), etc.: actual rules for EU Member States
+* [build.sh](./build.sh): a build script to build the compressed value sets, build the tooling, and run all tests
 
 
 ## Testing & Status
