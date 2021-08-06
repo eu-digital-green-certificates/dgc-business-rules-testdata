@@ -1,0 +1,67 @@
+{
+    "Identifier": "IR-DE-0001",
+    "Type": "Invalidation",
+    "Country": "DE",
+    "Version": "1.0.0",
+    "SchemaVersion": "1.0.0",
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.8.0",
+    "CertificateType": "Vaccination",
+    "Description": [
+        {
+            "lang": "en",
+            "desc": "The certificate must not have been issued by unauthorized issuers."
+        },
+        {
+            "lang": "de",
+            "desc": "Das Zertifikat darf nicht durch unberechtigte Aussteller ausgestellt worden sein"
+        },
+        {
+            "lang": "fr",
+            "desc": "Le certificat ne doit pas avoir été émis par des émetteurs non autorisés."
+        },
+        {
+            "lang": "es",
+            "desc": "El certificado no debe haber sido emitido por emisores no autorizados."
+        },
+        {
+            "lang": "it",
+            "desc": "Il certificato non deve essere stato rilasciato da emittenti non autorizzati."
+        }
+    ],
+    "ValidFrom": "2021-07-01T00:00:00Z",
+    "ValidTo": "2030-06-01T00:00:00Z",
+    "AffectedFields": [
+        "v.0.ci"
+    ],
+    "Logic": {
+        "if": [
+            {
+                "var": "payload.v.0.ci"
+            },
+            {
+                "if": [
+                    {
+                        "in": [
+                            {
+                                "extractFromUVCI": [
+                                    {
+                                        "var": "payload.v.0.ci"
+                                    },
+                                    1
+                                ]
+                            },
+                            [
+                                "A51018097",
+                                "<LOCATIONID2>"
+                            ]
+                        ]
+                    },
+                    false,
+                    true
+                ]
+            },
+            true
+        ]
+    }
+}
