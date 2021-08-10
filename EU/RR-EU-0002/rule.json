@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "The validity start date must be greater than or equal to the first positive test date  +11 days and validity end date must be less than or equal to the first postive test date +180."
+    },
+    {
+      "lang": "de",
+      "desc": "Der positive NAA-Test (z.B. PCR) muss mindestens 11 Tage und darf maximal 180 tage zurückliegen."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

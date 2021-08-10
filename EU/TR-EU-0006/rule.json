@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "DateTime of Sample Collection must be less than 72 hours before the Verification Datetime for a test of type NAA (PCR test)."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Probenahme für einen NAA-Test (z.B. PCR) darf maximal 72 Stunden zurückliegen."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
