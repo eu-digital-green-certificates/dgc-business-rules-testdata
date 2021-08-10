@@ -2,7 +2,7 @@
     "Identifier": "IR-DE-0001",
     "Type": "Invalidation",
     "Country": "DE",
-    "Version": "1.0.0",
+    "Version": "1.0.1",
     "SchemaVersion": "1.0.0",
     "Engine": "CERTLOGIC",
     "EngineVersion": "0.8.0",
