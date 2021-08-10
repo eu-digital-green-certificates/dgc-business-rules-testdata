@@ -1,0 +1,68 @@
+{
+  "Identifier": "VR-RO-0003",
+  "Type": "Acceptance",
+  "Country": "RO",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The vaccine must have been administered at least 10 days ago."
+    },
+    {
+      "lang": "de",
+      "desc": "Seit der Impfung müssen mindestens 10 Tage vergangen sein."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le vaccin doit avoir été administré il y a au moins 10 jours."
+    },
+    {
+      "lang": "es",
+      "desc": "La vacuna debe haberse administrado hace al menos 10 días."
+    },
+    {
+      "lang": "it",
+      "desc": "Il vaccino deve essere stato somministrato almeno 10 giorni prima."
+    }
+  ],
+  "ValidFrom": "2021-08-10T00:00:00Z",
+  "ValidTo": "2031-01-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "not-before": [
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              10,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

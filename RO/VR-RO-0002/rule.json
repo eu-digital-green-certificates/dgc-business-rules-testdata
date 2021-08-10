@@ -1,0 +1,57 @@
+{
+  "Identifier": "VR-RO-0002",
+  "Type": "Acceptance",
+  "Country": "RO",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The vaccination series must be complete (e.g. 1/1, 2/2)."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Impfreihe muss vollständig sein (z.B. 1/1, 2/2)."
+    },
+    {
+      "lang": "fr",
+      "desc": "La série vaccinale doit être complète (p. ex. 1/1, 2/2)."
+    },
+    {
+      "lang": "es",
+      "desc": "La serie de vacunación debe estar completa (p. ej. 1/1, 2/2)."
+    },
+    {
+      "lang": "it",
+      "desc": "La serie di vaccinazione deve essere completa (es. 1/1, 2/2)."
+    }
+  ],
+  "ValidFrom": "2021-08-10T00:00:00Z",
+  "ValidTo": "2031-01-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dn",
+    "v.0.sd"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        ">=": [
+          {
+            "var": "payload.v.0.dn"
+          },
+          {
+            "var": "payload.v.0.sd"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
