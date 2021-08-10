@@ -1,0 +1,8 @@
+{
+  "name": "v == empty array",
+  "payload": {
+    "v": []
+  },
+  "expected": true,
+  "external": {}
+}
