@@ -29,7 +29,7 @@
             "desc": "Il certificato non deve essere stato rilasciato da emittenti non autorizzati."
         }
     ],
-    "ValidFrom": "2021-08-11T00:00:00Z",
+    "ValidFrom": "2021-08-10T12:45:00Z",
     "ValidTo": "2030-06-01T00:00:00Z",
     "AffectedFields": [
         "v.0.ci"
