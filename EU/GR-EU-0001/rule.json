@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "The \"disease or agent targeted\" must be COVID-19 of the value set list."
+    },
+    {
+      "lang": "de",
+      "desc": "\"disease or agent targeted\" darf nur COVID-19 aus der Value-Set Liste sein."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

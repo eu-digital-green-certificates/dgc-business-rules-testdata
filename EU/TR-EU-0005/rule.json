@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "DateTime of Sample Collection must be less than 48 hours before the Verification Datetime for a test of type RAT (rapid antigen test)."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Probenahme für einen Antigen-Test (z.B. Schnelltest) darf maximal 48 Stunden zurückliegen."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

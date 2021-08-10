@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "Vaccination doses must be equal or greater than expected doses."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Impfreihe muss vollständig sein (z.B. 1/1, 2/2)."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "Verification Datetime must be more than 14 days and less than 365 days after the last date of vaccination."
+    },
+    {
+      "lang": "de",
+      "desc": "Seit der Impfung müssen mindestens 14 Tage aber maximal 365 Tage vergangen sein."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
