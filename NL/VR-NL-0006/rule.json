@@ -56,7 +56,16 @@
             ]
           },
           {
-            "not-after": [
+            "not-before": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
               {
                 "plusTime": [
                   {
@@ -65,7 +74,11 @@
                   14,
                   "day"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "not-before": [
               {
                 "plusTime": [
                   {
@@ -74,26 +87,13 @@
                   0,
                   "day"
                 ]
-              }
-            ]
-          },
-          {
-            "not-after": [
+              },
               {
                 "plusTime": [
                   {
                     "var": "payload.v.0.dt"
                   },
                   28,
-                  "day"
-                ]
-              },
-              {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
                   "day"
                 ]
               }
