@@ -1,0 +1,15 @@
+{
+  "name": "dt=14-08, now=28-08",
+  "payload": {
+    "v": [
+      {
+        "mp": "EU/1/20/1525",
+        "dt": "2021-08-14"
+      }
+    ]
+  },
+  "expected": false,
+  "external": {
+    "validationClock": "2021-08-28T00:00:00"
+  }
+}
