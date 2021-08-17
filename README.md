@@ -40,6 +40,10 @@ JSON files containing tests must adhere to [this JSON Schema](./tooling/validati
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
 The results are exposed as an artifact (called `rules-on-testData.json`) of the "Validation and Testing of Rule Sets" GitHub Action.
 
+To execute the tests on the rules of a specific rule set, or even a specific rule, you can run the following:
+
+    $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
+
 
 ## Organisation
 
