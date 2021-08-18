@@ -1,20 +1,27 @@
 import * as React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
-import { CertLogicBusinessReadableRendering } from "./CertLogic-business-readable"
 import { writeHtml } from "./file-utils"
 import { ruleSets } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
 import { Rule, RuleSet } from "./typings"
+import { dataAccesses } from "certlogic-js/dist/validation"
+import { CompactExprRendering } from "certlogic-html"
 
 
-const RuleRendering = ({ rule }: { rule: Rule }) => <div className="row">
-    <div className="cell"><span>{rule.Identifier}</span></div>
-    <div className="cell"><span>{rule.Description[0].desc}</span></div>
-    <div className="cell">
-        <CertLogicBusinessReadableRendering ruleType={rule.Type} expr={rule.Logic} />
+const RuleRendering = ({ rule }: { rule: Rule }) => {
+    const expr = rule.Logic
+    const externalParametersAccessed = dataAccesses(expr).filter((path) => path.startsWith("external.") && !path.startsWith("external.valueSets"))
+    return <div className="row">
+        <div className="cell"><span>{rule.Identifier}</span></div>
+        <div className="cell"><span>{rule.Description[0].desc}</span></div>
+        <div className="cell">
+            <div><span className="keyword">Given a DCC {externalParametersAccessed ? " and some external parameters" : ""},</span></div>
+            <div><span className="keyword">when </span><CompactExprRendering expr={expr}/><span>,</span></div>
+            <div><span className="keyword">then that DCC is </span><span>{rule.Type === "Acceptance" ? "Accepted" : "Invalidated"}</span><span>.</span></div>
+        </div>
     </div>
-</div>
+}
 
 
 const RuleSetRendering = ({ ruleSetId, ruleSet }: { ruleSetId: string, ruleSet: RuleSet }) => {
