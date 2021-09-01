@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "The test type must be one of the value set list (RAT OR NAA)."
+    },
+    {
+      "lang": "de",
+      "desc": "Es muss ein Antigen-Test (z.B. Schnelltest) oder NAA-Test (z.B. PCR) sein."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

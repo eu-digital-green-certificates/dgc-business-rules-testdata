@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0005",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,10 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Date of vaccination must be before the current time."
+      "desc": "From Saturday July 10th 2021 onwards, a finished vaccination course is considered protective earliest from 14 days after the date of the last vaccination."
     }
   ],
-  "ValidFrom": "2021-07-10T00:00:00Z",
+  "ValidFrom": "2021-08-08T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -25,69 +25,23 @@
         "var": "payload.v.0"
       },
       {
-        "if": [
+        "not-before": [
           {
-            "before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "external.validationClock"
               },
-              {
-                "plusTime": [
-                  "2021-07-10",
-                  0,
-                  "day"
-                ]
-              }
+              0,
+              "day"
             ]
           },
           {
-            "not-before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "payload.v.0.dt"
               },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
-              }
-            ]
-          },
-          {
-            "not-before": [
-              {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
-              },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  14,
-                  "day"
-                ]
-              }
+              14,
+              "day"
             ]
           }
         ]

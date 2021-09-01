@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "Only vaccines in the allowed valueset that have been approved by the EMA are allowed."
+    },
+    {
+      "lang": "de",
+      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

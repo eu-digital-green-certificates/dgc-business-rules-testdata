@@ -1,0 +1,12 @@
+{
+  "name": "v with something other than Janssen",
+  "payload": {
+    "v": [
+      {
+        "mp": "EU/1/20/1528"
+      }
+    ]
+  },
+  "expected": true,
+  "external": {}
+}

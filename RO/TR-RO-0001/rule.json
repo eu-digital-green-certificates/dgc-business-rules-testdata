@@ -1,0 +1,56 @@
+{
+  "Identifier": "TR-RO-0001",
+  "Type": "Acceptance",
+  "Country": "RO",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "This must be a NAA test (e.g., PCR)."
+    },
+    {
+      "lang": "de",
+      "desc": "Dies muss ein NAA-Test (z. B. PCR) sein."
+    },
+    {
+      "lang": "fr",
+      "desc": "Il doit s'agir d'un test NAA (par exemple, PCR)."
+    },
+    {
+      "lang": "es",
+      "desc": "Debe ser una prueba NAA (por ejemplo, PCR)."
+    },
+    {
+      "lang": "it",
+      "desc": "Questo deve essere un test NAA (ad es. PCR)."
+    }
+  ],
+  "ValidFrom": "2021-08-10T00:00:00Z",
+  "ValidTo": "2031-01-01T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "in": [
+          {
+            "var": "payload.t.0.tt"
+          },
+          [
+            "LP6464-4"
+          ]
+        ]
+      },
+      true
+    ]
+  }
+}

@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "At most one v-event."
+    },
+    {
+      "lang": "de",
+      "desc": "Es darf nur ein einziges Impfzertifikat enthalten sein."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

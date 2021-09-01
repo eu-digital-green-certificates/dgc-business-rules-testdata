@@ -8,13 +8,15 @@ git clone --depth 1 https://github.com/eu-digital-green-certificates/$REPO_NAME.
 echo "Downloading JSON Schema for rules..."
 curl https://raw.githubusercontent.com/eu-digital-green-certificates/dgc-gateway/main/src/main/resources/validation-rule.schema.json > schemas/validation-rule.schema.json
 
-mkdir -p ../out
+OUT_DIR=../out
 
-echo "Building tooling..."
+echo "Cleaning..."
 npm run clean
-npm install
-npm run build
+rm -rf $OUT_DIR
+mkdir -p $OUT_DIR
 
-echo "Running all tests (as Mocha unit tests)..."
-npm test
+npm install
+
+echo "Building tooling, and running all tests (as Mocha unit tests)..."
+npm start
 

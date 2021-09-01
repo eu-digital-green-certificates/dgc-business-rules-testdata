@@ -19,14 +19,14 @@ Its main purpose is to help with developing _interchangeable_ business rules.
 This repository performs automatic validation and testing on all the rules, and their tests, contributed to it.
 This validation and testing runs on every Pull Request, but can also be run locally from the commandline, as follows:
 
-    $ (cd tooling ; sh build.sh)
+    $ ./build.sh
 
 The “CertLogic Validation” GitHub Action performs this exact same command.
 It requires a UNIX-like shell, Git, `curl`, and a recent Node.js (with the NPM package manager) to be installed.
 
 After having run this command once, you can just run the validation/testing as follows:
 
-    $ (cd tooling ; npm test)
+    $ (cd tooling ; npm start)
 
 Validation encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
@@ -40,6 +40,10 @@ JSON files containing tests must adhere to [this JSON Schema](./tooling/validati
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
 The results are exposed as an artifact (called `rules-on-testData.json`) of the "Validation and Testing of Rule Sets" GitHub Action.
 
+To execute the tests on the rules of a specific rule set, or even a specific rule, you can run the following:
+
+    $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
+
 
 ## Organisation
 
@@ -48,8 +52,10 @@ This repository contains the following:
 * [GitHub Actions configuration](./.github)
 * [tests](./tests): testing material called by the “Business Rule Validation” GitHub Action
 * [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
+* [valuesets](./valuesets): “compress” the value sets for use with validation rule evaluation - see that [README](./valuesets/README.md)
 * [EU](./EU): EU template/recommendation rules
 * [DE](./DE), [FI](./FI), [NL](./NL), etc.: actual rules for EU Member States
+* [build.sh](./build.sh): a build script to build the compressed value sets, build the tooling, and run all tests
 
 
 ## Testing & Status

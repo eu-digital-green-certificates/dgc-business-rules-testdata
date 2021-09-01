@@ -11,6 +11,10 @@
     {
       "lang": "en",
       "desc": "If the test type is \"RAT\" then the \"test product and manufacturer\" MUST be in the valueset list, if it's NAA return true."
+    },
+    {
+      "lang": "de",
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"test product and manufacturer\" der EU enthalten sein."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

@@ -1,0 +1,60 @@
+{
+  "Identifier": "VR-RO-0001",
+  "Type": "Acceptance",
+  "Country": "RO",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Only the following vaccines are accepted: AstraZeneca, Biontech, Covishield, Janssen, Moderna."
+    },
+    {
+      "lang": "de",
+      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Covishield, Janssen, Moderna."
+    },
+    {
+      "lang": "fr",
+      "desc": "Seuls les vaccins suivants sont acceptés: AstraZeneca, Biontech, Covishield, Janssen, Moderna."
+    },
+    {
+      "lang": "es",
+      "desc": "Solo se aceptan las siguientes vacunas: AstraZeneca, Biontech, Covishield, Janssen y Moderna."
+    },
+    {
+      "lang": "it",
+      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Covishield, Janssen, Moderna."
+    }
+  ],
+  "ValidFrom": "2021-08-10T00:00:00Z",
+  "ValidTo": "2031-01-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.mp"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "in": [
+          {
+            "var": "payload.v.0.mp"
+          },
+          [
+            "EU/1/20/1528",
+            "EU/1/20/1507",
+            "EU/1/21/1529",
+            "EU/1/20/1525",
+            "Covishield"
+          ]
+        ]
+      },
+      true
+    ]
+  }
+}
