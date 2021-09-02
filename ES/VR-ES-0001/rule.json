@@ -2,7 +2,7 @@
   "Identifier": "VR-ES-0001",
   "Type": "Acceptance",
   "Country": "ES",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -29,7 +29,7 @@
       "desc": "Il ciclo di vaccinazione deve essere stato completato (ad es. 1/1, 2/2)."
     }
   ],
-  "ValidFrom": "2021-07-05T00:00:00Z",
+  "ValidFrom": "2021-09-03T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -42,7 +42,7 @@
         "var": "payload.v.0"
       },
       {
-        ">=": [
+        "===": [
           {
             "var": "payload.v.0.dn"
           },

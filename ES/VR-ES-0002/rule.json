@@ -10,27 +10,27 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Only the following vaccines are accepted: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Only the following vaccines are accepted (EMA or WHO): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
     },
     {
       "lang": "de",
-      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
     },
     {
       "lang": "fr",
-      "desc": "Seuls les vaccins suivants sont acceptés : AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Seuls les vaccins suivants sont acceptés : AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
     },
     {
       "lang": "es",
-      "desc": "Solo se aceptan las siguientes vacunas: AstraZeneca, Biontech, Janssen y Moderna."
+      "desc": "Solo se aceptan las siguientes vacunas (EMA o OMS): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
     },
     {
       "lang": "it",
-      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Janssen, Moderna."
+      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
     }
   ],
-  "ValidFrom": "2021-07-05T00:00:00Z",
-  "ValidTo": "2030-06-01T00:00:00Z",
+  "ValidFrom": "2021-09-03T00:00:00Z",
+  "ValidTo": "2030-08-08T00:00:00Z",
   "AffectedFields": [
     "v.0",
     "v.0.mp"
@@ -49,7 +49,11 @@
             "EU/1/20/1528",
             "EU/1/20/1507",
             "EU/1/21/1529",
-            "EU/1/20/1525"
+            "EU/1/20/1525",
+			"CoronaVac",
+			"Inactivated-SARS-CoV-2-Vero-Cell",
+			"Covishield"			
+			
           ]
         ]
       },

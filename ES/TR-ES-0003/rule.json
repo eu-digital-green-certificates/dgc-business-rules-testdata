@@ -2,7 +2,7 @@
   "Identifier": "TR-ES-0003",
   "Type": "Acceptance",
   "Country": "ES",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,26 +10,26 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The sample for an NAA test (e.g., PCR) must have been taken no longer than 48 hours ago."
+      "desc": "The sample for an NAA test (e.g., PCR) must have been taken no longer than 72 hours ago."
     },
     {
       "lang": "de",
-      "desc": "Die Probenahme für einen NAA-Test (z.B. PCR) darf maximal 48 Stunden zurückliegen."
+      "desc": "Die Probenahme für einen NAA-Test (z.B. PCR) darf maximal 72 Stunden zurückliegen."
     },
     {
       "lang": "fr",
-      "desc": "Le prélèvement pour un test TAN (p. ex. PCR) ne doit pas dater de plus de 48 heures."
+      "desc": "Le prélèvement pour un test TAN (p. ex. PCR) ne doit pas dater de plus de 72 heures."
     },
     {
       "lang": "es",
-      "desc": "Deben haber transcurrido 48 horas como máximo desde la extracción para una prueba de amplificación de ácidos nucleicos (por ejemplo, una PCR)."
+      "desc": "Deben haber transcurrido 72 horas como máximo desde la extracción para una prueba de amplificación de ácidos nucleicos (por ejemplo, una PCR)."
     },
     {
       "lang": "it",
-      "desc": "Il campione per il NAAT (test PRC) deve essere stato rilevato nelle ultime 48 ore."
+      "desc": "Il campione per il NAAT (test PRC) deve essere stato rilevato nelle ultime 72 ore."
     }
   ],
-  "ValidFrom": "2021-07-05T00:00:00Z",
+  "ValidFrom": "2021-09-03T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",
@@ -67,7 +67,7 @@
                   {
                     "var": "payload.t.0.sc"
                   },
-                  48,
+                  72,
                   "hour"
                 ]
               }

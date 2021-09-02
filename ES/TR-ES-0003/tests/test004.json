@@ -1,16 +1,16 @@
 {
-  "name": "sc less than 48h before now",
+  "name": "sc less than 72h before now",
   "payload": {
     "t": [
       {
         "tt": "LP6464-4",
-        "sc": "2021-07-21T01:00:00Z"
+        "sc": "2021-06-20T01:00:00Z"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-07-23T00:00:00Z",
+    "validationClock": "2021-06-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
