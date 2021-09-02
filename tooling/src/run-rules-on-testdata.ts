@@ -39,7 +39,7 @@ describe("execute all rules on test data", () => {
                                     }
                                 })
                         }
-                    } catch (e) {
+                    } catch (e: any) {
                         return { errorMessage: e.message }
                     }
                 })
