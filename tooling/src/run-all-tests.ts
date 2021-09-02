@@ -48,7 +48,7 @@ const testResults: TestResults =
                         try {
                             const actual = evaluate(rule.Logic, { payload, external })
                             return { actual, asExpected: deepEqual(actual, expected) }
-                        } catch (e) {
+                        } catch (e: any) {
                             return {
                                 evaluationErrorMessage: e.message
                             }
