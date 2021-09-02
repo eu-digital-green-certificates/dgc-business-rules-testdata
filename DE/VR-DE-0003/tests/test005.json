@@ -1,10 +1,10 @@
 {
-  "name": "dt less than 14 days before now but sd > 2",
+  "name": "dt less than 14 days before now but dn > 2",
   "payload": {
     "v": [
       {
         "dt": "2021-08-10",
-        "sd": 3
+        "dn": 3
       }
     ]
   },

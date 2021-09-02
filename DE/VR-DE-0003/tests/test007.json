@@ -1,10 +1,10 @@
 {
-  "name": "dt less than 14 days before now but sd = 2 and mp is Jansen",
+  "name": "dt less than 14 days before now but dn = 2 and mp is Jansen",
   "payload": {
     "v": [
       {
         "dt": "2021-08-10",
-        "sd": 2,
+        "dn": 2,
         "mp": "EU/1/20/1525"
       }
     ]

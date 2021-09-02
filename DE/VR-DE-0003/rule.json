@@ -73,7 +73,7 @@
               {
                 ">": [
                   {
-                    "var": "payload.v.0.sd"
+                    "var": "payload.v.0.dn"
                   },
                   2
                 ]
@@ -86,7 +86,7 @@
                       {
                         ">": [
                           {
-                            "var": "payload.v.0.sd"
+                            "var": "payload.v.0.dn"
                           },
                           1
                         ]
