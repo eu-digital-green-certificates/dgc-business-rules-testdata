@@ -1,10 +1,12 @@
 {
-  "name": "dt exactly 14 days before now",
+  "name": "dt less than 14 days before now but sd = 1, dn = 1 and mp is not in [Moderna/Pfizer/AZ]",
   "payload": {
     "v": [
       {
-        "dt": "2021-08-09",
-        "sd": 2
+        "dt": "2021-08-10",
+        "sd": 1,
+        "dn": 1,
+        "mp": "EU/1/20/1525"
       }
     ]
   },
