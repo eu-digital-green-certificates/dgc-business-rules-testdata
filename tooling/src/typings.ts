@@ -39,6 +39,8 @@ export type TestResult = {
 } | {
     actual: any
     asExpected: boolean
+} | {
+    nowOutsideValidityRange: boolean
 }
 
 export type TestResults = { [ruleSetId: string]: { [ruleId: string]: { [testId: string]: TestResult } } }

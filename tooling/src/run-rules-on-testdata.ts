@@ -8,7 +8,7 @@ import { ruleSets } from "./rule-sets"
 import { mapOverTestFiles } from "./test-data"
 
 
-const valueSets = require(fromRepoRoot("valuesets/valueSets.json"))
+const valueSets = require(fromRepoRoot("valuesets", "valueSets.json"))
 
 
 type ResultPerRule = {
@@ -19,14 +19,13 @@ const isSatisfied = (resultPerRule: ResultPerRule): boolean =>
     "result" in resultPerRule && (typeof resultPerRule.result === "boolean") && resultPerRule.result
 
 
-
 describe("execute all rules on test data", () => {
 
     writeJson(
         join(jsonOutPath, "rules-on-testData.json"),
         mapOverTestFiles((testJson: any) =>
             mapValues(ruleSets, (ruleSetId, ruleSet) => {
-                const resultsPerRule = mapValues(ruleSet, (ruleId, rule) => {
+                const resultsPerRule: { [ruleId: string]: ResultPerRule } = mapValues(ruleSet, (ruleId, rule) => {
                     try {
                         return {
                             result: evaluate(

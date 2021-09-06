@@ -1,0 +1,106 @@
+= Gateway constraints
+
+The constraints on the JSON (payload) of the upload of a validation rule (after checking the signer's certificate) are the following:
+
+[cols="1,4a,4a"]
+|===
+| reason code | constraints | message
+
+| `UPLOADER_CERT_CHECK_FAILED`
+| signer certificate must be known under authenticated country code
+| Could not find _upload_ certificate with hash <signer certificate's thumbprint> and country <authenticated country code>
+
+| `INVALID_JSON`
+| parsable as JSON
+| JSON could not be parsed
+
+|
+| validates against JSON Schema for Rule
+| JSON does not align to Validation Rule Schema: <comma-separated list of validation violations' messages>
+
+| `INVALID_RULE_ID`
+| head fragment of `Identifier` must match `CertificateType`
+| ID must start with <type abbrev.> for <certificate type> Rules
+
+|
+| `Identifier` of Acceptance rules can't start with `IR`
+| Acceptance Rule Rule-ID requires prefix other than IR.
+
+|
+| `Identifier` of Invalidation rules must start with `IR`
+| Invalidation Rule Rule-ID requires IR prefix.
+
+| `INVALID_COUNTRY`
+| `Country` code must match authenticated country code
+| Country does not match your authentication.
+
+|
+| country code in `Identifier` (2nd fragment) must match authenticated country code
+| Country Code in Identifier does not match country.
+
+| `INVALID_VERSION`
+| new `Version` must be greater (according to semver) than the most recent version (if that exists)
+| Version of new rule (<new version>) needs to be greater then old version (<old version>)
+
+| `INVALID_TIMESTAMP`
+| `ValidFrom` needs to be before `ValidTo`
+| ValidFrom (<(val)>) needs to be before ValidTo (<(val)>).
+
+|
+| `ValidFrom` must be no more than 2 weeks from now
+| ValidFrom (<(val)>) cannot be more than 2 weeks in future.
+
+|
+| `ValidFrom` must be at least 48 hours from now
+| ValidFrom (<(val)>) needs to be at least 48h in future for Acceptance Validation Rules
+
+|
+| `ValidFrom` must be in the future for Invalidation rules
+| ValidFrom (<(val)>) needs to be in future for Invalidation Rules
+
+|
+| duration of validity must be at least 72 hours
+| Rule Validity must be at least 72h but is %dh
+
+|
+| new `ValidFrom` can't be before that of the most recent version (if that exists)
+| ValidFrom (<(current val)> needs to be after or equal to ValidFrom (<(previous val)> of previous version of the rule.
+
+|===
+
+These constraints are checked in this order.
+Only the first violation is reported.
+
+Reason codes and Java methods are currently 1-to-1:
+
+|===
+
+| Java method | reason code
+
+| `contentCheckUploaderCertificate`
+| `UPLOADER_CERT_CHECK_FAILED`
+
+| `contentCheckValidJson`
+| `INVALID_JSON`
+
+| `contentCheckRuleIdPrefixMatchCertificateType`
+| `INVALID_RULE_ID`
+
+| `contentCheckUploaderCountry`
+| `INVALID_COUNTRY`
+
+| `contentCheckVersion`
+| `INVALID_VERSION`
+
+| `contentCheckTimestamps`
+| `INVALID_TIMESTAMP`
+
+|===
+
+// TODO  mention API doc + HTTP error codes?
+
+The authenticated country code and signer certificate's thumb print are request parameters of the HTTP POST endpoint.
+
+This information has been "`reverse engineered`" from [the Gateway implementation - specifically the https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/java/eu/europa/ec/dgc/gateway/service/ValidationRuleService.java[`ValidationRuleService`].
+The SHA of the commit used is: `1146c404205605aa1174a6bd159e91b0217f334d`.
+
