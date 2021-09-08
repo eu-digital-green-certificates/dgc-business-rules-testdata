@@ -1,13 +1,16 @@
 {
-  "name": "dt less than 14 days before now",
+  "name": "dt less than 14 days before now but dn > 2",
   "payload": {
     "v": [
       {
-        "dt": "2021-08-10"
+        "dt": "2021-08-10",
+        "dn": 3,
+        "sd": 1,
+        "mp": "EU/1/20/1525"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
     "validationClock": "2021-08-23T00:00:00Z",
     "valueSets": {
