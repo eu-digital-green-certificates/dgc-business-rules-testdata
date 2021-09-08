@@ -1,4 +1,5 @@
 import { evaluate } from "certlogic-js"
+import { dateFromString } from "certlogic-js/dist/internals"    // TODO  expose properly from certlogic-js
 const assert = require("chai").assert
 const { fail, isTrue } = assert
 const deepEqual = require("deep-equal")
@@ -45,6 +46,15 @@ const testResults: TestResults =
                     const rule = ruleWithTests.def
                     return mapValues(ruleWithTests.tests, (testId, test) => {
                         const { payload, external, expected } = test
+                        const { validationClock } = external
+                        if (validationClock) {
+                            const now = dateFromString(validationClock)
+                            if (!(dateFromString(rule.ValidFrom) <= now && now < dateFromString(rule.ValidTo))) {
+                                return {
+                                    nowOutsideValidityRange: true
+                                }
+                            }
+                        }
                         try {
                             const actual = evaluate(rule.Logic, { payload, external })
                             return { actual, asExpected: deepEqual(actual, expected) }
@@ -100,10 +110,12 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
                 )
             })
             for (const [ testId, test ] of Object.entries(ruleWithTests.tests)) {
-                const { name, expected } = test
+                const { name, expected, external } = test
                 const testResult = testResults[ruleSetId][ruleId][testId]
                 it(`${(name || "<no name>")} (test-ID=${testId})`, () => {
-                    if ("evaluationErrorMessage" in testResult) {
+                    if ("nowOutsideValidityRange" in testResult) {
+                        fail(`${ruleText} can't pertain to the test in file "${testId}" because ${external.validationClock} is not in the rule's validity range [ ${rule.ValidFrom}, ${rule.ValidTo} ) - please change either the value of external.validationClock or the rule's validity range`)
+                    } else if ("evaluationErrorMessage" in testResult) {
                         fail(`exception occurred during evaluation of CertLogic expression: ${testResult.evaluationErrorMessage}`)
                     } else {
                         if (singleRuleSetId || !testResult.asExpected) {
