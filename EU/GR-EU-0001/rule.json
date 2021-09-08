@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "\"disease or agent targeted\" darf nur COVID-19 aus der Value-Set Liste sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "\"disease or agent targeted\" трябва да бъде COVID-19 от номенклатурата."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

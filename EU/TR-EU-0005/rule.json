@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Die Probenahme für einen Antigen-Test (z.B. Schnelltest) darf maximal 48 Stunden zurückliegen."
+    },
+    {
+      "lang": "bg",
+      "desc": "При Бързи Антигенни Тестове (RAT) датата на вземане на пробата трябва да е не повече от 48 часа преди датата на проверка"
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

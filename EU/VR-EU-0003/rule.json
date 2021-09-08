@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Seit der Impfung müssen mindestens 14 Tage aber maximal 365 Tage vergangen sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "Датата на проверка трябва да е не по-рано от 14 дни и не по-късно от 365 дни от датата на ваксиниране."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
