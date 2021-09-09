@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Es muss ein Antigen-Test (z.B. Schnelltest) oder NAA-Test (z.B. PCR) sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "Типът тест трябва да е един от изброените в номенклатурата (RAT или NAA)."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

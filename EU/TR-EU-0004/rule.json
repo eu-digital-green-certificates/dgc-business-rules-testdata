@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Das Ergebnis des Tests muss negativ sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "Резултатът от теста трябва да е отрицателен (\"not detected\")."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

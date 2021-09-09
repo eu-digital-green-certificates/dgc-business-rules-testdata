@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Der positive NAA-Test (z.B. PCR) muss mindestens 11 Tage und darf maximal 180 tage zurückliegen."
+    },
+    {
+      "lang": "bg",
+      "desc": "Периода на валидност трябва да е не по-малко от 11 дни и не повече от 180 дни от датата на първия положителен тест."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

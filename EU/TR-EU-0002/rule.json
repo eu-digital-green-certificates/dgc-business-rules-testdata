@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"test product and manufacturer\" der EU enthalten sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "Ако типа на теста е \"RAT\" тогава \"test product and manufacturer\" ТРЯБВА да е в списъка с позволени производители."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

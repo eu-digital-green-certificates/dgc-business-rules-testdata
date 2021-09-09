@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Das Verifizierungsdatum darf nur zwischen \"Certificate Valid From\" und \"Certificate Valid Until\" liegen."
+    },
+    {
+      "lang": "bg",
+      "desc": "Датата на валидиране трябва да е между \"Certificate Valid From\" и \"Certificate Valid Until\"."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
