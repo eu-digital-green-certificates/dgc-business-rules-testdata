@@ -1,16 +1,16 @@
 {
-  "name": "dt more than 14 days before now",
+  "name": "dt less than 14 days before now but dn = 2 and mp is not Jansen",
   "payload": {
     "v": [
       {
-        "dt": "2021-08-08",
+        "dt": "2021-08-10",
+        "dn": 2,
         "sd": 1,
-        "dn": 1,
-        "mp": "EU/1/20/1525"
+        "mp": "4711"
       }
     ]
   },
-  "expected": true,
+  "expected": false,
   "external": {
     "validationClock": "2021-08-23T00:00:00Z",
     "valueSets": {
