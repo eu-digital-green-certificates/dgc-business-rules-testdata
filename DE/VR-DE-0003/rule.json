@@ -10,7 +10,7 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The vaccine must have been administered at least 14 days ago."
+      "desc": "At least 14 days must have elapsed since completing the primary course of immunization. A booster shot or vaccination of someone who recovered from COVID-19 is valid immediately as long as it is clearly identified as such."
     },
     {
       "lang": "de",
@@ -18,18 +18,18 @@
     },
     {
       "lang": "fr",
-      "desc": "La vaccination doit dater de plus de 14 jours."
+      "desc": "Une fois la primo-vaccination effectuée, il faut attendre au moins 14 jours. Une injection de rappel ou une injection après une guérison est valable immédiatement, si elle est clairement identifiable comme telle."
     },
     {
       "lang": "es",
-      "desc": "Deben haber transcurrido más de 14 días desde la vacuna."
+      "desc": "Deben haber transcurrido al menos 14 días desde la finalización de la inmunización básica. Una vacuna de refuerzo o una vacuna de convalecencia será válida de forma inmediata si es claramente reconocible como tal."
     },
     {
       "lang": "it",
-      "desc": "La vaccinazione deve risalire a più di 14 giorni fa."
+      "desc": "Devono essere passati minimo 14 giorni dalla vaccinazione finale necessaria per l’immunizzazione di base. Il richiamo del vaccino o il vaccino per le persone che sono guarite dal virus è valido da subito purché sia riconoscibile come tale in maniera univoca."
     }
   ],
-  "ValidFrom": "2021-07-30T00:00:00Z",
+  "ValidFrom": "2021-09-16T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
