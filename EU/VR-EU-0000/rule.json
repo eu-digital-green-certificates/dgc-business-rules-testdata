@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Es darf nur ein einziges Impfzertifikat enthalten sein."
+    },
+    {
+      "lang": "bg",
+      "desc": "Позволено е само едно събитие за ваксиниран."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",

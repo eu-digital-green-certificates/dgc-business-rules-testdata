@@ -15,6 +15,10 @@
     {
       "lang": "de",
       "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna."
+    },
+    {
+      "lang": "bg",
+      "desc": "Позволени са само ваксини от номенклатурата, одобрена от Европейската Агенция по Лекарствата (EMA)."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
