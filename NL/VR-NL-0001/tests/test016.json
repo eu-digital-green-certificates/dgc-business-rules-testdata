@@ -1,15 +1,13 @@
 {
-  "name": "dt=2021-09-04, now=2021-09-17 -> false",
   "payload": {
     "v": [
       {
-        "dt": "2021-09-04"
+        "mp": "Covishield"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2021-09-17T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
