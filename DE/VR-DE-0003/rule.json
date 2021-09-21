@@ -2,7 +2,7 @@
   "Identifier": "VR-DE-0003",
   "Type": "Acceptance",
   "Country": "DE",
-  "Version": "1.0.3",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -18,7 +18,7 @@
     },
     {
       "lang": "fr",
-      "desc": "Une fois la primo-vaccination effectuée, il faut attendre au moins 14 jours. Une injection de rappel ou une injection après une guérison est valable immédiatement, si elle est clairement identifiable comme telle."
+      "desc": "Une fois la primo-vaccination effectuée, il faut attendre au moins 14 jours. Une injection de rappel ou une injection après une guérison est valable immédiatement, si elle est clairement identifiable comme telle."
     },
     {
       "lang": "es",
@@ -29,7 +29,7 @@
       "desc": "Devono essere passati minimo 14 giorni dalla vaccinazione finale necessaria per l’immunizzazione di base. Il richiamo del vaccino o il vaccino per le persone che sono guarite dal virus è valido da subito purché sia riconoscibile come tale in maniera univoca."
     }
   ],
-  "ValidFrom": "2021-09-16T00:00:00Z",
+  "ValidFrom": "2021-09-23T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -44,96 +44,104 @@
         "var": "payload.v.0"
       },
       {
-        "in": [
+        "if": [
+          {
+            "not-before": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.v.0.dt"
+                  },
+                  15,
+                  "day"
+                ]
+              }
+            ]
+          },
           true,
-          [
-            {
-              "not-before": [
-                {
-                  "plusTime": [
-                    {
-                      "var": "external.validationClock"
-                    },
-                    0,
-                    "day"
-                  ]
-                },
-                {
-                  "plusTime": [
-                    {
-                      "var": "payload.v.0.dt"
-                    },
-                    15,
-                    "day"
-                  ]
-                }
-              ]
-            },
-            {
-              ">": [
-                {
-                  "var": "payload.v.0.dn"
-                },
-                2
-              ]
-            },
-            {
-              "and": [
-                {
-                  ">": [
-                    {
-                      "var": "payload.v.0.dn"
-                    },
-                    1
-                  ]
-                },
-                {
-                  "===": [
-                    {
-                      "var": "payload.v.0.mp"
-                    },
-                    "EU/1/20/1525"
-                  ]
-                }
-              ]
-            },
-            {
-              "and": [
-                {
-                  "and": [
-                    {
-                      "===": [
-                        {
-                          "var": "payload.v.0.sd"
-                        },
-                        1
-                      ]
-                    },
-                    {
-                      "===": [
-                        {
-                          "var": "payload.v.0.dn"
-                        },
-                        1
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "in": [
-                    {
-                      "var": "payload.v.0.mp"
-                    },
-                    [
-                      "EU/1/20/1528",
-                      "EU/1/20/1507",
-                      "EU/1/21/1529"
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "payload.v.0.dn"
+                  },
+                  2
+                ]
+              },
+              true,
+              {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        ">": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          1
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.mp"
+                          },
+                          "EU/1/20/1525"
+                        ]
+                      }
                     ]
-                  ]
-                }
-              ]
-            }
-          ]
+                  },
+                  true,
+                  {
+                    "and": [
+                      {
+                        "and": [
+                          {
+                            "===": [
+                              {
+                                "var": "payload.v.0.sd"
+                              },
+                              1
+                            ]
+                          },
+                          {
+                            "===": [
+                              {
+                                "var": "payload.v.0.dn"
+                              },
+                              1
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "in": [
+                          {
+                            "var": "payload.v.0.mp"
+                          },
+                          [
+                            "EU/1/20/1528",
+                            "EU/1/20/1507",
+                            "EU/1/21/1529"
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         ]
       },
       true
