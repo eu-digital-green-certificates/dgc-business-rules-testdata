@@ -29,7 +29,7 @@
       "desc": "Devono essere passati minimo 14 giorni dalla vaccinazione finale necessaria per l’immunizzazione di base. Il richiamo del vaccino o il vaccino per le persone che sono guarite dal virus è valido da subito purché sia riconoscibile come tale in maniera univoca."
     }
   ],
-  "ValidFrom": "2021-09-23T00:00:00Z",
+  "ValidFrom": "2021-10-03T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
