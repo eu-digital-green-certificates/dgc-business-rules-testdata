@@ -1,0 +1,68 @@
+{
+  "Identifier": "GR-PL-0000",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "General",
+  "Description": [
+	{
+      "lang": "pl",
+      "desc": "Wymagany dokładnie jeden typ zdarzenia."
+    },   
+	{
+      "lang": "en",
+      "desc": "Exactly one type of event."
+    },
+    {
+      "lang": "de",
+      "desc": "Es darf nur genau ein Zertifikatstyp enthalten sein."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "r",
+    "t",
+    "v"
+  ],
+  "Logic": {
+    "===": [
+      {
+        "reduce": [
+          [
+            {
+              "var": "payload.r"
+            },
+            {
+              "var": "payload.t"
+            },
+            {
+              "var": "payload.v"
+            }
+          ],
+          {
+            "+": [
+              {
+                "var": "accumulator"
+              },
+              {
+                "if": [
+                  {
+                    "var": "current.0"
+                  },
+                  1,
+                  0
+                ]
+              }
+            ]
+          },
+          0
+        ]
+      },
+      1
+    ]
+  }
+}

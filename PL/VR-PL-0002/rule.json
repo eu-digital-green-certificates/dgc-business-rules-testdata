@@ -1,0 +1,106 @@
+{
+  "Identifier": "VR-PL-0002",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+	{
+      "lang": "pl",
+      "desc": "Musi upłynąć co najmniej 14 dni od zakończenia podstawowego cyklu szczepień. Szczepienie przypominające lub uzupełniające jest ważne natychmiast, jeśli można je jednoznacznie zidentyfikować."
+    },    
+	{
+      "lang": "en",
+      "desc": "At least 14 days must have elapsed since completing the primary course of immunization. A booster shot is valid immediately as long as it is clearly identified as such."
+    },
+    {
+      "lang": "de",
+      "desc": "Seit dem Abschluss der Grundimmunisierung müssen mindestens 14 Tage vergangen sein. Eine Auffrischungsimpfung ist sofort gültig, falls sie eindeutig als solche erkennbar ist."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dt",
+    "v.0.mp",
+    "v.0.dn",
+    "v.0.sd"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "if": [
+          {
+            "not-before": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.v.0.dt"
+                  },
+                  14,
+                  "day"
+                ]
+              }
+            ]
+          },
+          true,
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "payload.v.0.dn"
+                  },
+                  2
+                ]
+              },
+              true,
+              {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        ">": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          1
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.mp"
+                          },
+                          "EU/1/20/1525"
+                        ]
+                      }
+                    ]
+                  },
+                  true
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "Identifier": "RR-PL-0000",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Recovery",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Dodatni wynik testu NAA (np. PCR) musi być starszy niż 11 dni."
+    },
+    {
+      "lang": "en",
+      "desc": "The positive NAA test result (e.g., PCR) must be older than 11 days."
+    },
+    {
+      "lang": "de",
+      "desc": "Der positive NAA-Test (z.B. PCR) muss mindestens 11 Tage zurückliegen."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.fr"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.r.0"
+      },
+      {
+        "not-before": [
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.r.0.fr"
+              },
+              11,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
