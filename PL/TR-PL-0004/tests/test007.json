@@ -4,13 +4,13 @@
     "t": [
       {
         "tt": "LP6464-4",
-        "sc": "2021-06-01T00:00:00+00:00"
+        "sc": "2021-10-10T00:00:00+00:00"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-06-03T00:00:00+00:00",
+    "validationClock": "2021-10-12T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

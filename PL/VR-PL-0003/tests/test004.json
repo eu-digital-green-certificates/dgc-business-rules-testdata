@@ -3,13 +3,13 @@
   "payload": {
     "v": [
       {
-        "dt": "2020-07-23"
+        "dt": "2020-10-23"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-07-23T00:00:00Z",
+    "validationClock": "2021-10-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
