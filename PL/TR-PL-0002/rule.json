@@ -1,0 +1,46 @@
+{
+  "Identifier": "TR-PL-0002",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Wynik testu musi być ujemny (\"not detected\")."
+    },
+    {
+      "lang": "en",
+      "desc": "Test result must be negative (\"not detected\")."
+    },
+    {
+      "lang": "de",
+      "desc": "Das Ergebnis des Tests muss negativ sein."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.tr"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "===": [
+          {
+            "var": "payload.t.0.tr"
+          },
+          "260415000"
+        ]
+      },
+      true
+    ]
+  }
+}

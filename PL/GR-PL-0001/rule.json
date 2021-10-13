@@ -1,0 +1,92 @@
+{
+  "Identifier": "GR-PL-0001",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "General",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Wartość \"disease or agent targeted\" musi być COVID-19 i pochodzić z listy zestawu wartości."
+    },
+	{
+      "lang": "en",
+      "desc": "The \"disease or agent targeted\" must be COVID-19 of the value set list."
+    },
+    {
+      "lang": "de",
+      "desc": "\"disease or agent targeted\" darf nur COVID-19 aus der Value-Set Liste sein."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.tg",
+    "t.0",
+    "t.0.tg",
+    "v.0",
+    "v.0.tg"
+  ],
+  "Logic": {
+    "and": [
+      {
+        "if": [
+          {
+            "var": "payload.r.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.r.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      },
+      {
+        "if": [
+          {
+            "var": "payload.t.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.t.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      },
+      {
+        "if": [
+          {
+            "var": "payload.v.0"
+          },
+          {
+            "in": [
+              {
+                "var": "payload.v.0.tg"
+              },
+              {
+                "var": "external.valueSets.disease-agent-targeted"
+              }
+            ]
+          },
+          true
+        ]
+      }
+    ]
+  }
+}

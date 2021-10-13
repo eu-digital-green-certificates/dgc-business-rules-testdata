@@ -1,0 +1,53 @@
+{
+  "Identifier": "TR-PL-0001",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Szybki test antygenowy (RAT) musi znajdować się na unijnej liście \"testów i producentów\" (\"test product and manufacturer\")."
+    },
+    {
+      "lang": "en",
+      "desc": "If the test type is \"RAT\" then the \"test product and manufacturer\" MUST be in the valueset list, if it's NAA return true."
+    },
+    {
+      "lang": "de",
+      "desc": "Der Antigen-Test (z.B. Schnelltest) muss in der Liste \"test product and manufacturer\" der EU enthalten sein."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "t.0.ma",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "===": [
+          {
+            "var": "payload.t.0.tt"
+          },
+          "LP217198-3"
+        ]
+      },
+      {
+        "in": [
+          {
+            "var": "payload.t.0.ma"
+          },
+          {
+            "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

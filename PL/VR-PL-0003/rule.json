@@ -1,0 +1,60 @@
+{
+  "Identifier": "VR-PL-0003",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Od daty szczepienia może upłynąć nie więcej niż 365 dni."
+    },
+    {
+      "lang": "en",
+      "desc": "The vaccine must have been administered no longer than one year ago."
+    },
+    {
+      "lang": "de",
+      "desc": "Seit der Impfung darf maximal ein Jahr vergangen sein."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "not-after": [
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              365,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

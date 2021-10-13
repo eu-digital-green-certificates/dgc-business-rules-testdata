@@ -1,0 +1,49 @@
+{
+  "Identifier": "VR-PL-0001",
+  "Type": "Acceptance",
+  "Country": "PL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "pl",
+      "desc": "Ilość dawek szczepionki musi być równa lub większa od ilości dawek oczekiwanych."
+    },
+    {
+      "lang": "en",
+      "desc": "Vaccination doses must be equal or greater than expected doses."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Impfreihe muss vollständig sein (z.B. 1/1, 2/2)."
+    }
+  ],
+  "ValidFrom": "2021-10-11T00:00:00Z",
+  "ValidTo": "2030-10-11T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dn",
+    "v.0.sd"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        ">=": [
+          {
+            "var": "payload.v.0.dn"
+          },
+          {
+            "var": "payload.v.0.sd"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
