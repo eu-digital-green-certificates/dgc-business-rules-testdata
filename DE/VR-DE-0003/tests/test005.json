@@ -3,7 +3,7 @@
   "payload": {
     "v": [
       {
-        "dt": "2021-09-03",
+        "dt": "2021-10-03",
         "dn": 3,
         "sd": 1,
         "mp": "EU/1/20/1525"
@@ -12,7 +12,7 @@
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-09-16T00:00:00Z",
+    "validationClock": "2021-10-16T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
