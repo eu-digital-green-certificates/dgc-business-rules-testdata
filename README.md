@@ -13,8 +13,9 @@
 ## About
 
 This repository holds business rules to determine whether a person is deemed fit-for-travel into a country-of-arrival (CoA) based on their vaccination, test, and recovery status, as encoded using the Digital COVID Certificate.
-The status of the business rules here is _unofficial_: the actual rules will be available from the [DCGC Gateway](https://github.com/eu-digital-green-certificates/dgc-gateway).
-Its main purpose is to help with developing _interchangeable_ business rules.
+The status of the business rules here is _unofficial_: the actual rules are available from the [DCC Gateway](https://github.com/eu-digital-green-certificates/dgc-gateway).
+The main purpose of this repository is to help with developing _interchangeable_ business rules.
+As such, it's also useful for testing and staging these business rules prior to uploading to the DCC Gateway.
 
 This repository performs automatic validation and testing on all the rules, and their tests, contributed to it.
 This validation and testing runs on every Pull Request, but can also be run locally from the commandline, as follows:
@@ -22,9 +23,15 @@ This validation and testing runs on every Pull Request, but can also be run loca
     $ ./build.sh
 
 The “CertLogic Validation” GitHub Action performs this exact same command.
-It requires a UNIX-like shell, Git, `curl`, and a recent Node.js (with the NPM package manager) to be installed.
+This script has the following prerequisites to be installed:
 
-After having run this command once, you can just run the validation/testing as follows:
+* A UNIX-like shell
+* Git
+* `curl`
+* a recent Node.js, with either the NPM package manager co-installed, or alternatively: [yarn](https://yarnpkg.com/)
+* the [`jq` JSON processor](https://stedolan.github.io/jq/)
+
+After having run this command once (succesfully, without exiting with an exit code other than 0), you can just run the validation/testing directly as follows:
 
     $ (cd tooling ; npm start)
 
@@ -54,7 +61,7 @@ This repository contains the following:
 * [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
 * [valuesets](./valuesets): “compress” the value sets for use with validation rule evaluation - see that [README](./valuesets/README.md)
 * [EU](./EU): EU template/recommendation rules
-* [DE](./DE), [FI](./FI), [NL](./NL), etc.: actual rules for EU Member States
+* [DE](./DE), [FI](./FI), [NL](./NL), etc.: rules for EU Member States
 * [build.sh](./build.sh): a build script to build the compressed value sets, build the tooling, and run all tests
 
 
