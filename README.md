@@ -37,7 +37,7 @@ After having run this command once (succesfully, without exiting with an exit co
 
 Validation encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
-* The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/specification/README.md).
+* The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/blob/main/certlogic/specification/README.md).
 * The specified `AffectedFields` field is checked against the fields of the DCC `payload` accessed from the `Logic` field.
 * ..._more validations and checks to follow_
 
