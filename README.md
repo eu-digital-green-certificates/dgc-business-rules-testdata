@@ -42,7 +42,7 @@ Validation encompasses the following:
 * ..._more validations and checks to follow_
 
 Testing means that all rules' tests are executed using the JS-implementation of CertLogic.
-JSON files containing tests must adhere to [this JSON Schema](./tooling/validation-rule-test.schema.json).
+JSON files containing tests must adhere to [this JSON Schema](./tooling/schemas/validation-rule-test.schema.json).
 
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
 The results are exposed as an artifact (called `rules-on-testData.json`) of the "Validation and Testing of Rule Sets" GitHub Action.
