@@ -17,7 +17,7 @@
       "desc": "Een vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
     }
   ],
-  "ValidFrom": "2021-08-14T00:00:00+02:00",
+  "ValidFrom": "2021-11-27T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0.dt",
@@ -34,69 +34,23 @@
         ]
       },
       {
-        "if": [
+        "not-before": [
           {
-            "before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "external.validationClock"
               },
-              {
-                "plusTime": [
-                  "2021-08-14",
-                  0,
-                  "day"
-                ]
-              }
+              0,
+              "day"
             ]
           },
           {
-            "not-before": [
+            "plusTime": [
               {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "payload.v.0.dt"
               },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  14,
-                  "day"
-                ]
-              }
-            ]
-          },
-          {
-            "not-before": [
-              {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
-              },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  28,
-                  "day"
-                ]
-              }
+              28,
+              "day"
             ]
           }
         ]
