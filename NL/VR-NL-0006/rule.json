@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0006",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.0.0",
+  "Version": "1.1.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,16 +10,17 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "A vaccination with the Janssen vaccine has to be administered at least 28 days ago."
+      "desc": "A vaccination with the Janssen vaccine is, without being augmented with boosters, considered protective earliest from 28 days after the date of the last vaccination. A booster vaccination is considered to be protective immediately."
     },
     {
       "lang": "nl",
-      "desc": "Een vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
+      "desc": "Een vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn, tenzij het een booster-vaccinatie betreft: dan is er geen wachttijd."
     }
   ],
   "ValidFrom": "2021-11-27T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
+    "v.0.dn",
     "v.0.dt",
     "v.0.mp"
   ],
@@ -34,23 +35,36 @@
         ]
       },
       {
-        "not-before": [
+        "if": [
           {
-            "plusTime": [
+            ">": [
               {
-                "var": "external.validationClock"
+                "var": "payload.v.0.dn"
               },
-              0,
-              "day"
+              1
             ]
           },
+          true,
           {
-            "plusTime": [
+            "not-before": [
               {
-                "var": "payload.v.0.dt"
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
               },
-              28,
-              "day"
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.v.0.dt"
+                  },
+                  28,
+                  "day"
+                ]
+              }
             ]
           }
         ]
