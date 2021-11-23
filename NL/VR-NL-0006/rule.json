@@ -10,11 +10,11 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "A vaccination with the Janssen vaccine is, without being augmented with boosters, considered protective earliest from 28 days after the date of the last vaccination. A booster vaccination is considered to be protective immediately."
+      "desc": "A first vaccination with the Janssen vaccine has to be administered at least 28 days ago."
     },
     {
       "lang": "nl",
-      "desc": "Een vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn, tenzij het een booster-vaccinatie betreft: dan is er geen wachttijd."
+      "desc": "Een eerste vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
     }
   ],
   "ValidFrom": "2021-11-27T00:00:00+01:00",

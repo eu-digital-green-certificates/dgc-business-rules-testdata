@@ -10,7 +10,11 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "A finished vaccination course is, without being augmented with boosters, considered protective earliest from 14 days after the date of the last vaccination. A booster vaccination is considered to be protective immediately."
+      "desc": "A vaccination is considered to be protective earliest 14 days after the second vaccination date."
+    },
+    {
+      "lang": "nl",
+      "desc": "Een vaccinatie wordt vanaf 14 dagen na de tweede vaccinatiedatum als beschermend aangemerkt."
     }
   ],
   "ValidFrom": "2021-11-27T00:00:00+01:00",
