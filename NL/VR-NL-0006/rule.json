@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0006",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.0.0",
+  "Version": "1.1.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,16 +10,17 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "A vaccination with the Janssen vaccine has to be administered at least 28 days ago."
+      "desc": "A first vaccination with the Janssen vaccine has to be administered at least 28 days ago."
     },
     {
       "lang": "nl",
-      "desc": "Een vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
+      "desc": "Een eerste vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
     }
   ],
-  "ValidFrom": "2021-08-14T00:00:00+02:00",
+  "ValidFrom": "2021-11-27T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
+    "v.0.dn",
     "v.0.dt",
     "v.0.mp"
   ],
@@ -36,47 +37,14 @@
       {
         "if": [
           {
-            "before": [
+            ">": [
               {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  0,
-                  "day"
-                ]
+                "var": "payload.v.0.dn"
               },
-              {
-                "plusTime": [
-                  "2021-08-14",
-                  0,
-                  "day"
-                ]
-              }
+              1
             ]
           },
-          {
-            "not-before": [
-              {
-                "plusTime": [
-                  {
-                    "var": "external.validationClock"
-                  },
-                  0,
-                  "day"
-                ]
-              },
-              {
-                "plusTime": [
-                  {
-                    "var": "payload.v.0.dt"
-                  },
-                  14,
-                  "day"
-                ]
-              }
-            ]
-          },
+          true,
           {
             "not-before": [
               {
