@@ -2,15 +2,15 @@
   "Identifier": "VR-CY-0001",
   "Type": "Acceptance",
   "Country": "CY",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.3.0",
+  "Version": "1.0.1",
+  "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
   "CertificateType": "Vaccination",
   "Description": [
     {
       "lang": "en",
-      "desc": "Only vaccines in the allowed valueset that have been approved by the EMA are allowed."
+      "desc": "Only vaccines in the allowed valueset that have been approved by the Cyprus Goverment are allowed."
     }
   ],
   "ValidFrom": "2021-06-01T00:00:00Z",
@@ -33,7 +33,17 @@
             "EU/1/20/1528",
             "EU/1/20/1507",
             "EU/1/21/1529",
-            "EU/1/20/1525"
+            "EU/1/20/1525",
+            "CVnCoV",
+            "NVX-CoV2373",
+            "Sputnik-V",
+            "Convidecia",
+            "EpiVacCorona",
+            "BBIBP-CorV",
+            "Inactivated-SARS-CoV-2-Vero-Cell",
+            "CoronaVac",
+            "Covaxin",
+            "Covishield"
           ]
         ]
       },

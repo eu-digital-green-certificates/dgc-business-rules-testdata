@@ -1,15 +1,15 @@
 {
-  "name": "not enough doses",
+  "name": "dt=2021-07-09, now=2021-07-10",
   "payload": {
     "v": [
       {
-        "sd": 2,
-        "dn": 1
+        "dt": "2021-07-09"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
+    "validationClock": "2021-07-23T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

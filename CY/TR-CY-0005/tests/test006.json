@@ -1,15 +1,16 @@
 {
-  "name": "dt=2021-08-26, now=2021-09-01",
+  "name": "dob 15 years old and sc less than 3 days old",
   "payload": {
-    "v": [
+    "t": [
       {
-        "dt": "2021-08-16"
+        "sc": "2021-06-01T00:00:00+00:00"
       }
-    ]
+    ],
+    "dob": "2006-06-01T00:00:00+00:00"
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-09-01T00:00:00+00:00",
+    "validationClock": "2021-06-03T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
