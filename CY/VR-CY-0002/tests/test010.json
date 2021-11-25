@@ -1,13 +1,17 @@
 {
+  "name": "dt=2021-07-01, now=2021-07-30 with dose 1 and number of total doses 2",
   "payload": {
     "v": [
       {
-        "mp": "EpiVacCorona"
+        "sd": 1,
+        "dn": 1,
+        "dt": "2021-07-01"
       }
     ]
   },
   "expected": true,
   "external": {
+    "validationClock": "2021-07-16T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

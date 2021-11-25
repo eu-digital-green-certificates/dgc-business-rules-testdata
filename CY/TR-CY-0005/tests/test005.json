@@ -1,13 +1,16 @@
 {
+  "name": "dob 15 years old and sc 4 days old",
   "payload": {
-    "v": [
+    "t": [
       {
-        "mp": "EpiVacCorona"
+        "sc": "2021-06-01T00:00:00+00:00"
       }
-    ]
+    ],
+    "dob": "2006-06-01T00:00:00+00:00"
   },
-  "expected": true,
+  "expected": false,
   "external": {
+    "validationClock": "2021-06-04T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

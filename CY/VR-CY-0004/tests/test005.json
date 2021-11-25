@@ -1,13 +1,15 @@
 {
+  "name": "dt less than 365 days before now",
   "payload": {
     "v": [
       {
-        "mp": "EpiVacCorona"
+        "dt": "2020-07-24"
       }
     ]
   },
   "expected": true,
   "external": {
+    "validationClock": "2021-07-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

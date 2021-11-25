@@ -1,13 +1,15 @@
 {
+  "name": "dt=2021-06-26, now=2021-07-01",
   "payload": {
     "v": [
       {
-        "mp": "EpiVacCorona"
+        "dt": "2021-06-16"
       }
     ]
   },
   "expected": true,
   "external": {
+    "validationClock": "2021-07-01T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

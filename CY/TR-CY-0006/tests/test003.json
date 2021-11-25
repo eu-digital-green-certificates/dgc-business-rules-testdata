@@ -1,17 +1,16 @@
 {
-  "name": "dt=2021-07-10, now=2021-07-23",
+  "name": "dob 18 years old and sc 4 days old",
   "payload": {
-    "v": [
+    "t": [
       {
-        "sd": 1,
-        "dt": "2021-08-10",
-        "dn": 1
+        "sc": "2021-06-04T00:00:00+00:00"
       }
-    ]
+    ],
+    "dob": "2005-06-01T00:00:00+00:00"
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2021-08-23T00:00:00+00:00",
+    "validationClock": "2021-06-05T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

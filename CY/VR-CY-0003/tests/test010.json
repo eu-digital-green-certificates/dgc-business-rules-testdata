@@ -1,17 +1,17 @@
 {
-  "name": "dt=2021-08-11, now=2021-08-10",
+  "name": "dt=2021-07-01, now=2021-07-30 with dose 1 and number of total doses 2",
   "payload": {
     "v": [
       {
-        "sd": 1,
-        "dt": "2021-08-11",
-        "dn": 1
+        "sd": 2,
+        "dn": 1,
+        "dt": "2021-07-01"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-08-10T00:00:00+00:00",
+    "validationClock": "2021-07-30T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
