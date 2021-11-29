@@ -1,4 +1,4 @@
-import { version } from "certlogic-js"
+import { specificationVersion } from "certlogic-js"
 import { dateFromString } from "certlogic-js/dist/internals"
 import { dataAccesses, validateFormat } from "certlogic-js/dist/validation"
 import { gt } from "semver"
@@ -37,8 +37,8 @@ const validateMetaData = (rule: Rule) => {
     if (rule.Engine !== "CERTLOGIC") {
         errors.push(`Engine "${rule.Engine}" must be "CERTLOGIC"`)
     }
-    if (gt(rule.EngineVersion, version)) {
-        errors.push(`EngineVersion ${rule.EngineVersion} is newer than the currently supported version ${version}`)
+    if (gt(rule.EngineVersion, specificationVersion)) {
+        errors.push(`EngineVersion ${rule.EngineVersion} is newer than the currently supported version ${specificationVersion}`)
     }
     if (gt("0.7.5", rule.EngineVersion)) {
         errors.push(`EngineVersion ${rule.EngineVersion} must be 0.7.5 or newer`)
