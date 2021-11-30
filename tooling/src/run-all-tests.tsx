@@ -14,7 +14,7 @@ import { fromRepoRoot, jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"
 import { TestResults } from "./typings"
 import { validateRule } from "./validate"
-import { AllRuleSetsWithTestsResults } from "./all-rule-sets-with-tests-results"
+import { AllRuleSets } from "./all-rule-sets"
 
 
 const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
@@ -145,8 +145,8 @@ describe(`writing HTML for all rules' tests`, () => {
 
     it(`done`, () => {
         writeHtml(
-            fromRepoRoot("html", "all-rule-sets-with-tests-results.html"),
-            renderToStaticMarkup(<AllRuleSetsWithTestsResults ruleSets={ruleSets} testResults={testResults} />)
+            fromRepoRoot("html", "all-rule-sets.html"),
+            renderToStaticMarkup(<AllRuleSets ruleSets={ruleSets} testResults={testResults} />)
         )
     })
 

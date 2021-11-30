@@ -10,7 +10,7 @@ const sortWithHead = (strings: string[], head: string) =>
     ]
 
 
-export const AllRuleSetsWithTestsResults = ({ ruleSets, testResults }: { ruleSets: RuleSets, testResults: TestResults }) => {
+export const AllRuleSets = ({ ruleSets }: { ruleSets: RuleSets, testResults: TestResults }) => {
     const ruleSetIdsInOrder = sortWithHead(Object.keys(ruleSets), "EU")
     return <html lang="en">
     <head>
@@ -20,16 +20,16 @@ export const AllRuleSetsWithTestsResults = ({ ruleSets, testResults }: { ruleSet
     </head>
     <body>
 
-    <h1>All rule sets with tests and results</h1>
+        <h1>All rule sets with tests and results</h1>
 
-    <p>
-        Index of all rule sets:
-    </p>
-    <ol>
-        {ruleSetIdsInOrder.map((ruleSetId, index) => <li key={index}><a href={`#rule-set-${ruleSetId}`}>{ruleSetId}</a></li>)}
-    </ol>
+        <p>
+            Index of all rule sets:
+        </p>
+        <ol>
+            {ruleSetIdsInOrder.map((ruleSetId, index) => <li key={index}><a href={`#rule-set-${ruleSetId}`}>{ruleSetId}</a></li>)}
+        </ol>
 
-    {ruleSetIdsInOrder.map((ruleSetId, index) => <RuleSetRender ruleSetId={ruleSetId} ruleSet={ruleSets[ruleSetId]} key={index} />)}
+        {ruleSetIdsInOrder.map((ruleSetId, index) => <RuleSetRender ruleSetId={ruleSetId} ruleSet={ruleSets[ruleSetId]} key={index} />)}
 
     </body>
     </html>
@@ -55,4 +55,7 @@ const RuleRender = ({ rule }: { rule: Rule }) =>
         <div className="cell identifier"><span>{rule.Identifier}</span></div>
         <div className="cell"><span>{rule.Description[0].desc}</span></div>
     </div>
+
+
+// TODO  also render the test results
 
