@@ -22,7 +22,7 @@ This validation and testing runs on every Pull Request, but can also be run loca
 
     $ ./build.sh
 
-The “CertLogic Validation” GitHub Action performs this exact same command.
+The “Validation and Testing of Rule Sets” GitHub Action performs this exact same command.
 This script has the following prerequisites to be installed:
 
 * A UNIX-like shell
@@ -31,17 +31,17 @@ This script has the following prerequisites to be installed:
 * a recent Node.js, with either the NPM package manager co-installed, or alternatively: [yarn](https://yarnpkg.com/)
 * the [`jq` JSON processor](https://stedolan.github.io/jq/)
 
-After having run this command once (succesfully, without exiting with an exit code other than 0), you can just run the validation/testing directly as follows:
+After having run this command once (succesfully, without exiting with an exit code other than 0), you run the validation, testing, and generation of HTML directly as follows:
 
     $ (cd tooling ; npm start)
 
-Validation encompasses the following:
+_Validation_ encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
 * The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/blob/main/certlogic/specification/README.md).
 * The specified `AffectedFields` field is checked against the fields of the DCC `payload` accessed from the `Logic` field.
 * ..._more validations and checks to follow_
 
-Testing means that all rules' tests are executed using the JS-implementation of CertLogic.
+_Testing_ means that all rules' tests are executed using the JS-implementation of CertLogic.
 JSON files containing tests must adhere to [this JSON Schema](./tooling/schemas/validation-rule-test.schema.json).
 
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
@@ -51,6 +51,9 @@ To execute the tests on the rules of a specific rule set, or even a specific rul
 
     $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
 
+_HTML generation_ generates a HTML page for all rule sets in the directory `html/`.
+Those generated HTML pages are also exported as an artifact of the “Validation and Testing of Rule Sets” GitHub Action.
+
 
 ## Organisation
 
@@ -58,7 +61,7 @@ This repository contains the following:
 
 * [GitHub Actions configuration](./.github)
 * [tests](./tests): testing material called by the “Business Rule Validation” GitHub Action
-* [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
+* [tooling](./tooling): testing material called by the “Validation and Testing of Rule Sets” GitHub Action
 * [valuesets](./valuesets): “compress” the value sets for use with validation rule evaluation - see that [README](./valuesets/README.md)
 * [EU](./EU): EU template/recommendation rules
 * [DE](./DE), [FI](./FI), [NL](./NL), etc.: rules for EU Member States
