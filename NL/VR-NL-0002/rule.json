@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0002",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -11,9 +11,29 @@
     {
       "lang": "en",
       "desc": "Vaccination doses must be equal or greater than expected doses."
+    },
+    {
+      "lang": "de",
+      "desc": "Die Impfdosen müssen gleich oder höher sein als die erwarteten Dosen."
+    },
+    {
+      "lang": "fr",
+      "desc": "Les doses de vaccination doivent être égales ou supérieures aux doses prévues."
+    },
+    {
+      "lang": "es",
+      "desc": "Las dosis de vacunación deben ser iguales o superiores a las previstas."
+    },
+    {
+      "lang": "it",
+      "desc": "Le dosi di vaccinazione devono essere uguali o superiori alle dosi previste."
+    },
+    {
+      "lang": "nl",
+      "desc": "Vaccinatiedoses moeten gelijk of groter zijn dan de verwachte doses."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",

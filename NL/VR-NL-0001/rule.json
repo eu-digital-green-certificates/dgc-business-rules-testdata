@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0001",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.3.0",
+  "Version": "1.3.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Only vaccines in the allowed valueset that have been approved by the EMA are allowed."
+      "desc": "Only vaccines that have been approved by the EMA and or WHO are allowed."
+    },
+    {
+      "lang": "de",
+      "desc": "Nur Impfstoffe, die von der EMA und/oder der WHO zugelassen wurden, sind erlaubt."
+    },
+    {
+      "lang": "fr",
+      "desc": "Seuls les vaccins qui ont été approuvés par l'EMA et/ou l'OMS sont autorisés."
+    },
+    {
+      "lang": "es",
+      "desc": "Sólo se permiten las vacunas aprobadas por la EMA y/o la OMS."
+    },
+    {
+      "lang": "it",
+      "desc": "Sono ammessi solo i vaccini che sono stati approvati dall'EMA e dall'OMS."
+    },
+    {
+      "lang": "nl",
+      "desc": "Alleen vaccins die zijn goedgekeurd door het EMA en/of de WHO zijn toegestaan."
     }
   ],
-  "ValidFrom": "2021-11-08T00:00:00+01:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",

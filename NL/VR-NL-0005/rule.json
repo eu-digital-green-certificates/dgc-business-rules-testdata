@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0005",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.2.0",
+  "Version": "1.2.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -15,9 +15,25 @@
     {
       "lang": "nl",
       "desc": "Een vaccinatie wordt vanaf 14 dagen na de tweede vaccinatiedatum als beschermend aangemerkt."
+    },
+    {
+      "lang": "de",
+      "desc": "Eine Impfung gilt ab frühestens 14 Tage nach dem zweiten Impftermin als schützend."
+    },
+    {
+      "lang": "fr",
+      "desc": "Une vaccination est considérée comme protectrice au plus tôt à partir de 14 jours après la deuxième date de vaccination.."
+    },
+    {
+      "lang": "es",
+      "desc": "Una vacuna se considera protectora a partir de los 14 días posteriores a la fecha de la segunda vacunación."
+    },
+    {
+      "lang": "it",
+      "desc": "Una vaccinazione è considerata protettiva a partire da 14 giorni dopo la seconda data di vaccinazione."
     }
   ],
-  "ValidFrom": "2021-11-27T00:00:00+01:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
