@@ -2,7 +2,7 @@
   "Identifier": "RR-NL-0003",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -11,9 +11,29 @@
     {
       "lang": "en",
       "desc": "The validity start date must be before the validity end date."
+    },
+    {
+      "lang": "de",
+      "desc": "Das Anfangsdatum der Gültigkeit muss vor dem Enddatum der Gültigkeit liegen."
+    },
+    {
+      "lang": "fr",
+      "desc": "La date de début de validité doit être antérieure à la date de fin de validité."
+    },
+    {
+      "lang": "es",
+      "desc": "La fecha de inicio de la validez debe ser anterior a la fecha de finalización de la validez."
+    },
+    {
+      "lang": "it",
+      "desc": "La data di inizio della validità deve essere prima della data di fine della validità."
+    },
+    {
+      "lang": "nl",
+      "desc": "De begindatum van de geldigheid moet vóór de einddatum van de geldigheid liggen."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

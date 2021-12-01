@@ -2,7 +2,7 @@
   "Identifier": "GR-NL-0001",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The \"disease or agent targeted\" must be COVID-19 of the value set list."
+      "desc": "The certificate must pertain to a disease or agent that's recognised by the EMA and the WHO (COVID-19)."
+    },
+    {
+      "lang": "de",
+      "desc": "Das Zertifikat muss sich auf eine Krankheit oder einen Erreger beziehen, der von der EMA und der WHO anerkannt ist."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le certificat doit porter sur une maladie ou un agent reconnu par l'EMA et l'OMS."
+    },
+    {
+      "lang": "es",
+      "desc": "El certificado debe pertenecer a una enfermedad o agente reconocido por la EMA y la OMS."
+    },
+    {
+      "lang": "it",
+      "desc": "Il certificato deve riguardare una malattia o un agente riconosciuto dall'EMA e dall'OMS."
+    },
+    {
+      "lang": "nl",
+      "desc": "Het certificaat moet een door de EMA en de WHO erkende ziekte(-verwekker) betreffen (COVID-19)."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

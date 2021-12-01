@@ -2,7 +2,7 @@
   "Identifier": "RR-NL-0000",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "At most one r-event."
+      "desc": "At most one recovery-event."
+    },
+    {
+      "lang": "de",
+      "desc": "Höchstens ein Wiederherstellungsereignis."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le certificat ne contient au plus qu'un évènement de rétablissement."
+    },
+    {
+      "lang": "es",
+      "desc": "Como máximo un evento de recuperación."
+    },
+    {
+      "lang": "it",
+      "desc": "Al massimo un evento di recupero."
+    },
+    {
+      "lang": "nl",
+      "desc": "Ten hoogste één vaccinatie-gebeurtenis."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.1"

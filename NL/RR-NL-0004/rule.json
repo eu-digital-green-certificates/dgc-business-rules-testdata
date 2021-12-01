@@ -2,7 +2,7 @@
   "Identifier": "RR-NL-0004",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The validity start date must be greater than or equal to the first positive test date  +11 days and validity end date must be less than or equal to the first postive test date +180."
+      "desc": "The validity start date must be greater than or equal to the first positive test date +11 days and validity end date must be less than or equal to the first postive test date +180."
+    },
+    {
+      "lang": "de",
+      "desc": "Das Datum des Gültigkeitsbeginns muss größer oder gleich dem Datum des ersten positiven Tests +11 Tage und das Datum des Gültigkeitsendes muss kleiner oder gleich dem Datum des ersten positiven Tests +180 sein."
+    },
+    {
+      "lang": "fr",
+      "desc": "La date de début de validité doit être supérieure ou égale à la date du premier test positif +11 jours et la date de fin de validité doit être inférieure ou égale à la date du premier test positif +180."
+    },
+    {
+      "lang": "es",
+      "desc": "La fecha de inicio de la validez debe ser mayor o igual a la fecha de la primera prueba positiva +11 días y la fecha de finalización de la validez debe ser menor o igual a la fecha de la primera prueba positiva +180."
+    },
+    {
+      "lang": "it",
+      "desc": "La data di inizio validità deve essere maggiore o uguale alla data del primo test positivo +11 giorni e la data di fine validità deve essere minore o uguale alla data del primo test positivo +180."
+    },
+    {
+      "lang": "nl",
+      "desc": "De begindatum van de geldigheid moet groter zijn dan of gelijk zijn aan de datum van de eerste positieve test +11 dagen en de einddatum van de geldigheid moet kleiner zijn dan of gelijk zijn aan de datum van de eerste positieve test +180."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

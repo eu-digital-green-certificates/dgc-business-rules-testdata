@@ -2,7 +2,7 @@
   "Identifier": "TR-NL-0000",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "At most one t-event."
+      "desc": "At most one test-event."
+    },
+    {
+      "lang": "de",
+      "desc": "Höchstens ein test-Ereignis."
+    },
+    {
+      "lang": "fr",
+      "desc": "Au maximum un événement de test."
+    },
+    {
+      "lang": "es",
+      "desc": "Como máximo un evento de test."
+    },
+    {
+      "lang": "it",
+      "desc": "Al massimo un test-evento."
+    },
+    {
+      "lang": "nl",
+      "desc": "Maximaal één testgebeurtenis."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.1"
