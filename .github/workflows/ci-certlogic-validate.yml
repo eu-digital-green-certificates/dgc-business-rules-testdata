@@ -29,3 +29,8 @@ jobs:
        with:
          name: gathered-JSON
          path: ${{ github.workspace }}/out/*.json
+     - name: Publish generated HTML
+       uses: actions/upload-artifact@v2
+       with:
+          name: rules-html
+          path: ${{ github.workspace }}/html

@@ -1,8 +1,11 @@
 import { CertLogicExpression } from "certlogic-js"
 
+
+export type RuleType = "Acceptance" | "Invalidation"
+
 export type Rule = {
     Identifier: string
-    Type: "Acceptance" | "Invalidation"
+    Type: RuleType
     Country: string
     Version: string
     SchemaVersion: string
