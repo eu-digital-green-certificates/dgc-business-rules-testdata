@@ -13,7 +13,7 @@ import { filterValues, mapValues } from "./func-utils"
 import { fromRepoRoot, jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"
 import { TestResults } from "./typings"
-import { validateRule } from "./validate"
+import { validateRule } from "dcc-business-rules-utils"
 import { AllRuleSets } from "./all-rule-sets"
 
 
@@ -78,6 +78,7 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
     if (singleRuleSetId && singleRuleSetId !== ruleSetId) {
         continue
     }
+    // TODO  do validation of entire rule set, e.g. check whether (active) rules exist for every certificate type
     for (const [ ruleId, ruleWithTests ] of Object.entries(ruleSet)) {
         if (singleRuleId && singleRuleId !== ruleId) {
             continue

@@ -1,23 +1,4 @@
-import { CertLogicExpression } from "certlogic-js"
-
-
-export type RuleType = "Acceptance" | "Invalidation"
-
-export type Rule = {
-    Identifier: string
-    Type: RuleType
-    Country: string
-    Version: string
-    SchemaVersion: string
-    Engine: string
-    EngineVersion: string
-    CertificateType: "General" | "Test" | "Vaccination" | "Recovery"
-    Description: { lang: string, desc: string }[]
-    ValidFrom: string
-    ValidTo: string
-    AffectedFields: string[]
-    Logic: CertLogicExpression
-}
+import { Rule } from "dcc-business-rules-utils"
 
 
 export type RuleSets = { [ruleSetId: string]: RuleSet }

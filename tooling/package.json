@@ -18,6 +18,7 @@
     "ajv-formats": "^2.1.1",
     "certlogic-html": "^0.1.1",
     "certlogic-js": "^1.0.4",
+    "dcc-business-rules-utils": "^0.1.0",
     "deep-equal": "^2.0.5",
     "fs-readdir-recursive": "^1.1.0",
     "prettier": "^2.5.0",
