@@ -1,24 +1,24 @@
 #!/bin/sh
 
-VALUESETS_REPO_NAME=ehn-dcc-valuesets
+valueSets="country-2-codes.json \
+  disease-agent-targeted.json\
+  test-manf.json\
+  test-result.json\
+  test-type.json\
+  vaccine-mah-manf.json\
+  vaccine-medicinal-product.json\
+  vaccine-prophylaxis.json\
+"
 
-git clone --depth 1 https://github.com/ehn-dcc-development/$VALUESETS_REPO_NAME.git
-# locally, use:   ln -s ../../$VALUESETS_REPO_NAME .
+for vs in $valueSets; do
+  curl "https://raw.githubusercontent.com/ehn-dcc-development/ehn-dcc-valuesets/main/$vs" > $vs
+done
 
-if [ -d "$VALUESETS_REPO_NAME" ]
-then
-  jq --slurp 'map( { (.valueSetId): .valueSetValues|keys }) | add'\
-    $VALUESETS_REPO_NAME/country-2-codes.json\
-    $VALUESETS_REPO_NAME/disease-agent-targeted.json\
-    $VALUESETS_REPO_NAME/test-manf.json\
-    $VALUESETS_REPO_NAME/test-result.json\
-    $VALUESETS_REPO_NAME/test-type.json\
-    $VALUESETS_REPO_NAME/vaccine-mah-manf.json\
-    $VALUESETS_REPO_NAME/vaccine-medicinal-product.json\
-    $VALUESETS_REPO_NAME/vaccine-prophylaxis.json\
-      > valueSets.json
-  echo "Compressed value sets."
-else
-  echo "expected $VALUESETS_REPO_NAME to exist"
-fi
+jq --slurp 'map( { (.valueSetId): .valueSetValues|keys }) | add' $valueSets > valueSets.json
+
+for vs in $valueSets; do
+  rm $vs
+done
+
+echo "Compressed value sets."
 
