@@ -1,6 +1,7 @@
 import * as React from "react"
 
-import { Rule, RuleSet, RuleSets, TestResults } from "./typings"
+import { RuleSet, RuleSets, TestResults } from "./typings"
+import { Rule } from "dcc-business-rules-utils"
 
 
 const sortWithHead = (strings: string[], head: string) =>

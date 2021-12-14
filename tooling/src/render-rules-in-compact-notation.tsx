@@ -4,9 +4,10 @@ import { renderToStaticMarkup } from "react-dom/server"
 import { writeHtml } from "./file-utils"
 import { ruleSets } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
-import { Rule, RuleSet } from "./typings"
+import { RuleSet } from "./typings"
 import { dataAccesses } from "certlogic-js/dist/validation"
 import { CompactExprRendering } from "certlogic-html"
+import { Rule } from "dcc-business-rules-utils"
 
 
 const RuleRendering = ({ rule }: { rule: Rule }) => {
