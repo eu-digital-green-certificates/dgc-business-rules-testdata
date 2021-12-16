@@ -1,5 +1,5 @@
 {
-  "name" : "return true when DCC contain valid test type (LP6464-4)",
+  "name": "return true when DCC contain valid test type (LP6464-4)",
   "payload": {
     "t": [
       {

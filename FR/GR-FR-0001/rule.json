@@ -2,8 +2,8 @@
   "Identifier": "GR-FR-0001",
   "Type": "Acceptance",
   "Country": "FR",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.3.0",
+  "Version": "1.0.1",
+  "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
   "CertificateType": "General",
@@ -17,8 +17,8 @@
       "desc": "La maladie ciblée doit etre le COVID-19 de la value set."
     }
   ],
-  "ValidFrom": "2021-07-26T00:00:00Z",
-  "ValidTo": "2030-07-26T00:00:00Z",
+  "ValidFrom": "2021-10-31T00:00:00Z",
+  "ValidTo": "2030-10-31T00:00:00Z",
   "AffectedFields": [
     "r.0.tg",
     "t.0.tg",

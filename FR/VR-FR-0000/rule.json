@@ -2,23 +2,23 @@
   "Identifier": "VR-FR-0000",
   "Type": "Acceptance",
   "Country": "FR",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.3.0",
+  "Version": "1.0.4",
+  "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
   "CertificateType": "Vaccination",
   "Description": [
     {
       "lang": "en",
-      "desc": "At most one v-event."
+      "desc": "Vaccin format is not EU standard."
     },
     {
       "lang": "fr",
-      "desc": "Le certificat ne contient au plus qu'un évènement de vaccination"
+      "desc": "Le format lié au vaccin n'est pas au standard UE."
     }
   ],
-  "ValidFrom": "2021-07-26T00:00:00Z",
-  "ValidTo": "2030-07-26T00:00:00Z",
+	"ValidFrom": "2021-12-17T16:00:00Z",
+	"ValidTo": "2031-12-17T16:00:00Z",
   "AffectedFields": [
     "v.1"
   ],

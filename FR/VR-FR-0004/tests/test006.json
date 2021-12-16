@@ -1,7 +1,7 @@
 {
   "name": "return true when test event exist but it is empty",
   "payload": {
-    "t":[]
+    "t": []
   },
   "expected": true,
   "external": {
