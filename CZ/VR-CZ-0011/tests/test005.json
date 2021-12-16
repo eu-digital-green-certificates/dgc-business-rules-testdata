@@ -3,14 +3,14 @@
   "payload": {
     "v": [
       {
-        "dt": "2020-07-24",
+        "dt": "2022-07-24",
 		"mp": "EU/1/20/1507"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-07-23T00:00:00Z",
+    "validationClock": "2022-09-23T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
