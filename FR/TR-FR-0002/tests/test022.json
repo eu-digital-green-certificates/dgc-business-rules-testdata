@@ -1,15 +1,15 @@
 {
-  "name": "return false when sample collection date has passed exactly 72 hours",
+  "name": "return false when sample collection date has passed exactly 48 hours",
   "payload": {
     "t": [
       {
-        "sc": "2021-08-01T00:00:00+00:00"
+        "sc": "2021-12-12T00:00:00+00:00"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-08-04T16:00:00+00:00",
+    "validationClock": "2021-12-14T00:00:10+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

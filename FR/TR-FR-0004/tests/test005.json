@@ -1,7 +1,7 @@
 {
   "name": "return true when vaccine event exist but it is empty",
   "payload": {
-    "v":[]
+    "v": []
   },
   "expected": true,
   "external": {

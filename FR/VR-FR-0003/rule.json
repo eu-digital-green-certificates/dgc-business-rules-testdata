@@ -2,8 +2,8 @@
   "Identifier": "VR-FR-0003",
   "Type": "Acceptance",
   "Country": "FR",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.3.0",
+  "Version": "1.0.4",
+  "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
   "CertificateType": "Vaccination",
@@ -14,11 +14,11 @@
     },
     {
       "lang": "fr",
-      "desc": "La date de vaccination doit être anterieur à la date de validation."
+      "desc": "La date de vaccination doit être antérieure à la date de lecture de la preuve de vaccination."
     }
   ],
-  "ValidFrom": "2021-07-26T00:00:00Z",
-  "ValidTo": "2030-07-26T00:00:00Z",
+	"ValidFrom": "2021-12-17T18:00:00Z",
+	"ValidTo": "2031-12-17T18:00:00Z",
   "AffectedFields": [
     "v.0",
     "v.0.dt"

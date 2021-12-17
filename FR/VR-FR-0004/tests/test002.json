@@ -4,14 +4,13 @@
     "v": [
       {
         "mp": "EU/1/20/1525",
-        "dt": "2021-07-01"
-
+        "dt": "2021-12-18"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-07-29T00:00:00+00:00",
+    "validationClock": "2022-01-16T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
