@@ -2,7 +2,7 @@
 	"Identifier": "GR-FR-0000",
 	"Type": "Acceptance",
 	"Country": "FR",
-	"Version": "1.0.4",
+	"Version": "1.0.5",
 	"SchemaVersion": "1.0.0",
 	"Engine": "CERTLOGIC",
 	"EngineVersion": "0.7.5",
@@ -10,15 +10,15 @@
 	"Description": [
 		{
 			"lang": "en",
-			"desc": "Only test is allowed, and in a EU standard format."
+			"desc": "Only a vaccine or test is allowed, and in a EU standard format."
 		},
 		{
 			"lang": "fr",
-			"desc": "Seuls un test est autorisé, et dans un format au standard UE."
+			"desc": "Seul un vaccin ou un test est autorisé, et dans un format au standard UE."
 		}
 	],
-	"ValidFrom": "2021-12-17T16:00:00Z",
-	"ValidTo": "2031-12-17T16:00:00Z",
+	"ValidFrom": "2021-12-19T13:00:00Z",
+	"ValidTo": "2031-12-19T13:00:00Z",
 	"AffectedFields": [
 		"v",
 		"t"
