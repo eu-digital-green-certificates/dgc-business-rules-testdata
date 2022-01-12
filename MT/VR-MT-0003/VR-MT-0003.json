@@ -1,0 +1,41 @@
+{
+  "Identifier": "VR-MT-0003",
+  "Type": "Acceptance",
+  "Country": "MT",
+  "Version": "1.0.1",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The vaccination schedule must be complete (e.g., 1/1, 2/2,3/3)."
+    }
+  ],
+  "ValidFrom": "2022-01-15T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dn",
+    "v.0.sd"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "===": [
+          {
+            "var": "payload.v.0.dn"
+          },
+          {
+            "var": "payload.v.0.sd"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

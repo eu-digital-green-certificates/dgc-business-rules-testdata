@@ -1,0 +1,133 @@
+{
+  "Identifier": "RR-MT-0001",
+  "Type": "Acceptance",
+  "Country": "MT",
+  "Version": "1.1.1",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Recovery",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The recovery certificate is valid between the 11th and 180th day after the positive PCR test. "
+    }
+  ],
+  "ValidFrom": "2022-01-15T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.df",
+    "r.0.du",
+    "r.0.fr"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.r.0"
+      },
+      {
+        "not-after": [
+          {
+            "if": [
+              {
+                "after": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.df"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.fr"
+                      },
+                      11,
+                      "day"
+                    ]
+                  }
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.df"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.fr"
+                  },
+                  11,
+                  "day"
+                ]
+              }
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "if": [
+              {
+                "before": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.du"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.fr"
+                      },
+                      180,
+                      "day"
+                    ]
+                  }
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.du"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.fr"
+                  },
+                  180,
+                  "day"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}
