@@ -1,0 +1,94 @@
+{
+	"Identifier": "VR-MT-0007",
+	"Type": "Acceptance",
+	"Country": "MT",
+	"Version": "1.0.0",
+	"SchemaVersion": "1.0.0",
+	"Engine": "CERTLOGIC",
+	"EngineVersion": "0.7.5",
+	"CertificateType": "Vaccination",
+	"Description": [
+		{
+			"lang": "en",
+			"desc": "Verification Datetime must be less than 273 days after vaccination for first booster dose"
+		}
+	],
+	"ValidFrom": "2022-01-16T00:00:00Z",
+	"ValidTo": "2030-06-01T00:00:00Z",
+	"AffectedFields": [
+		"v.0",
+		"v.0.dn",
+		"v.0.sd",
+		"v.0.dt"
+
+		
+	],
+	"Logic": {
+		"if": [
+			{
+				"var": "payload.v.0"
+			},
+			{
+				"if": [
+					{
+						"==": [
+							{
+								"var": "payload.v.0.sd"
+							},
+							3
+						]
+					},
+					{
+						"if": [
+							{
+								"==": [
+									{
+										"var": "payload.v.0.dn"
+									},
+									{
+										"var": "payload.v.0.sd"
+									}
+								]
+							},
+							{
+								"not-after": [
+									{
+										"plusTime": [
+											{
+												"var": "payload.v.0.dt"
+											},
+											0,
+											"day"
+										]
+									},
+									{
+										"plusTime": [
+											{
+												"var": "external.validationClock"
+											},
+											0,
+											"day"
+										]
+									},
+									{
+										"plusTime": [
+											{
+												"var": "payload.v.0.dt"
+											},
+											273,
+											"day"
+										]
+									},
+									
+								]
+							},
+							true
+						]
+					},
+					true
+				]
+			},
+			true
+		]
+	}
+}
