@@ -1,15 +1,8 @@
 {
-  "name": "Collection and validation before 72hrs",
-  "payload": {
-    "t": [
-      {
-        "sc": "2021-06-27T00:00:00+00:00"
-      }
-
-  },
+  "name": "empty DCC",
+  "payload": {},
   "expected": true,
   "external": {
-    "validationClock": "2021-06-28T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
