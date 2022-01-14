@@ -1,0 +1,150 @@
+{
+  "Identifier": "VR-NL-0007",
+  "Type": "Acceptance",
+  "Country": "NL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "A primary vaccination cycle has to be finished within the last 9 months (270 days), unless it's followed by booster vaccinations."
+    },
+    {
+      "lang": "de",
+      "desc": "Ein Grundimmunisierungszyklus ohne nachfolgende Auffrischungsimpfungen muss innerhalb der letzten 9 Monate (270 Tage) abgeschlossen sein."
+    },
+    {
+      "lang": "fr",
+      "desc": "Un cycle de primovaccination doit être terminé au cours des 9 derniers mois (270 jours), à moins qu'il ne soit suivi de vaccinations de rappel."
+    },
+    {
+      "lang": "es",
+      "desc": "Un ciclo de vacunación primaria tiene que estar terminado dentro de los últimos 9 meses (270 días), a menos que sea seguido por vacunas de refuerzo."
+    },
+    {
+      "lang": "it",
+      "desc": "Un ciclo di vaccinazione primaria deve essere terminato negli ultimi 9 mesi (270 giorni), a meno che non sia seguito da vaccinazioni di richiamo."
+    },
+    {
+      "lang": "nl",
+      "desc": "De primarire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties."
+    }
+  ],
+  "ValidFrom": "2022-02-01T00:00:00+01:00",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.dn",
+    "v.0.dt",
+    "v.0.mp",
+    "v.0.sd"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "if": [
+          {
+            "if": [
+              {
+                ">": [
+                  {
+                    "var": "payload.v.0.dn"
+                  },
+                  {
+                    "var": "payload.v.0.sd"
+                  }
+                ]
+              },
+              true,
+              {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          {
+                            "var": "payload.v.0.sd"
+                          }
+                        ]
+                      },
+                      {
+                        ">": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          2
+                        ]
+                      }
+                    ]
+                  },
+                  true,
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          2
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.sd"
+                          },
+                          2
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.mp"
+                          },
+                          "EU/1/20/1525"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          true,
+          {
+            "before": [
+              {
+                "plusTime": [
+                  {
+                    "var": "external.validationClock"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.v.0.dt"
+                  },
+                  270,
+                  "day"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

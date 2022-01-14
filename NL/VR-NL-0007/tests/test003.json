@@ -1,0 +1,16 @@
+{
+  "name": "2021-06-08 -> 2022-03-04, 1/1 => true",
+  "payload": {
+    "v": [
+      {
+        "dt": "2021-06-08",
+        "dn": 1,
+        "sd": 1
+      }
+    ]
+  },
+  "expected": true,
+  "external": {
+    "validationClock": "2022-03-04T00:00:00Z"
+  }
+}
