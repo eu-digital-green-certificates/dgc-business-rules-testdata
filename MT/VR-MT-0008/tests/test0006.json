@@ -1,17 +1,18 @@
 {
-  "name": "2/2 and validation after 90 days",
+  "name": "above 18 years old with 2/2",
   "payload": {
     "v": [
       {
-        "dt": "2022-01-01",
-        "dn": 2,
+        "dt": "2021-06-01T00:00:00+00:00",
+	"dn": 2,
         "sd": 2
       }
-    ]
+    ],
+    "dob": "2004-06-01T00:00:00+00:00"
   },
   "expected": false,
   "external": {
-    "validationClock": "2022-05-01T00:00:00Z",
+    "validationClock": "2022-01-13T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

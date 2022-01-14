@@ -1,17 +1,23 @@
 {
-  "name": "2/2 and validation after 90 days",
   "payload": {
+    "r": [
+      {
+        "tg": "840539006"
+      }
+    ],
+    "t": [
+      {
+        "tg": "840539006"
+      }
+    ],
     "v": [
       {
-        "dt": "2022-01-01",
-        "dn": 2,
-        "sd": 2
+        "tg": "840539006"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2022-05-01T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

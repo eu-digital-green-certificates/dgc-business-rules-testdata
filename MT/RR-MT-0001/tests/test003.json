@@ -1,17 +1,15 @@
 {
-  "name": "2/2 and validation after 90 days",
+  "name": "less than 11 days before now",
   "payload": {
-    "v": [
+    "r": [
       {
-        "dt": "2022-01-01",
-        "dn": 2,
-        "sd": 2
+        "fr": "2022-05-01"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2022-05-01T00:00:00Z",
+    "validationClock": "2022-05-11T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
