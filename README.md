@@ -28,7 +28,7 @@ This script has the following prerequisites to be installed:
 * A UNIX-like shell
 * Git
 * `curl`
-* a recent Node.js, with either the NPM package manager co-installed, or alternatively: [yarn](https://yarnpkg.com/)
+* a recent Node.js (developed on version 16.10; version 14.17 is already too old, apparently), with either the NPM package manager co-installed, or alternatively: [yarn](https://yarnpkg.com/)
 * the [`jq` JSON processor](https://stedolan.github.io/jq/)
 
 After having run this command once (succesfully, without exiting with an exit code other than 0), you run the validation, testing, and generation of HTML directly as follows:
