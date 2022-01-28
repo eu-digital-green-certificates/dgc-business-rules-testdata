@@ -2,7 +2,7 @@
   "Identifier": "RR-DE-0002",
   "Type": "Acceptance",
   "Country": "DE",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,11 +10,11 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The positive NAA test result (e.g., PCR) must be no older than 6 months."
+      "desc": "The positive NAA test result (e.g., PCR) must be no older than 180 days."
     },
     {
       "lang": "de",
-      "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 6 Monate zurückliegen."
+      "desc": "Der positive NAA-Test (z.B. PCR) darf maximal 180 Tage zurückliegen."
     },
     {
       "lang": "fr",
@@ -29,7 +29,7 @@
       "desc": "Il NAAT positivo (ad es. test PRC) deve risalire massimo a 180 giorni fa."
     }
   ],
-  "ValidFrom": "2021-07-15T22:00:00Z",
+  "ValidFrom": "2022-02-01T22:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

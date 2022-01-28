@@ -1,15 +1,15 @@
 {
-  "name": "dt exactly 365 days before now",
+  "name": "dt exactly 270 days before now",
   "payload": {
     "v": [
       {
-        "dt": "2020-07-23"
+        "dt": "2024-05-02"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-07-23T00:00:00Z",
+    "validationClock": "2025-01-27T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

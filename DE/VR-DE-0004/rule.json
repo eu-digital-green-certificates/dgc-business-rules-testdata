@@ -2,7 +2,7 @@
   "Identifier": "VR-DE-0004",
   "Type": "Acceptance",
   "Country": "DE",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,26 +10,26 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The vaccine must have been administered no longer than one year ago."
+      "desc": "The primary vaccination series must have been completed no longer than 270 days ago."
     },
     {
       "lang": "de",
-      "desc": "Seit der Impfung darf maximal ein Jahr vergangen sein."
+      "desc": "Seit dem Abschluss der Grundimmunisierung dürfen maximal 270 Tage vergangen sein."
     },
     {
       "lang": "fr",
-      "desc": "La vaccination ne doit pas dater de plus d’un an."
+      "desc": "La vaccination ne doit pas dater de plus de 270 jours."
     },
     {
       "lang": "es",
-      "desc": "Debe haber transcurrido como máximo un año desde la vacuna."
+      "desc": "Debe haber transcurrido como máximo 270 díasdesde la vacuna."
     },
     {
       "lang": "it",
-      "desc": "La vaccinazione non può risalire a più di 365 giorni fa."
+      "desc": "La vaccinazione non può risalire a più di 270 giorni fa."
     }
   ],
-  "ValidFrom": "2021-07-03T00:00:00Z",
+  "ValidFrom": "2022-02-01T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -56,7 +56,7 @@
               {
                 "var": "payload.v.0.dt"
               },
-              365,
+              270,
               "day"
             ]
           }
