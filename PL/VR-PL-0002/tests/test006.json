@@ -1,15 +1,17 @@
 {
-  "name": "dt more than 365 days before now",
+  "name": "dt less than 14 days before now but dn and sd = 3",
   "payload": {
     "v": [
       {
-        "dt": "2021-10-22"
+        "dt": "2022-10-05",
+        "dn": 3,
+        "sd": 3
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2022-10-29T00:00:00Z",
+    "validationClock": "2022-10-16T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
