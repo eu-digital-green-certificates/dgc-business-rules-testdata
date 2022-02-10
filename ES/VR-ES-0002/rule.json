@@ -1,4 +1,4 @@
-{
+﻿{
   "Identifier": "VR-ES-0002",
   "Type": "Acceptance",
   "Country": "ES",
@@ -10,26 +10,26 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Only the following vaccines are accepted (EMA or WHO): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
+      "desc": "Only the following vaccines are accepted (EMA or WHO): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV, Covaxin, Nuvaxovid, Covovax, WIBP-CorV."
     },
     {
       "lang": "de",
-      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
+      "desc": "Nur die folgenden Impfstoffe werden akzeptiert: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV, Covaxin, Nuvaxovid, Covovax, WIBP-CorV."
     },
     {
       "lang": "fr",
-      "desc": "Seuls les vaccins suivants sont acceptés : AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
+      "desc": "Seuls les vaccins suivants sont acceptés : AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV, Covaxin, Nuvaxovid, Covovax, WIBP-CorV."
     },
     {
       "lang": "es",
-      "desc": "Solo se aceptan las siguientes vacunas (EMA o OMS): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
+      "desc": "Solo se aceptan las siguientes vacunas (EMA o OMS): AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV, Covaxin, Nuvaxovid, Covovax, WIBP-CorV."
     },
     {
       "lang": "it",
-      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield."
+      "desc": "Saranno accettati solamente i seguenti vaccini: AstraZeneca, Biontech, Janssen, Moderna, CoronaVac, Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV, Covaxin, Nuvaxovid, Covovax, WIBP-CorV."
     }
   ],
-  "ValidFrom": "2021-09-03T00:00:00Z",
+  "ValidFrom": "2021-08-13T00:00:00Z",
   "ValidTo": "2030-08-08T00:00:00Z",
   "AffectedFields": [
     "v.0",
@@ -52,8 +52,12 @@
             "EU/1/20/1525",
 			"CoronaVac",
 			"Inactivated-SARS-CoV-2-Vero-Cell",
-			"Covishield"			
-			
+			"Covishield",
+            "BBIBP-CorV",
+            "Covaxin",
+            "EU/1/21/1618",
+            "Covovax",
+            "WIBP-CorV"
           ]
         ]
       },

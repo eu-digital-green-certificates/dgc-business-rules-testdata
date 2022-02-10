@@ -8,7 +8,7 @@
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
     "valueSets": {
       "country-2-codes": [
