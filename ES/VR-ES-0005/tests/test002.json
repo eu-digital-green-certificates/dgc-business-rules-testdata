@@ -1,17 +1,10 @@
 {
-  "name": "more than a year",
+  "name": "v == empty array",
   "payload": {
-    "v": [
-      {
-        "dt": "2021-06-01",
-		"dn":2,
-		"sd":2
-      }
-    ]
+    "v": []
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2022-06-02T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

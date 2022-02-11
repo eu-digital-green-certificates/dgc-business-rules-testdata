@@ -1,17 +1,17 @@
 {
-  "name": "more than a year",
+  "name": "just too early",
   "payload": {
     "v": [
       {
-        "dt": "2021-06-01",
-		"dn":2,
-		"sd":2
+        "dt": "2021-08-06",
+		"dn":3,
+		"sd":3
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2022-06-02T00:00:00+00:00",
+    "validationClock": "2021-08-05T23:59:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

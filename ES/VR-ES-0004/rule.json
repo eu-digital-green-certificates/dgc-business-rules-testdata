@@ -1,5 +1,5 @@
 {
-  "Identifier": "VR-ES-0003",
+  "Identifier": "VR-ES-0004",
   "Type": "Acceptance",
   "Country": "ES",
   "Version": "1.0.0",
@@ -10,23 +10,23 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Verification Datetime must be more than 14 days and less than 270 days after the last date of vaccination. No Booster"
+      "desc": "Verification Datetime must be more than 0 days and less than 270 days after the last date of vaccination. Booster DN > SD"
     },
     {
       "lang": "de",
-      "desc": "Der Zeitpunkt der Verifizierung muss mehr als 14 Tage und weniger als 270 Tage nach dem letzten Impfdatum liegen. No Booster"
+      "desc": "Der Zeitpunkt der Verifizierung muss mehr als 0 Tage und weniger als 270 Tage nach dem letzten Impfdatum liegen. Booster DN > SD"
     },
     {
       "lang": "fr",
-      "desc": "La date de vérification doit être supérieure à 14 jours et inférieure à 270 jours après la dernière date de vaccination. No Booster"
+      "desc": "La date de vérification doit être supérieure à 0 jours et inférieure à 270 jours après la dernière date de vaccination. Booster DN > SD"
     },
     {
       "lang": "es",
-      "desc": "La fecha de verificación debe ser superior a 14 días e inferior a 270 días después de la última fecha de vacunación en caso de no ser booster."
+      "desc": "La fecha de verificación debe ser superior a 0 días e inferior a 270 días después de la última fecha de vacunación. Booster DN > SD"
     },
     {
       "lang": "it",
-      "desc": "La data di verifica deve essere più di 14 giorni e meno di 270 giorni dopo l'ultima data di vaccinazione. No Booster"
+      "desc": "La data di verifica deve essere più di 0 giorni e meno di 270 giorni dopo l'ultima data di vaccinazione. Booster DN > SD"
     }
   ],
   "ValidFrom": "2021-07-05T00:00:00Z",
@@ -46,26 +46,14 @@
     {
       "if": [
         {
-          "and": [
-            {
-              "<": [
-                {
-                  "var": "payload.v.0.sd"
-                },
-                3
-              ]
-            },
-            {
-              "===": [
+            ">": [
                 {
                   "var": "payload.v.0.dn"
                 },
 				{
 				  "var": "payload.v.0.sd"
 				}
-              ]
-            }
-          ]
+            ]
         },
         {
         "not-after": [
@@ -74,7 +62,7 @@
               {
                 "var": "payload.v.0.dt"
               },
-              14,
+              0,
               "day"
             ]
           },

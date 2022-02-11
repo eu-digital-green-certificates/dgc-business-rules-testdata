@@ -1,17 +1,8 @@
 {
-  "name": "more than a year",
-  "payload": {
-    "v": [
-      {
-        "dt": "2021-06-01",
-		"dn":2,
-		"sd":2
-      }
-    ]
-  },
-  "expected": false,
+  "name": "empty DCC",
+  "payload": {},
+  "expected": true,
   "external": {
-    "validationClock": "2022-06-02T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

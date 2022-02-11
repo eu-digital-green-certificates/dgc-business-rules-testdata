@@ -1,10 +1,10 @@
 {
-  "name": "exactly 48 hours ago",
+  "name": "exactly 24 hours ago",
   "payload": {
     "t": [
       {
         "tt": "LP217198-3",
-        "sc": "2021-07-21T00:00:00Z"
+        "sc": "2021-07-22T00:00:00Z"
       }
     ]
   },

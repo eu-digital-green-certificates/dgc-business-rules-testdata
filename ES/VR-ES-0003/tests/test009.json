@@ -1,15 +1,17 @@
 {
-  "name": "a year",
+  "name": "270 days",
   "payload": {
     "v": [
       {
-        "dt": "2021-06-01"
+        "dt": "2021-02-01",
+		"dn":2,
+		"sd":2
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2022-06-01T00:00:00+00:00",
+    "validationClock": "2021-10-29T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
