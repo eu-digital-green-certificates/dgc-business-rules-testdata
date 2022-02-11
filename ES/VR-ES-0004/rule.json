@@ -1,5 +1,5 @@
 {
-  "Identifier": "VR-ES-0003",
+  "Identifier": "VR-ES-0004",
   "Type": "Acceptance",
   "Country": "ES",
   "Version": "1.0.0",
@@ -10,30 +10,32 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Verification Datetime must be more than 0 days and less than 270 days after the last date of vaccination. Booster"
+      "desc": "Verification Datetime must be more than 0 days and less than 270 days after the last date of vaccination. Booster DN > SD"
     },
     {
       "lang": "de",
-      "desc": "Der Zeitpunkt der Verifizierung muss mehr als 0 Tage und weniger als 270 Tage nach dem letzten Impfdatum liegen. Booster"
+      "desc": "Der Zeitpunkt der Verifizierung muss mehr als 0 Tage und weniger als 270 Tage nach dem letzten Impfdatum liegen. Booster DN > SD"
     },
     {
       "lang": "fr",
-      "desc": "La date de vérification doit être supérieure à 0 jours et inférieure à 270 jours après la dernière date de vaccination. Booster"
+      "desc": "La date de vérification doit être supérieure à 0 jours et inférieure à 270 jours après la dernière date de vaccination. Booster DN > SD"
     },
     {
       "lang": "es",
-      "desc": "La fecha de verificación debe ser superior a 0 días e inferior a 270 días después de la última fecha de vacunación en caso de ser booster."
+      "desc": "La fecha de verificación debe ser superior a 0 días e inferior a 270 días después de la última fecha de vacunación. Booster DN > SD"
     },
     {
       "lang": "it",
-      "desc": "La data di verifica deve essere più di 0 giorni e meno di 270 giorni dopo l'ultima data di vaccinazione. Booster"
+      "desc": "La data di verifica deve essere più di 0 giorni e meno di 270 giorni dopo l'ultima data di vaccinazione. Booster DN > SD"
     }
   ],
   "ValidFrom": "2021-07-05T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
-    "v.0.dt"
+    "v.0.dt",
+    "v.0.dn",
+    "v.0.sd"
   ]
 ,
   "Logic": {
@@ -44,39 +46,14 @@
     {
       "if": [
         {
-          "or": [
-            {
-               "and": [
-				{">": [
-					{
-					  "var": "payload.v.0.sd"
-					},
-					2
-				  ]
-				},
-				{
-					"===": [
-					{
-					  "var": "payload.v.0.sd"
-					},
-					{
-					  "var": "payload.v.0.dn"
-					}
-				  ]
-				  }
-				]
-			},
-            {
-              ">": [
+            ">": [
                 {
                   "var": "payload.v.0.dn"
                 },
 				{
 				  "var": "payload.v.0.sd"
 				}
-              ]
-            }
-          ]
+            ]
         },
         {
         "not-after": [
