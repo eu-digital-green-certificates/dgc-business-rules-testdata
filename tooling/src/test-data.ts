@@ -8,7 +8,7 @@ import { PathLike } from "fs"
 const readdirRecursive = require("fs-readdir-recursive")
 import { join } from "path"
 
-import { readJson } from "./file-utils"
+import { readJson } from "./json-utils"
 
 
 export interface TestFileIdentification {
