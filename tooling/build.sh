@@ -21,6 +21,7 @@ mkdir -p $OUT_DIR
 rm -rf $HTML_DIR/*.html
 
 npm install
+npm dedupe
 
 echo "Building tooling, running all tests (as Mocha unit tests), and generating HTML..."
 npm start
