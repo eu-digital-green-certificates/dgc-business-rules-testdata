@@ -2,7 +2,7 @@
   "Identifier": "TR-NL-0001",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -11,9 +11,29 @@
     {
       "lang": "en",
       "desc": "The test type must be one of the value set list (RAT OR NAA)."
+    },
+    {
+      "lang": "de",
+      "desc": "Der Testtyp muss einer der Werte aus der Liste sein (RAT ODER NAA)."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le type de test doit être l'un des ensembles de valeurs de la liste (RAT OU NAA)."
+    },
+    {
+      "lang": "es",
+      "desc": "El tipo de prueba debe ser uno de la lista de conjuntos de valores (RAT O NAA)."
+    },
+    {
+      "lang": "it",
+      "desc": "Il tipo di test deve essere uno della lista di valori (RAT O NAA)."
+    },
+    {
+      "lang": "nl",
+      "desc": "Het type test moet voorkomen in de lijst van waardenreeksen (RAT OF NAA)."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",

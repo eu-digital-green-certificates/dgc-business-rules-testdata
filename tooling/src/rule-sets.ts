@@ -7,7 +7,11 @@ import { fromRepoRoot, repoRootPath, jsonOutPath } from "./paths"
 import { RuleSet, RuleSets, RuleWithTests } from "./typings"
 
 
-const nonRuleSetsDirs = [ "html", "out", "tests", "tooling", "valuesets" ]
+const nonRuleSetsDirs = [
+    "html", "out", "tests", "tooling", "valuesets",
+    "analysis",     // (for as-yet unpublished WIP)
+    "node_modules"  // (aberrant NPM modules dir.)
+]
 
 const allRuleSetsDirs = readdirSync(repoRootPath)
     .filter((path) => !path.startsWith(".") && nonRuleSetsDirs.indexOf(path) === -1)

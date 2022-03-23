@@ -1,5 +1,5 @@
 {
-  "name" : "return false when DCC contain invalid test type",
+  "name": "return false when DCC contain invalid test type",
   "payload": {
     "t": [
       {

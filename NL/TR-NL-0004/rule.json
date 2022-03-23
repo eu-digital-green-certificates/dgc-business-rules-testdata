@@ -2,7 +2,7 @@
   "Identifier": "TR-NL-0004",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -11,9 +11,29 @@
     {
       "lang": "en",
       "desc": "Test result must be negative (\"not detected\")."
+    },
+    {
+      "lang": "de",
+      "desc": "Das Testergebnis muss negativ sein (\"nicht nachgewiesen\")."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le résultat du test doit être négatif (\"non détecté\")."
+    },
+    {
+      "lang": "es",
+      "desc": "El resultado de la prueba debe ser negativo (\"no se detecta\")."
+    },
+    {
+      "lang": "it",
+      "desc": "Il risultato del test deve essere negativo (\"non rilevato\")."
+    },
+    {
+      "lang": "nl",
+      "desc": "Het testresultaat moet negatief zijn (\"niet te detecteren\")."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",

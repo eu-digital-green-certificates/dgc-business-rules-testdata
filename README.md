@@ -13,29 +13,36 @@
 ## About
 
 This repository holds business rules to determine whether a person is deemed fit-for-travel into a country-of-arrival (CoA) based on their vaccination, test, and recovery status, as encoded using the Digital COVID Certificate.
-The status of the business rules here is _unofficial_: the actual rules will be available from the [DCGC Gateway](https://github.com/eu-digital-green-certificates/dgc-gateway).
-Its main purpose is to help with developing _interchangeable_ business rules.
+The status of the business rules here is _unofficial_: the actual rules are available from the [DCC Gateway](https://github.com/eu-digital-green-certificates/dgc-gateway).
+The main purpose of this repository is to help with developing _interchangeable_ business rules.
+As such, it's also useful for testing and staging these business rules prior to uploading to the DCC Gateway.
 
 This repository performs automatic validation and testing on all the rules, and their tests, contributed to it.
 This validation and testing runs on every Pull Request, but can also be run locally from the commandline, as follows:
 
     $ ./build.sh
 
-The “CertLogic Validation” GitHub Action performs this exact same command.
-It requires a UNIX-like shell, Git, `curl`, and a recent Node.js (with the NPM package manager) to be installed.
+The “Validation and Testing of Rule Sets” GitHub Action performs this exact same command.
+This script has the following prerequisites to be installed:
 
-After having run this command once, you can just run the validation/testing as follows:
+* A UNIX-like shell
+* Git
+* `curl`
+* a recent Node.js (developed on version 16.10; version 14.17 is already too old, apparently), with either the NPM package manager co-installed, or alternatively: [yarn](https://yarnpkg.com/)
+* the [`jq` JSON processor](https://stedolan.github.io/jq/)
+
+After having run this command once (succesfully, without exiting with an exit code other than 0), you run the validation, testing, and generation of HTML directly as follows:
 
     $ (cd tooling ; npm start)
 
-Validation encompasses the following:
+_Validation_ encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
-* The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/specification/README.md).
+* The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/blob/main/certlogic/specification/README.md).
 * The specified `AffectedFields` field is checked against the fields of the DCC `payload` accessed from the `Logic` field.
 * ..._more validations and checks to follow_
 
-Testing means that all rules' tests are executed using the JS-implementation of CertLogic.
-JSON files containing tests must adhere to [this JSON Schema](./tooling/validation-rule-test.schema.json).
+_Testing_ means that all rules' tests are executed using the JS-implementation of CertLogic.
+JSON files containing tests must adhere to [this JSON Schema](./tooling/schemas/validation-rule-test.schema.json).
 
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
 The results are exposed as an artifact (called `rules-on-testData.json`) of the "Validation and Testing of Rule Sets" GitHub Action.
@@ -44,6 +51,9 @@ To execute the tests on the rules of a specific rule set, or even a specific rul
 
     $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
 
+_HTML generation_ generates a HTML page for all rule sets in the directory `html/`.
+Those generated HTML pages are also exported as an artifact of the “Validation and Testing of Rule Sets” GitHub Action.
+
 
 ## Organisation
 
@@ -51,10 +61,10 @@ This repository contains the following:
 
 * [GitHub Actions configuration](./.github)
 * [tests](./tests): testing material called by the “Business Rule Validation” GitHub Action
-* [tooling](./tooling): testing material called by the “CertLogic Validation” GitHub Action
+* [tooling](./tooling): testing material called by the “Validation and Testing of Rule Sets” GitHub Action
 * [valuesets](./valuesets): “compress” the value sets for use with validation rule evaluation - see that [README](./valuesets/README.md)
 * [EU](./EU): EU template/recommendation rules
-* [DE](./DE), [FI](./FI), [NL](./NL), etc.: actual rules for EU Member States
+* [DE](./DE), [FI](./FI), [NL](./NL), etc.: rules for EU Member States
 * [build.sh](./build.sh): a build script to build the compressed value sets, build the tooling, and run all tests
 
 

@@ -2,7 +2,7 @@
   "name": "return false when disease of recorvery event is not the expected value",
   "payload": {
     "t": [
-      {       
+      {
         "tg": "123456789"
       }
     ]

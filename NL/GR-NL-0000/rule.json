@@ -2,7 +2,7 @@
   "Identifier": "GR-NL-0000",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.1.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -11,9 +11,29 @@
     {
       "lang": "en",
       "desc": "Exactly one type of event."
+    },
+    {
+      "lang": "de",
+      "desc": "Genau eine Art von Ereignis."
+    },
+    {
+      "lang": "fr",
+      "desc": "Un seul type d'événement."
+    },
+    {
+      "lang": "es",
+      "desc": "Exactamente un tipo de evento."
+    },
+    {
+      "lang": "it",
+      "desc": "Un solo tipo di evento."
+    },
+    {
+      "lang": "nl",
+      "desc": "Precies één soort gebeurtenis."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2021-12-06T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r",

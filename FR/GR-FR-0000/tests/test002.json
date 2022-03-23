@@ -1,5 +1,5 @@
 {
-  "name": "return true when DCC contain exactly one recorvery event",
+  "name": "return false when DCC contain exactly one recorvery event",
   "payload": {
     "r": [
       {
@@ -7,7 +7,7 @@
       }
     ]
   },
-  "expected": true,
+  "expected": false,
   "external": {
     "valueSets": {
       "country-2-codes": [

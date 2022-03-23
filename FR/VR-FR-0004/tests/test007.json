@@ -1,7 +1,7 @@
 {
   "name": "return true when recorvery event exist but it is empty",
   "payload": {
-    "r":[]
+    "r": []
   },
   "expected": true,
   "external": {

@@ -1,15 +1,15 @@
 {
-  "name": "dt=2021-08-09, now=2021-08-10",
+  "name": "dt=2021-07-09, now=2021-07-10",
   "payload": {
     "v": [
       {
-        "dt": "2021-08-09"
+        "dt": "2021-07-09"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-08-23T00:00:00+00:00",
+    "validationClock": "2021-07-23T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

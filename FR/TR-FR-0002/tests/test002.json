@@ -1,15 +1,15 @@
 {
-  "name": "return true when sample collection date is 72 hours",
+  "name": "return true when sample collection date is 48 hours",
   "payload": {
     "t": [
       {
-        "sc": "2021-08-01T00:00:00+00:00"
+        "sc": "2021-12-12T00:00:00+00:00"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-08-02T00:00:00+00:00",
+    "validationClock": "2021-12-12T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

@@ -1,0 +1,44 @@
+{
+  "Identifier": "VR-FR-0009",
+  "Type": "Acceptance",
+  "Country": "FR",
+  "Version": "1.0.2",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Vaccination",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Only manufacturers in the allowed valueset that have been approved by the EMA are allowed."
+    },
+    {
+      "lang": "fr",
+      "desc": "Seuls les fabicants approuvés par l'AEM (Value set UE) sont acceptés en France."
+    }
+  ],
+	"ValidFrom": "2021-12-17T18:00:00Z",
+	"ValidTo": "2031-12-17T18:00:00Z",
+  "AffectedFields": [
+    "v.0",
+    "v.0.ma"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.v.0"
+      },
+      {
+        "in": [
+          {
+            "var": "payload.v.0.ma"
+          },
+          {
+            "var": "external.valueSets.vaccines-covid-19-auth-holders"
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

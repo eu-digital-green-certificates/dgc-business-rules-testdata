@@ -1,5 +1,5 @@
 {
-  "name" : "return true when DCC contain valid test type (LP217198-3)",
+  "name": "return true when DCC contain valid test type (LP217198-3)",
   "payload": {
     "t": [
       {

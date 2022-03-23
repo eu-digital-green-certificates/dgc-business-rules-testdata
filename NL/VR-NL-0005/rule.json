@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0005",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.3.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,14 +10,37 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "From Saturday July 10th 2021 onwards, a finished vaccination course is considered protective earliest from 14 days after the date of the last vaccination."
+      "desc": "A vaccination is considered to be protective at the earliest 14 days after the second vaccination date."
+    },
+    {
+      "lang": "nl",
+      "desc": "Een vaccinatie wordt vanaf 14 dagen na de tweede vaccinatiedatum als beschermend aangemerkt."
+    },
+    {
+      "lang": "de",
+      "desc": "Eine Impfung gilt ab frühestens 14 Tage nach dem zweiten Impftermin als schützend."
+    },
+    {
+      "lang": "fr",
+      "desc": "Une vaccination est considérée comme protectrice au plus tôt à partir de 14 jours après la deuxième date de vaccination.."
+    },
+    {
+      "lang": "es",
+      "desc": "Una vacuna se considera protectora a partir de los 14 días posteriores a la fecha de la segunda vacunación."
+    },
+    {
+      "lang": "it",
+      "desc": "Una vaccinazione è considerata protettiva a partire da 14 giorni dopo la seconda data di vaccinazione."
     }
   ],
-  "ValidFrom": "2021-08-19T00:00:00+02:00",
+  "ValidFrom": "2022-02-01T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
-    "v.0.dt"
+    "v.0.dn",
+    "v.0.dt",
+    "v.0.mp",
+    "v.0.sd"
   ],
   "Logic": {
     "if": [
@@ -25,23 +48,63 @@
         "var": "payload.v.0"
       },
       {
-        "not-before": [
+        "if": [
           {
-            "plusTime": [
+            "===": [
               {
-                "var": "external.validationClock"
+                "var": "payload.v.0.mp"
               },
-              0,
-              "day"
+              "EU/1/20/1525"
             ]
           },
+          true,
           {
-            "plusTime": [
+            "if": [
               {
-                "var": "payload.v.0.dt"
+                "and": [
+                  {
+                    "===": [
+                      {
+                        "var": "payload.v.0.dn"
+                      },
+                      {
+                        "var": "payload.v.0.sd"
+                      }
+                    ]
+                  },
+                  {
+                    "<=": [
+                      {
+                        "var": "payload.v.0.dn"
+                      },
+                      2
+                    ]
+                  }
+                ]
               },
-              14,
-              "day"
+              {
+                "not-before": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "external.validationClock"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.v.0.dt"
+                      },
+                      14,
+                      "day"
+                    ]
+                  }
+                ]
+              },
+              true
             ]
           }
         ]

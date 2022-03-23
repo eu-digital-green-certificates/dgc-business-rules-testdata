@@ -3,14 +3,14 @@
   "payload": {
     "r": [
       {
-        "df": "2021-09-01",
-        "du": "2021-09-04"
+        "df": "2022-01-01",
+        "du": "2022-01-04"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-09-03T23:59:59+00:00",
+    "validationClock": "2022-01-03T22:59:59+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

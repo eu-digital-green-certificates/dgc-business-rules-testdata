@@ -1,0 +1,17 @@
+{
+  "name": "dt=2021-12-10, 1/1, now=2021-12-10 -> false",
+  "payload": {
+    "v": [
+      {
+        "mp": "EU/1/20/1528",
+        "dt": "2022-02-10",
+        "dn": 1,
+        "sd": 1
+      }
+    ]
+  },
+  "expected": false,
+  "external": {
+    "validationClock": "2022-02-10T00:00:00+00:00"
+  }
+}
