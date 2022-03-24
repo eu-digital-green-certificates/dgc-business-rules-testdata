@@ -1,0 +1,56 @@
+{
+  "Identifier":"RR-HR-0001",
+  "Type":"Acceptance",
+  "Country":"HR",
+  "Version":"1.0.0",
+  "SchemaVersion":"1.0.0",
+  "Engine":"CERTLOGIC",
+  "EngineVersion":"0.7.5",
+  "CertificateType":"Recovery",
+  "Description":[
+     {
+        "lang":"hr",
+        "desc":"Rezultat pozitivnog testa mora biti stariji od 10 dana."
+     },       
+     {
+        "lang":"en",
+        "desc":"The positive test result must be older than 10 days."
+     }
+  ],
+  "ValidFrom":"2021-07-03T00:00:00Z",
+  "ValidTo":"2030-06-01T00:00:00Z",
+  "AffectedFields":[
+     "r.0",
+     "r.0.fr"
+  ],
+  "Logic":{
+     "if":[
+        {
+           "var":"payload.r.0"
+        },
+        {
+           "not-before":[
+              {
+                 "plusTime":[
+                    {
+                       "var":"external.validationClock"
+                    },
+                    0,
+                    "day"
+                 ]
+              },
+              {
+                 "plusTime":[
+                    {
+                       "var":"payload.r.0.fr"
+                    },
+                    11,
+                    "day"
+                 ]
+              }
+           ]
+        },
+        true
+     ]
+  }
+}
