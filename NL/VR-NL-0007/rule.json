@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0007",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -30,10 +30,10 @@
     },
     {
       "lang": "nl",
-      "desc": "De primarire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties."
+      "desc": "De primaire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties."
     }
   ],
-  "ValidFrom": "2022-02-01T00:00:00+01:00",
+  "ValidFrom": "2022-03-28T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",

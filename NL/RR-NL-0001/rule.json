@@ -2,7 +2,7 @@
   "Identifier": "RR-NL-0001",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.1",
+  "Version": "1.1.2",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -33,7 +33,7 @@
       "desc": "Het tijdstip van verificatie moet binnen de geldigheid van het herstelbewijs vallen."
     }
   ],
-  "ValidFrom": "2021-12-06T00:00:00+01:00",
+  "ValidFrom": "2022-03-28T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",
