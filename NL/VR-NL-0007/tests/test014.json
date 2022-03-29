@@ -1,5 +1,5 @@
 {
-  "name": "2021-07-08 -> 2022-04-03 === 269 days, 2/2 => true",
+  "name": "2021-06-08 -> 2022-03-05, 2/2, but < 18yrs => true",
   "payload": {
     "v": [
       {
@@ -8,10 +8,10 @@
         "sd": 2
       }
     ],
-    "dob": "1977"
+    "dob": "2010"
   },
   "expected": true,
   "external": {
-    "validationClock": "2022-04-03T01:00:00Z"
+    "validationClock": "2022-04-05T01:00:00Z"
   }
 }
