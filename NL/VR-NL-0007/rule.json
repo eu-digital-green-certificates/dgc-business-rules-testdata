@@ -2,40 +2,41 @@
   "Identifier": "VR-NL-0007",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.0.1",
+  "Version": "1.1.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
-  "EngineVersion": "0.7.5",
+  "EngineVersion": "1.2.0",
   "CertificateType": "Vaccination",
   "Description": [
     {
       "lang": "en",
-      "desc": "A primary vaccination cycle has to be finished within the last 9 months (270 days), unless it's followed by booster vaccinations."
+      "desc": "A primary vaccination cycle has to be finished within the last 9 months (270 days), unless it's followed by booster vaccinations or the holder of this DCC is deemed to be exempted as a minor."
     },
     {
       "lang": "de",
-      "desc": "Ein Grundimmunisierungszyklus ohne nachfolgende Auffrischungsimpfungen muss innerhalb der letzten 9 Monate (270 Tage) abgeschlossen sein."
+      "desc": "Ein Grundimmunisierungszyklus ohne nachfolgende Auffrischungsimpfungen muss innerhalb der letzten 9 Monate (270 Tage) abgeschlossen sein oder der Inhaber des DCC gilt als minderjährig befreit."
     },
     {
       "lang": "fr",
-      "desc": "Un cycle de primovaccination doit être terminé au cours des 9 derniers mois (270 jours), à moins qu'il ne soit suivi de vaccinations de rappel."
+      "desc": "Un cycle de primovaccination doit être terminé au cours des 9 derniers mois (270 jours), à moins qu'il ne soit suivi de vaccinations de rappel ou le titulaire du DCC est réputé exempté en tant que mineur."
     },
     {
       "lang": "es",
-      "desc": "Un ciclo de vacunación primaria tiene que estar terminado dentro de los últimos 9 meses (270 días), a menos que sea seguido por vacunas de refuerzo."
+      "desc": "Un ciclo de vacunación primaria tiene que estar terminado dentro de los últimos 9 meses (270 días), a menos que sea seguido por vacunas de refuerzo o el titular del DCC se considera exento como menor."
     },
     {
       "lang": "it",
-      "desc": "Un ciclo di vaccinazione primaria deve essere terminato negli ultimi 9 mesi (270 giorni), a meno che non sia seguito da vaccinazioni di richiamo."
+      "desc": "Un ciclo di vaccinazione primaria deve essere terminato negli ultimi 9 mesi (270 giorni), a meno che non sia seguito da vaccinazioni di richiamo o il titolare del DCC è considerato esentato come minore."
     },
     {
       "lang": "nl",
-      "desc": "De primaire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties."
+      "desc": "De primaire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties of de houder van deze DCC als minderjarige uitgezonderd is."
     }
   ],
   "ValidFrom": "2022-03-28T00:00:00+01:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
+    "dob",
     "v.0",
     "v.0.dn",
     "v.0.dt",
@@ -121,23 +122,48 @@
           },
           true,
           {
-            "before": [
+            "if": [
               {
-                "plusTime": [
+                "after": [
                   {
-                    "var": "external.validationClock"
+                    "dccDateOfBirth": [
+                      {
+                        "var": "payload.dob"
+                      }
+                    ]
                   },
-                  0,
-                  "day"
+                  {
+                    "plusTime": [
+                      {
+                        "var": "external.validationClock"
+                      },
+                      -18,
+                      "year"
+                    ]
+                  }
                 ]
               },
+              true,
               {
-                "plusTime": [
+                "before": [
                   {
-                    "var": "payload.v.0.dt"
+                    "plusTime": [
+                      {
+                        "var": "external.validationClock"
+                      },
+                      0,
+                      "day"
+                    ]
                   },
-                  270,
-                  "day"
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.v.0.dt"
+                      },
+                      270,
+                      "day"
+                    ]
+                  }
                 ]
               }
             ]
