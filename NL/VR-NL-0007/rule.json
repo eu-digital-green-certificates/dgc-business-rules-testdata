@@ -124,23 +124,31 @@
           {
             "if": [
               {
-                "after": [
+                "if": [
                   {
-                    "dccDateOfBirth": [
+                    "var": "payload.dob"
+                  },
+                  {
+                    "after": [
                       {
-                        "var": "payload.dob"
+                        "dccDateOfBirth": [
+                          {
+                            "var": "payload.dob"
+                          }
+                        ]
+                      },
+                      {
+                        "plusTime": [
+                          {
+                            "var": "external.validationClock"
+                          },
+                          -18,
+                          "year"
+                        ]
                       }
                     ]
                   },
-                  {
-                    "plusTime": [
-                      {
-                        "var": "external.validationClock"
-                      },
-                      -18,
-                      "year"
-                    ]
-                  }
+                  false
                 ]
               },
               true,
