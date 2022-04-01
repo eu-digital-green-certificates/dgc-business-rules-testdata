@@ -1,0 +1,122 @@
+## Solution 1
+
+[source,json]
+----
+{
+  "if": [
+    { <1>
+      "var": "payload.dob"
+    },
+    {
+      "after": [
+        {
+          "plusTime": [ <2>
+            {
+              "var": "payload.dob"
+            },
+            0,
+            "year"
+          ]
+        },
+        {
+          "plusTime": [ <3>
+            {
+              "var": "external.validationClock"
+            },
+            -18,
+            "year"
+          ]
+        }
+      ]
+    },
+    false <4>
+  ]
+}
+----
+<1> Check if `dob` is a (falsy) empty string or a (truthy) date string (partial/full).
+<2> Convert `dob` as-is to a date.
+<3> Convert _now_ to a date 18 years prior.
+<4> Return `false` if DOB is empty &lArr; assume person is *not* a minor.
+
+*Works with:* CertLogic < 1.3.0 (specification version), so `certlogic-js` before 1.2.0, and `certlogic-kotlin` before 0.11.0
+
+
+## Solution 3a
+
+[source,json]
+----
+{
+  "if": [
+    {
+      "var": "payload.dob"
+    },
+    {
+      "after": [
+        {
+          "dccDateOfBirth": [ <1>
+            {
+              "var": "payload.dob"
+            }
+          ]
+        },
+        {
+          "plusTime": [
+            {
+              "var": "external.validationClock"
+            },
+            -18,
+            "year"
+          ]
+        }
+      ]
+    },
+    false
+  ]
+}
+----
+<1> Use the `dccDateOfBirth` operation to also a convert partial date string to a valid date.
+
+*Requires:* `certlogic-js` 1.2.0, and `certlogic-kotlin` 0.11.0 - CertLogic 1.3.0 specification version
+
+&rArr;
+
+## Solution 3b
+
+[source,json]
+----
+{
+  "and": [ <1>
+    {
+      "var": "payload.dob"
+    },
+    {
+      "after": [
+        { <1>
+          "dccDateOfBirth": [
+            {
+              "var": "payload.dob"
+            }
+          ]
+        },
+        {
+          "plusTime": [
+            {
+              "var": "external.validationClock"
+            },
+            -18,
+            "year"
+          ]
+        }
+      ]
+    } <2>
+  ]
+}
+----
+<1> Use an `and` instead of an `if`.
+<2> The third operand of `if` can be removed.
+If it's not removed, it behaves exactly the same as solution 3a.
+
+This expression produces `true` for a minor (including “beneficiality”), `false` for a non-minor, and a (falsy) empty string for a missing DOB.
+
+*Requires:* `certlogic-js` 1.2.1, and `certlogic-kotlin` 0.11.1
+
