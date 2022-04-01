@@ -131,12 +131,10 @@
                   {
                     "after": [
                       {
-                        "plusTime": [
+                        "dccDateOfBirth": [
                           {
                             "var": "payload.dob"
-                          },
-                          0,
-                          "year"
+                          }
                         ]
                       },
                       {
