@@ -1,14 +1,15 @@
 {
-  "name": "a RAT, but approved test manufacturer field is missing",
+  "name": "TRUE if Date/Time of Sample Collection is comfortably within 72 hours",
   "payload": {
     "t": [
       {
-        "tt": "LP217198-3"
+        "sc": "2022-06-01T00:00:00+00:00"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
+    "validationClock": "2022-06-03T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

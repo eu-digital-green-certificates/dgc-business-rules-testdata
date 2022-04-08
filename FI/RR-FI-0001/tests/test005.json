@@ -1,16 +1,16 @@
 {
-  "name": "just in time",
+  "name": "TRUE if current time is same as Certificate Valid From",
   "payload": {
     "r": [
       {
-        "df": "2021-06-01",
-        "du": "2021-06-04"
+        "df": "2022-06-01",
+        "du": "2022-06-04"
       }
     ]
   },
   "expected": true,
   "external": {
-    "validationClock": "2021-06-01T00:00:00+00:00",
+    "validationClock": "2022-06-01T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

@@ -2,7 +2,7 @@
   "Identifier": "TR-FI-0003",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,14 +10,22 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "DateTime of Sample Collection must be less than 72 hours before the Verification Datetime."
+      "desc": "Test result must be negative"
+    },
+    {
+      "lang": "fi",
+      "desc": "Testituloksen pitää olla negatiivinen"
+    },
+    {
+      "lang": "sv",
+      "desc": "Testresultatet måste vara negativt"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",
-    "t.0.sc"
+    "t.0.tr"
   ],
   "Logic": {
     "if": [
@@ -25,25 +33,11 @@
         "var": "payload.t.0"
       },
       {
-        "before": [
+        "===": [
           {
-            "plusTime": [
-              {
-                "var": "external.validationClock"
-              },
-              0,
-              "day"
-            ]
+            "var": "payload.t.0.tr"
           },
-          {
-            "plusTime": [
-              {
-                "var": "payload.t.0.sc"
-              },
-              72,
-              "hour"
-            ]
-          }
+          "260415000"
         ]
       },
       true

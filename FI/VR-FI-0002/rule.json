@@ -2,7 +2,7 @@
   "Identifier": "VR-FI-0002",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,15 +10,22 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Vaccination doses must be equal or greater than expected doses."
+      "desc": "Vaccination date is invalid"
+    },
+    {
+      "lang": "fi",
+      "desc": "Rokotuspäivä on virheellinen"
+    },
+    {
+      "lang": "sv",
+      "desc": "Vaccinationsdatumet är felaktigt"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
-    "v.0.dn",
-    "v.0.sd"
+    "v.0.dt"
   ],
   "Logic": {
     "if": [
@@ -26,12 +33,24 @@
         "var": "payload.v.0"
       },
       {
-        ">=": [
+        "not-before": [
           {
-            "var": "payload.v.0.dn"
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
           },
           {
-            "var": "payload.v.0.sd"
+            "plusTime": [
+              {
+                "var": "payload.v.0.dt"
+              },
+              0,
+              "day"
+            ]
           }
         ]
       },

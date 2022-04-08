@@ -1,5 +1,5 @@
 {
-  "name": "empty DCC",
+  "name": "FALSE if empty DCC",
   "payload": {},
   "expected": false,
   "external": {

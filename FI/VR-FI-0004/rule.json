@@ -1,23 +1,35 @@
 {
-  "Identifier": "VR-FI-0004",
-  "Type": "Acceptance",
-  "Country": "FI",
-  "Version": "1.0.0",
-  "SchemaVersion": "1.0.0",
-  "Engine": "CERTLOGIC",
+  "Identifier":"VR-FI-0004",
+  "Type":"Acceptance",
+  "Country":"FI",
+  "Version": "1.0.4",
+  "SchemaVersion":"1.0.0",
+  "Engine":"CERTLOGIC",
   "EngineVersion": "0.7.5",
-  "CertificateType": "Vaccination",
-  "Description": [
-    {
-      "lang": "en",
-      "desc": "Date of vaccination must be before the current time."
-    }
+  "CertificateType":"Vaccination",
+  "Description":[
+     {
+        "lang":"en",
+        "desc":"Full vaccination series has expired (270 days)"
+     },
+     {
+        "lang":"fi",
+        "desc":"Täysi rokotussarja on vanhentunut (270 päivää)"
+     },
+     {
+        "lang":"sv",
+        "desc":"Den fullständiga vaccinationsserien är föråldrad (270 dagar)"
+     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
-  "ValidTo": "2030-06-01T00:00:00Z",
-  "AffectedFields": [
-    "v.0",
-    "v.0.dt"
+  "ValidFrom": "2022-04-10T23:59:59Z",
+  "ValidTo":"2030-06-01T00:00:00Z",
+  "AffectedFields":[
+     "dob",
+     "v.0",
+     "v.0.dt",
+     "v.0.dn",
+     "v.0.mp",
+     "v.0.sd"
   ],
   "Logic": {
     "if": [
@@ -25,23 +37,133 @@
         "var": "payload.v.0"
       },
       {
-        "not-before": [
+        "if": [
           {
-            "plusTime": [
+            "if": [
               {
-                "var": "external.validationClock"
+                ">": [
+                  {
+                    "var": "payload.v.0.dn"
+                  },
+                  {
+                    "var": "payload.v.0.sd"
+                  }
+                ]
               },
-              0,
-              "day"
+              true,
+              {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          {
+                            "var": "payload.v.0.sd"
+                          }
+                        ]
+                      },
+                      {
+                        ">": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          2
+                        ]
+                      }
+                    ]
+                  },
+                  true,
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.dn"
+                          },
+                          2
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.sd"
+                          },
+                          2
+                        ]
+                      },
+                      {
+                        "===": [
+                          {
+                            "var": "payload.v.0.mp"
+                          },
+                          "EU/1/20/1525"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
           },
+          true,
           {
-            "plusTime": [
+            "if": [
               {
-                "var": "payload.v.0.dt"
+                "if": [
+                  {
+                    "var": "payload.dob"
+                  },
+                  {
+                    "after": [
+                      {
+                        "plusTime": [
+                          {
+                            "var": "payload.dob"
+                          },
+                          0,
+                          "year"
+                        ]
+                      },
+                      {
+                        "plusTime": [
+                          {
+                            "var": "external.validationClock"
+                          },
+                          -18,
+                          "year"
+                        ]
+                      }
+                    ]
+                  },
+                  false
+                ]
               },
-              0,
-              "day"
+              true,
+              {
+                "before": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "external.validationClock"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.v.0.dt"
+                      },
+                      270,
+                      "day"
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]

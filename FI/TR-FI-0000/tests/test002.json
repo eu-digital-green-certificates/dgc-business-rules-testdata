@@ -1,5 +1,5 @@
 {
-  "name": "t == empty array",
+  "name": "TRUE if test entry is empty array",
   "payload": {
     "t": []
   },

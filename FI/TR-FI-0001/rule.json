@@ -2,7 +2,7 @@
   "Identifier": "TR-FI-0001",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,18 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The test type must be one of the value set list (RAT OR NAA)."
+      "desc": "Test type is not RAT or NAAT"
+    },
+    {
+      "lang": "fi",
+      "desc": "Testityyppi ei ole RAT eikä NAAT"
+    },
+    {
+      "lang": "sv",
+      "desc": "Testets typ är inte RAT och inte heller NAAT"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "t.0",

@@ -1,4 +1,5 @@
 {
+  "name": "FALSE if any of the entries (recovery, test or vaccination) include invalid (COVID-19) target disease agent",
   "payload": {
     "r": [
       {

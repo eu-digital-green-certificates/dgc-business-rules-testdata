@@ -1,4 +1,5 @@
 {
+  "name": "TRUE if disease agent (840539006) found from disease-agent-targeted list for one of the entrys (recovery, test or vaccination)",
   "payload": {
     "r": [
       {

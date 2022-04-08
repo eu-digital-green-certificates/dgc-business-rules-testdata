@@ -2,7 +2,7 @@
   "Identifier": "VR-FI-0001",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,14 +10,23 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "Only vaccines in the allowed valueset that have been approved by the EMA are allowed."
+      "desc": "Vaccination series is not full"
+    },
+    {
+      "lang": "fi",
+      "desc": "Rokotussarja ei ole täysi"
+    },
+    {
+      "lang": "sv",
+      "desc": "Vaccinationsserien är inte fullständig"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0",
-    "v.0.mp"
+    "v.0.dn",
+    "v.0.sd"
   ],
   "Logic": {
     "if": [
@@ -25,16 +34,13 @@
         "var": "payload.v.0"
       },
       {
-        "in": [
+        ">=": [
           {
-            "var": "payload.v.0.mp"
+            "var": "payload.v.0.dn"
           },
-          [
-            "EU/1/20/1528",
-            "EU/1/20/1507",
-            "EU/1/21/1529",
-            "EU/1/20/1525"
-          ]
+          {
+            "var": "payload.v.0.sd"
+          }
         ]
       },
       true

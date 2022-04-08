@@ -1,0 +1,9 @@
+{
+  "name": "TRUE if empty vaccination entry array",
+  "payload": {
+    "v": []
+  },
+  "expected": true,
+  "external": {
+  }
+}

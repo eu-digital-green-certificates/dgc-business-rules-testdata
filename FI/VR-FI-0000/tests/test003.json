@@ -1,5 +1,5 @@
 {
-  "name": "1 v-event",
+  "name": "TRUE if one vaccination entry can be found (Vaccine Medicinal Product entry exists)",
   "payload": {
     "v": [
       {

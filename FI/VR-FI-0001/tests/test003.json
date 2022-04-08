@@ -1,8 +1,10 @@
 {
+  "name": "FASLE if Total Series of Doses is more than Dose Number",
   "payload": {
     "v": [
       {
-        "mp": "Pfizer"
+        "sd": 2,
+        "dn": 1
       }
     ]
   },

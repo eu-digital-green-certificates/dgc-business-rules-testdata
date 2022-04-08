@@ -1,0 +1,17 @@
+{
+  "name": "TRUE if Dose Number = 2, Total Series of Dose = 2, Date of Vaccination = 2021-08-04, current time = 2022-04-10, age > 18",
+  "payload": {
+    "dob": "1992-11-08",
+    "v": [
+      {
+        "dt": "2021-08-04",
+        "dn": 2,
+        "sd": 2
+      }
+    ]
+  },
+  "expected": true,
+  "external": {
+    "validationClock": "2022-04-10T23:59:59Z"
+  }
+}

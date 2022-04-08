@@ -1,0 +1,17 @@
+{
+    "name": "FALSE if Dose Number = 2, Total Series of Dose = 2, Date of Vaccination = 22-06-08, current time = 2022-12-10 (>270 days), age > 18",
+    "payload": {
+      "dob": "1980-11-08",
+      "v": [
+        {
+          "dt": "2021-06-08",
+          "dn": 2,
+          "sd": 2
+        }
+      ]
+    },
+    "expected": false,
+    "external": {
+      "validationClock": "2022-12-10T15:30:00+00:00"
+    }
+  }

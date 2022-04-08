@@ -1,9 +1,10 @@
 {
-  "name": "BioNTech/Pfizer",
+    "name": "TRUE if Total Series of Doses is same as Dose Number",
   "payload": {
     "v": [
       {
-        "mp": "EU/1/20/1528"
+        "sd": 2,
+        "dn": 2
       }
     ]
   },

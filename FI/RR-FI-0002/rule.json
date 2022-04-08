@@ -1,0 +1,61 @@
+{
+  "Identifier": "RR-FI-0002",
+  "Type": "Acceptance",
+  "Country": "FI",
+  "Version": "1.0.4",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "Recovery",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The recovery issue date is not before the validity date"
+    },
+    {
+      "lang": "fi",
+      "desc": "Sairastamistodistuksen voimassaoloajoissa on ristiriita"
+    },
+    {
+      "lang": "sv",
+      "desc": "Giltighetstiderna i intyget om tillfrisknande från covid-19 strider mot varandra"
+    }
+  ],
+  "ValidFrom": "2022-04-10T23:59:59Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "r.0",
+    "r.0.df",
+    "r.0.du"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.r.0"
+      },
+      {
+        "before": [
+          {
+            "plusTime": [
+              {
+                "var": "payload.r.0.df"
+              },
+              0,
+              "day"
+            ]
+          },
+          {
+            "plusTime": [
+              {
+                "var": "payload.r.0.du"
+              },
+              0,
+              "day"
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

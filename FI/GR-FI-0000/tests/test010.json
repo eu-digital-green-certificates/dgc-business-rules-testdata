@@ -1,5 +1,5 @@
 {
-  "name": "not fooled by multiple events of one type",
+  "name": "TRUE if two target disease agents in same (recovery) entry",
   "payload": {
     "r": [
       {
