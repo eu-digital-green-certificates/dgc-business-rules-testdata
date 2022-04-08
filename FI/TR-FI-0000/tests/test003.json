@@ -1,5 +1,5 @@
 {
-  "name": "1 t-event",
+  "name": "TRUE if Type of Test (LP6464-4) found from covid-19-lab-test-type list",
   "payload": {
     "t": [
       {

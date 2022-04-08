@@ -1,4 +1,5 @@
 {
+  "name": "FALSE if Type of Test (TUT) is not found from covid-19-lab-test-type list",
   "payload": {
     "t": [
       {

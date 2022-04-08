@@ -1,5 +1,5 @@
 {
-  "name": "v == empty array",
+  "name": "TRUE if empty vaccination entry array",
   "payload": {
     "v": []
   },

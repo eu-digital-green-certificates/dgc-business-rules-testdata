@@ -1,4 +1,5 @@
 {
+  "name": "FALSE if target disease agent in two different entry (recovery and test)",
   "payload": {
     "r": [
       {

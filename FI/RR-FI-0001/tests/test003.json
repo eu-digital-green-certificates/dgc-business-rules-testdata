@@ -1,16 +1,16 @@
 {
-  "name": "day too early",
+  "name": "FALSE if current date is before (one day) Certificate Valid From",
   "payload": {
     "r": [
       {
-        "df": "2021-08-01",
-        "du": "2021-08-04"
+        "df": "2022-08-01",
+        "du": "2022-08-04"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-07-31T00:00:00+00:00",
+    "validationClock": "2022-07-31T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

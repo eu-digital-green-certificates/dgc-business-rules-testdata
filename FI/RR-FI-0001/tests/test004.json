@@ -1,16 +1,16 @@
 {
-  "name": "a second too early",
+  "name": "FALSE if current time is before (one second) Certificate Valid From",
   "payload": {
     "r": [
       {
-        "df": "2021-08-01",
-        "du": "2021-08-04"
+        "df": "2022-08-01",
+        "du": "2022-08-04"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2021-07-31T23:59:59+00:00",
+    "validationClock": "2022-07-31T23:59:59+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

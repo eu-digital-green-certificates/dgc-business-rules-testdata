@@ -1,9 +1,10 @@
 {
-  "name": "Moderna",
+  "name": "TRUE if Total Series of Doses is less than Dose Number",
   "payload": {
     "v": [
       {
-        "mp": "EU/1/20/1507"
+        "sd": 2,
+        "dn": 3
       }
     ]
   },

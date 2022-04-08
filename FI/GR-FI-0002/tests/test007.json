@@ -1,0 +1,16 @@
+{
+    "name": "TRUE if recovery certificate issuer is different than Joint Authority of the Helsinki and Uusimaa Hospital District",
+    "payload": {
+      "r": [
+        {
+          "df": "2022-04-01",
+          "ci": "URN:UVCI:01:NL:DADFCC47C7334E45A906DB12FD859FB7"
+        }
+      ]
+    },
+    "expected": true,
+    "external": {
+      "validationClock": "2022-06-01T13:00:00+00:00"
+    }
+  }
+  

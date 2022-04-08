@@ -2,7 +2,7 @@
   "Identifier": "RR-FI-0003",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,15 +10,24 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The validity start date must be before the validity end date."
+      "desc": "Recovery certificate is not valid"
+    },
+    {
+      "lang": "fi",
+      "desc": "Sairastamistodistus ei ole voimassa"
+    },
+    {
+      "lang": "sv",
+      "desc": "Intyget om tillfrisknande från covid-19 är inte giltigt"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",
     "r.0.df",
-    "r.0.du"
+    "r.0.du",
+    "r.0.fr"
   ],
   "Logic": {
     "if": [
@@ -26,23 +35,102 @@
         "var": "payload.r.0"
       },
       {
-        "before": [
+        "not-after": [
+          {
+            "if": [
+              {
+                "after": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.df"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.fr"
+                      },
+                      11,
+                      "day"
+                    ]
+                  }
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.df"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.fr"
+                  },
+                  11,
+                  "day"
+                ]
+              }
+            ]
+          },
           {
             "plusTime": [
               {
-                "var": "payload.r.0.df"
+                "var": "external.validationClock"
               },
               0,
               "day"
             ]
           },
           {
-            "plusTime": [
+            "if": [
               {
-                "var": "payload.r.0.du"
+                "before": [
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.du"
+                      },
+                      0,
+                      "day"
+                    ]
+                  },
+                  {
+                    "plusTime": [
+                      {
+                        "var": "payload.r.0.fr"
+                      },
+                      180,
+                      "day"
+                    ]
+                  }
+                ]
               },
-              0,
-              "day"
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.du"
+                  },
+                  0,
+                  "day"
+                ]
+              },
+              {
+                "plusTime": [
+                  {
+                    "var": "payload.r.0.fr"
+                  },
+                  180,
+                  "day"
+                ]
+              }
             ]
           }
         ]

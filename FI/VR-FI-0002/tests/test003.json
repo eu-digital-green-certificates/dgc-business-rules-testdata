@@ -1,15 +1,15 @@
 {
-  "name": "not enough doses",
+  "name": "FALSE if current time is before Date of Vaccination",
   "payload": {
     "v": [
       {
-        "sd": 2,
-        "dn": 1
+        "dt": "2022-07-01"
       }
     ]
   },
   "expected": false,
   "external": {
+    "validationClock": "2022-06-30T00:00:00+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",

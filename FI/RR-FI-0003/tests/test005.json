@@ -1,14 +1,17 @@
 {
+  "name": "TRUE if First Positive Test Result is more than 11 days before Certicifate Valid From and curretn time is after Certificate Valid From and same as Certificate Valid Until",
   "payload": {
     "r": [
       {
-        "df": "2021-06-01",
-        "du": "2021-06-02"
+        "fr": "2022-05-01",
+        "df": "2022-06-01",
+        "du": "2022-07-01"
       }
     ]
   },
   "expected": true,
   "external": {
+    "validationClock": "2022-07-01T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",

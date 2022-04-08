@@ -2,7 +2,7 @@
   "Identifier": "TR-FI-0002",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,32 +10,47 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "If the test type is \"RAT\" then the \"test product and manufacturer\" MUST be in the valueset list, if it's NAA return true."
+      "desc": "Test has expired (72 h)"
+    },
+    {
+      "lang": "fi",
+      "desc": "Testi on vanhentunut (72 tuntia)"
+    },
+    {
+      "lang": "sv",
+      "desc": "Testet är föråldrat (72 timmar)"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
-    "t.0.ma",
-    "t.0.tt"
+    "t.0",
+    "t.0.sc"
   ],
   "Logic": {
     "if": [
       {
-        "===": [
-          {
-            "var": "payload.t.0.tt"
-          },
-          "LP217198-3"
-        ]
+        "var": "payload.t.0"
       },
       {
-        "in": [
+        "before": [
           {
-            "var": "payload.t.0.ma"
+            "plusTime": [
+              {
+                "var": "external.validationClock"
+              },
+              0,
+              "day"
+            ]
           },
           {
-            "var": "external.valueSets.covid-19-lab-test-manufacturer-and-name"
+            "plusTime": [
+              {
+                "var": "payload.t.0.sc"
+              },
+              72,
+              "hour"
+            ]
           }
         ]
       },

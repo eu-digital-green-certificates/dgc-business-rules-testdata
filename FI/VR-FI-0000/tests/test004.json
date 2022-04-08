@@ -1,5 +1,5 @@
 {
-  "name": "2 v-events",
+  "name": "FALSE if more than one vaccionation entry can be found (two Vaccine Medicinal Product entry exists)",
   "payload": {
     "v": [
       {

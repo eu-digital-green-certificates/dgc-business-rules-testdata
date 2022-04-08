@@ -2,7 +2,7 @@
   "Identifier": "GR-FI-0001",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.0",
+  "Version": "1.0.4",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,10 +10,18 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "The \"disease or agent targeted\" must be COVID-19 of the value set list."
+      "desc": "Certificate is not for COVID-19"
+    },
+    {
+      "lang": "fi",
+      "desc": "Todistus ei koske COVID-19 -virusta"
+    },
+    {
+      "lang": "sv",
+      "desc": "Intyget gäller inte covid-19-viruset"
     }
   ],
-  "ValidFrom": "2021-06-01T00:00:00Z",
+  "ValidFrom": "2022-04-10T23:59:59Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

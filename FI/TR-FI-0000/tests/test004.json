@@ -1,5 +1,5 @@
 {
-  "name": "2 t-events",
+  "name": "FALSE if found more than one test entry (two Type of Test entrys in test entry)",
   "payload": {
     "t": [
       {

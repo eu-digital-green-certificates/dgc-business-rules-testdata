@@ -1,0 +1,16 @@
+{
+    "name": "FALSE if vaccination certificate issuer = Joint Authority of the Helsinki and Uusimaa Hospital District AND has elapsed more than 30 days after vaccination date",
+    "payload": {
+      "v": [
+        {
+          "dt": "2022-02-13",
+          "ci": "Joint Authority of the Helsinki and Uusimaa Hospital District"
+        }
+      ]
+    },
+    "expected": false,
+    "external": {
+      "validationClock": "2022-04-10T23:59:59+00:00"
+    }
+  }
+  

@@ -1,5 +1,5 @@
 {
-  "name": "r == empty array",
+  "name": "True if empty recovery entry array",
   "payload": {
     "r": []
   },
