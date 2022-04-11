@@ -1,5 +1,4 @@
 import { PathLike, readFileSync, writeFileSync } from "fs"
-import { format as prettify } from "prettier"
 
 
 export const readJson = (path: PathLike) => {
@@ -13,14 +12,9 @@ export const readJson = (path: PathLike) => {
 
 
 export const writeJson = (path: PathLike, json: any) => {
-    writeFileSync(path, JSON.stringify(json, null, 2), "utf8")
+    writeFileSync(path, asPrettyText(json), "utf8")
 }
 
 
-export const writeHtml = (path: PathLike, html: string) => {
-    writeFileSync(
-        path,
-        prettify("<!DOCTYPE html>" + html, { parser: "html" })
-    )
-}
+export const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
 

@@ -8,7 +8,8 @@ const deepEqual = require("deep-equal")
 import { join } from "path"
 import { argv } from "process"
 
-import { writeHtml, writeJson } from "./file-utils"
+import { writeHtml } from "./html-utils"
+import { asPrettyText, writeJson } from "./json-utils"
 import { filterValues, mapValues } from "./func-utils"
 import { fromRepoRoot, jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"
@@ -17,8 +18,7 @@ import { hasRulesForAllEventTypes, validateRule } from "dcc-business-rules-utils
 import { AllRuleSets } from "./all-rule-sets"
 
 
-const asPrettyText = (json: any) => JSON.stringify(json, null, 2)
-
+// Note: this assumes that this program is run using `npx mocha dist/run-all-tests.js [ruleSetId] [ruleId]`!
 const singleRuleSetId = argv[3]
 const singleRuleId = argv[4]
 

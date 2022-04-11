@@ -1,7 +1,7 @@
 import { existsSync, lstatSync, readdirSync } from "fs"
 import { join } from "path"
 
-import { readJson, writeJson } from "./file-utils"
+import { readJson, writeJson } from "./json-utils"
 import { mapValues } from "./func-utils"
 import { fromRepoRoot, repoRootPath, jsonOutPath } from "./paths"
 import { RuleSet, RuleSets, RuleWithTests } from "./typings"

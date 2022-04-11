@@ -1,7 +1,7 @@
 import * as React from "react"
 import { renderToStaticMarkup } from "react-dom/server"
 
-import { writeHtml } from "./file-utils"
+import { writeHtml } from "./html-utils"
 import { ruleSets } from "./rule-sets"
 import { fromRepoRoot } from "./paths"
 import { RuleSet } from "./typings"

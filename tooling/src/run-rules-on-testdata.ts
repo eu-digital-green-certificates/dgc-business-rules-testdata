@@ -1,7 +1,7 @@
 import { CertLogicExpression, evaluate } from "certlogic-js"
 import { join } from "path"
 
-import { writeJson } from "./file-utils"
+import { writeJson } from "./json-utils"
 import { mapValues } from "./func-utils"
 import { fromRepoRoot, jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"

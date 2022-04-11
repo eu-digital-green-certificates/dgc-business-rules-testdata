@@ -39,20 +39,40 @@ _Validation_ encompasses the following:
 * The JSON file of every rule is validated against [this JSON Schema](https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json).
 * The `Logic` field of every rule is validated as a CertLogic expression, which is a format/language that's [specified here](https://github.com/ehn-dcc-development/dgc-business-rules/blob/main/certlogic/specification/README.md).
 * The specified `AffectedFields` field is checked against the fields of the DCC `payload` accessed from the `Logic` field.
-* ..._more validations and checks to follow_
+* The rule's (other) metadata is checked against known constraints that the EU DCC Gateway imposes - see [this description of such constraints](./tooling/Gateway-constraints.adoc).
 
 _Testing_ means that all rules' tests are executed using the JS-implementation of CertLogic.
 JSON files containing tests must adhere to [this JSON Schema](./tooling/schemas/validation-rule-test.schema.json).
+Other constraints that tests must adhere to:
+
+* The verification timestamp in `external.validationClock` has to lie in the rule's *validity range* (`ValidFrom` - `ValidUntil`).
+* Validating the rule against the payload in the test must produce the expected result, and not throw an error.
 
 All rules are also executed against every DCC found in the [DCC test data repo](https://github.com/eu-digital-green-certificates/dgc-testdata).
 The results are exposed as an artifact (called `rules-on-testData.json`) of the "Validation and Testing of Rule Sets" GitHub Action.
 
-To execute the tests on the rules of a specific rule set, or even a specific rule, you can run the following:
+To execute the tests on the rules of a specific rule set, or even a specific rule, you can run the following (from `tooling/`):
 
     $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
 
+
+### Miscellaneous tools
+
 _HTML generation_ generates a HTML page for all rule sets in the directory `html/`.
 Those generated HTML pages are also exported as an artifact of the “Validation and Testing of Rule Sets” GitHub Action.
+
+When a rule's `ValidFrom` changes, the tests for that rule might have to be updated as well: the verification timestamp in `external.validationClock` has to be between the indicated `ValidFrom` and `ValidUntil` - its validity range.
+Updating the tests can be quite tedious.
+To help with that, you can use the `auto-update-test-dates` Node.js program, as follows (from `tooling/`):
+
+    $ node dist/auto-update-test-dates.js [ruleSetId] [[ruleId]]
+
+This updates the dates occurring in the payload, as well as the value of `external.validationClock` to be valid w.r.t. the indicated validity range.
+It does so by adding an integer number of months to the relevant dates.
+
+Use of this tool is at your own risk!
+You have to check the changes yourself, as the change could alter the meaning of the test.
+(Also, the test's `name` field is not updated, so might be out-of-sync.)
 
 
 ## Organisation
