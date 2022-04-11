@@ -25,11 +25,11 @@ if (singleRuleSetId !== "dist/") {  // prevent running on `[npx] mocha dist/`
     }
 
     if (!singleRuleSetId) {
-        console.log(`Usage (extended): mocha dist/auto-update-test-data.js [ruleSetId] [ruleId] - to run only the indicated rule set, or even rule within that`)
+        console.log(`Usage (extended): node dist/auto-update-test-dates.js [ruleSetId] [ruleId] - to update only the indicated rule set, or even rule within that`)
     } else if (!singleRuleId) {
-        console.log(`Note: only (showing results of) running rule set with ID="${singleRuleSetId}"`)
+        console.log(`Note: updating tests for rule set with ID="${singleRuleSetId}"`)
     } else {
-        console.log(`Note: only (showing results of) running rule with ID="${singleRuleId}" in rule set with ID="${singleRuleSetId}"`)
+        console.log(`Note: updating tests for rule with ID="${singleRuleId}" in rule set with ID="${singleRuleSetId}"`)
     }
 
 
