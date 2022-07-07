@@ -6,6 +6,7 @@ rm -rf $REPO_NAME/
 mkdir -p $REPO_NAME
 cd $REPO_NAME
 npx degit https://github.com/eu-digital-green-certificates/dgc-testdata#main
+# NOTE: If the degit command fails with "! zlib: unexpected end of file", then try deleting the ~/.degit directory entirely!
 cd ..
 
 echo "Downloading JSON Schema for rules..."

@@ -11,7 +11,8 @@
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["dom", "es2019"],
-    "module": "commonjs"
+    "module": "commonjs",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*.ts*"
