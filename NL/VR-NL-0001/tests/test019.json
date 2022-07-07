@@ -1,16 +1,13 @@
 {
-  "name": "a second too late",
   "payload": {
-    "r": [
+    "v": [
       {
-        "df": "2022-06-01",
-        "du": "2022-06-04"
+        "mp": "VLA2001"
       }
     ]
   },
-  "expected": false,
+  "expected": true,
   "external": {
-    "validationClock": "2022-06-04T01:00:01+00:00",
     "valueSets": {
       "country-2-codes": [
         "AD",
