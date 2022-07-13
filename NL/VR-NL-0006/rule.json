@@ -2,7 +2,7 @@
   "Identifier": "VR-NL-0006",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.2",
+  "Version": "1.2.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -10,30 +10,30 @@
   "Description": [
     {
       "lang": "en",
-      "desc": "A first vaccination with the Janssen vaccine has to be administered at least 28 days ago."
+      "desc": "A first vaccination with the Janssen or Convidecia vaccine has to be administered at least 28 days ago."
     },
     {
       "lang": "de",
-      "desc": "Eine Impfung mit dem Janssen-Impfstoff muss mindestens 28 Tage zurückliegen."
+      "desc": "Eine Impfung mit dem Janssen- oder Convidecia-Impfstoff muss mindestens 28 Tage zurückliegen."
     },
     {
       "lang": "fr",
-      "desc": "Une vaccination avec le vaccin Janssen doit être administrée depuis au moins 28 jours."
+      "desc": "Une vaccination avec le vaccin Janssen ou Convidecia doit être administrée depuis au moins 28 jours."
     },
     {
       "lang": "es",
-      "desc": "La vacunación con la vacuna Janssen tiene que ser administrada al menos hace 28 días."
+      "desc": "La vacunación con la vacuna Janssen o Convidecia tiene que ser administrada al menos hace 28 días."
     },
     {
       "lang": "it",
-      "desc": "Una vaccinazione con il vaccino Janssen deve essere somministrata almeno 28 giorni prima."
+      "desc": "Una vaccinazione con il vaccino Janssen o Convidecia deve essere somministrata almeno 28 giorni prima."
     },
     {
       "lang": "nl",
-      "desc": "Een eerste vaccinatie met het Janssen-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
+      "desc": "Een eerste vaccinatie met het Janssen- of Convidecia-vaccin moet ten minste 28 dagen geleden uitgevoerd zijn."
     }
   ],
-  "ValidFrom": "2022-03-28T00:00:00+01:00",
+  "ValidFrom": "2022-06-23T00:00:00+02:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "v.0.dn",
@@ -43,11 +43,14 @@
   "Logic": {
     "if": [
       {
-        "===": [
+        "in": [
           {
             "var": "payload.v.0.mp"
           },
-          "EU/1/20/1525"
+          [
+            "EU/1/20/1525",
+            "Convidecia"
+          ]
         ]
       },
       {
