@@ -2,10 +2,10 @@
   "Identifier": "VR-NL-0007",
   "Type": "Acceptance",
   "Country": "NL",
-  "Version": "1.1.0",
+  "Version": "1.2.0",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
-  "EngineVersion": "1.1.0",
+  "EngineVersion": "1.0.0",
   "CertificateType": "Vaccination",
   "Description": [
     {
@@ -33,7 +33,7 @@
       "desc": "De primaire vaccinatiecyclus moet in de laatste 9 maanden (270 dagen) afgerond zijn, tenzij deze gevolgd is door booster-vaccinaties of de houder van deze DCC als minderjarige uitgezonderd is."
     }
   ],
-  "ValidFrom": "2022-06-23T00:00:00+02:00",
+  "ValidFrom": "2022-07-17T00:00:00+02:00",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "dob",

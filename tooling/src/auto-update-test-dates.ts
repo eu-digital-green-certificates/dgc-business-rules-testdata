@@ -10,8 +10,8 @@ import { repoRootPath } from "./paths"
 import { ruleSets } from "./rule-sets"
 
 
-const singleRuleSetId = argv[2]
-const singleRuleId = argv[3]
+const singleRuleSetId = argv[3]
+const singleRuleId = argv[4]
 
 if (singleRuleSetId !== "dist/") {  // prevent running on `[npx] mocha dist/`
 
