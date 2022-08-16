@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server"
 import { evaluate } from "certlogic-js"
 import { dateFromString } from "certlogic-js/dist/internals"    // TODO  expose properly from certlogic-js
 const assert = require("chai").assert
-const { fail, isTrue } = assert
+const { fail } = assert
 const deepEqual = require("deep-equal")
 import { join } from "path"
 import { argv } from "process"
@@ -74,6 +74,24 @@ const testResults: TestResults =
 writeJson(join(jsonOutPath, "results-all-rules-tests.json"), testResults)
 
 
+/**
+ * Run all given thunks, without assertions in them preventing the other thunks from running.
+ */
+const assertAll = (...thunks: (() => void)[]): void => {
+    const failMessages: string[] = []
+    thunks.forEach((thunk) => {
+        try {
+            thunk()
+        } catch (e: any) {
+            failMessages.push(e.message)
+        }
+    })
+    if (failMessages.length > 0) {
+        fail(failMessages.map((message) => `\n\t* ${message}`).join(""))
+    }
+}
+
+
 for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
     if (singleRuleSetId && singleRuleSetId !== ruleSetId) {
         continue
@@ -95,25 +113,31 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
                     logicValidationErrors,
                     metaDataErrors
                 } = validateRule(rule)
-                isTrue(
-                    schemaValidationsErrors.length === 0,
-                    `${ruleText} has schema validation errors: ${schemaValidationsErrors.map(asPrettyText).join(", ")}`
-                )
-                if (affectedFields !== null) {
-                    assert.deepEqual(
-                        affectedFields.actual,
-                        affectedFields.computed,
-                        `${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed)`
-                    )
-                }
-                isTrue(
-                    logicValidationErrors.length === 0,
-                    `CertLogic expression in ${ruleText} has validation errors: ${asPrettyText(logicValidationErrors)}`
-                )
-                isTrue(
-                    // FIXME  change back to: metaDataErrors.length === 0
-                    metaDataErrors.every((errorMessage) => errorMessage.startsWith("CertificateType ")),    // skip only errors relating to mismatch of CertificateType and AffectedFields (regardless of the validity of those fields themselves)
-                    `meta data of ${ruleText} has validation errors: ${metaDataErrors.join(", ")}`
+                assertAll(() => {
+                        if (schemaValidationsErrors.length > 0) {
+                            fail(`${ruleText} has schema validation errors: ${schemaValidationsErrors.map(asPrettyText).join(", ")}`)
+                        }
+                    },
+                    () => {
+                        if (affectedFields !== null) {
+                            assert.deepEqual(
+                                affectedFields.actual,
+                                affectedFields.computed,
+                                `${ruleText} specifies other affected fields than computed from its CertLogic expression (actual vs. computed)`
+                            )
+                        }
+                    },
+                    () => {
+                        if (logicValidationErrors.length > 0) {
+                            fail(`CertLogic expression in ${ruleText} has validation errors: ${asPrettyText(logicValidationErrors)}`)
+                        }
+                    },
+                    () => {
+                        // skip errors relating to mismatch of CertificateType and AffectedFields (regardless of the validity of those fields themselves):
+                        if (!metaDataErrors.every((errorMessage) => errorMessage.startsWith("CertificateType "))) {
+                            fail(`meta data of ${ruleText} has validation errors: ${metaDataErrors.join(", ")}`)
+                        }
+                    }
                 )
             })
             for (const [ testId, test ] of Object.entries(ruleWithTests.tests)) {
@@ -133,10 +157,9 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
                             console.dir(expected)
                             console.log()
                         }
-                        isTrue(
-                            testResult.asExpected,
-                            `test with ID "${testId}" of ${ruleText} doesn't evaluate to expected value`
-                        )
+                        if (!testResult.asExpected) {
+                            fail(`test with ID "${testId}" of ${ruleText}: actual=[${testResult.actual}] while expected=[${expected}]`)
+                        }
                     }
                 })
             }
