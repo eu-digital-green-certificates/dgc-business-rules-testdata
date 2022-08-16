@@ -1,0 +1,66 @@
+{
+    "Identifier": "VR-RS-0003",
+    "Type": "Acceptance",
+    "Country": "RS",
+    "Version": "1.1.2",
+    "SchemaVersion": "1.0.0",
+    "Engine": "CERTLOGIC",
+    "EngineVersion": "0.7.5",
+    "CertificateType": "Vaccination",
+    "Description": [
+      {
+        "lang": "en",
+        "desc": "The vaccine must have been administered no longer than nine months ago."
+      },
+      {
+        "lang": "sr",
+        "desc": "Вакцинација мора бити обављена пре највише 9 месеци."
+      }
+    ],
+    "ValidFrom": "2021-06-26T00:00:00Z",
+    "ValidTo": "2033-06-01T00:00:00Z",
+    "AffectedFields": [
+      "v.0",
+      "v.0.dt",
+      "v.0.dn",
+      "V.0.sd"
+    ],
+    "Logic": {
+      "if": [
+        {
+          "var": "payload.v.0"
+        },
+        {
+          "not-after": [
+            {
+              "plusTime": [
+                {
+                  "var": "external.validationClock"
+                },
+                0,
+                "day"
+              ]
+            },
+            {
+              "plusTime": [
+                {
+                  "var": "payload.v.0.dt"
+                },
+                270,
+                "day"
+              ]
+            }
+          ]
+        },
+        {
+          "==": [
+            {
+              "var": "payload.v.0.dn"
+            },
+            2
+          ]
+        },
+        false
+      ]
+    }
+  }
