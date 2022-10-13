@@ -30,10 +30,10 @@ const RuleSetRendering = ({ ruleSetId, ruleSet }: { ruleSetId: string, ruleSet: 
         <head>
             <meta charSet="utf-8"/>
             <link href="styling.css" rel="stylesheet"/>
-            <title>Rule set: {ruleSetId}</title>
+            <title>{`Rule set: ${ruleSetId}`}</title>
         </head>
         <body>
-        <h1>Rule set: {ruleSetId}</h1>
+        <h1>{`Rule set: ${ruleSetId}`}</h1>
         <div className="table">
             <div className="table-body">
                 <div className="row header">
