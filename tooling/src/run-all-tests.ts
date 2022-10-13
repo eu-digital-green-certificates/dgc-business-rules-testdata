@@ -1,5 +1,3 @@
-import * as React from "react"
-import { renderToStaticMarkup } from "react-dom/server"
 import { evaluate } from "certlogic-js"
 import { dateFromString } from "certlogic-js/dist/internals"    // TODO  expose properly from certlogic-js
 const assert = require("chai").assert
@@ -8,14 +6,12 @@ const deepEqual = require("deep-equal")
 import { join } from "path"
 import { argv } from "process"
 
-import { writeHtml } from "./html-utils"
 import { asPrettyText, writeJson } from "./json-utils"
 import { filterValues, mapValues } from "./func-utils"
-import { fromRepoRoot, jsonOutPath } from "./paths"
+import { jsonOutPath } from "./paths"
 import { ruleSets } from "./rule-sets"
 import { TestResults } from "./typings"
 import { hasRulesForAllEventTypes, validateRule } from "dcc-business-rules-utils"
-import { AllRuleSets } from "./all-rule-sets"
 
 
 // Note: this assumes that this program is run using `npx mocha dist/run-all-tests.js [ruleSetId] [ruleId]`!
@@ -166,16 +162,4 @@ for (const [ ruleSetId, ruleSet ] of Object.entries(ruleSets)) {
         })
     }
 }
-
-
-describe(`writing HTML for all rules' tests`, () => {
-
-    it(`done`, () => {
-        writeHtml(
-            fromRepoRoot("html", "all-rule-sets.html"),
-            renderToStaticMarkup(<AllRuleSets ruleSets={ruleSets} testResults={testResults} />)
-        )
-    })
-
-})
 

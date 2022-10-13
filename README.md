@@ -58,9 +58,6 @@ To execute the tests on the rules of a specific rule set, or even a specific rul
 
 ### Miscellaneous tools
 
-_HTML generation_ generates a HTML page for all rule sets in the directory `html/`.
-Those generated HTML pages are also exported as an artifact of the “Validation and Testing of Rule Sets” GitHub Action.
-
 When a rule's `ValidFrom` changes, the tests for that rule might have to be updated as well: the verification timestamp in `external.validationClock` has to be between the indicated `ValidFrom` and `ValidUntil` - its validity range.
 Updating the tests can be quite tedious.
 To help with that, you can use the `auto-update-test-dates` Node.js program, as follows (from `tooling/`):

@@ -8,7 +8,7 @@ import { RuleSet, RuleSets, RuleWithTests } from "./typings"
 
 
 const nonRuleSetsDirs = [
-    "html", "out", "tests", "tooling", "valuesets",
+    "out", "tests", "tooling", "valuesets",
     "analysis",     // (for as-yet unpublished WIP)
     "node_modules"  // (aberrant NPM modules dir.)
 ]
