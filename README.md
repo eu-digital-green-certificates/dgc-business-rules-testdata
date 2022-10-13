@@ -53,7 +53,7 @@ The results are exposed as an artifact (called `rules-on-testData.json`) of the 
 
 To execute the tests on the rules of a specific rule set, or even a specific rule, you can run the following (from `tooling/`):
 
-    $ ./node_modules/.bin/mocha dist/run-all-test.js [ruleSetId] [[ruleId]]
+    $ ./node_modules/.bin/mocha dist/run-all-tests.js [ruleSetId] [[ruleId]]
 
 
 ### Miscellaneous tools
