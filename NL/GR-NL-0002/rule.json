@@ -1,0 +1,50 @@
+{
+  "Identifier": "GR-NL-0002",
+  "Type": "Acceptance",
+  "Country": "NL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.7.5",
+  "CertificateType": "General",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "The Dutch government has decided to lift all entry restrictions due to COVID-19 as of September 17, 2022."
+    },
+    {
+      "lang": "de",
+      "desc": "Die niederländische Regierung hat beschlossen alle Einreisebeschränkungen aufgrund von COVID-19 zum 17. September 2022 aufzuheben."
+    },
+    {
+      "lang": "fr",
+      "desc": "Le gouvernement néerlandais a décidé de lever toutes les restrictions d'entrée dues au COVID-19 à partir du 17 septembre 2022."
+    },
+    {
+      "lang": "es",
+      "desc": "El gobierno holandés ha decidido levantar todas las restricciones de entrada debido al COVID-19 a partir del 17 de septiembre de 2022."
+    },
+    {
+      "lang": "it",
+      "desc": "Il governo olandese ha deciso di revocare tutte le restrizioni all'ingresso dovute al COVID-19 a partire dal 17 settembre 2022."
+    },
+    {
+      "lang": "nl",
+      "desc": "De Nederlandse overheid heeft besloten om alle inreisbeperkingen vanwege COVID-19 per 17 september 2022 te laten vervallen."
+    }
+  ],
+  "ValidFrom": "2022-11-26T00:00:00+01:00",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "v"
+  ],
+  "Logic": {
+    "if": [
+      true,
+      true,
+      {
+        "var": "payload.v"
+      }
+    ]
+  }
+}
