@@ -71,6 +71,32 @@ The constraints on the JSON (payload) of the upload of a validation rule (after 
 These constraints are checked in this order.
 Only the first violation is reported.
 
+[NOTE]
+====
+The whole rule is _also_ validated against this JSON Schema: https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/resources/validation-rule.schema.json.
+
+This schema demands in particular that:
+
+. The `Logic` field is an object, which means it can't be a valid CertLogic literal value such as a boolean, an integer, or an array literal.
+. The `AffectedFields` field has at least one member, which means that the CertLogic expression that's the value of the `Logic` field needs to contain one `var` data access operation.
+
+These two facts together mean that a "`grant all`"-rule should have its `Logic` look something as follows:
+
+```json
+{
+  "if": [
+    true,
+    true,
+    {
+      "var": "payload.v"
+    }
+  ]
+}
+```
+
+(`AffectedFields` should then equal `[ "v" ]`, even though the data access will never be executed.)
+====
+
 Reason codes and Java methods are currently 1-to-1:
 
 |===
@@ -99,7 +125,7 @@ Reason codes and Java methods are currently 1-to-1:
 
 // TODO  mention API doc + HTTP error codes?
 
-The authenticated country code and signer certificate's thumb print are request parameters of the HTTP POST endpoint.
+The authenticated country code and signer certificate's thumbprint are request parameters of the HTTP POST endpoint.
 
 This information has been "`reverse engineered`" from [the Gateway implementation - specifically the https://github.com/eu-digital-green-certificates/dgc-gateway/blob/main/src/main/java/eu/europa/ec/dgc/gateway/service/ValidationRuleService.java[`ValidationRuleService`].
 The SHA of the commit used is: `1146c404205605aa1174a6bd159e91b0217f334d`.
