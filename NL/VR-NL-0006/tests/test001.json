@@ -1,6 +1,0 @@
-{
-  "name": "empty DCC -> false",
-  "payload": {},
-  "expected": true,
-  "external": {}
-}
