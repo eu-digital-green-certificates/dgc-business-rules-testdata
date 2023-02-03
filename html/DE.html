@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="styling.css" rel="stylesheet" />
+    <title>Rule set: DE</title>
+  </head>
+  <body>
+    <h1>Rule set: DE</h1>
+    <div class="table">
+      <div class="table-body">
+        <div class="row header">
+          <div class="cell"><span>Identifier</span></div>
+          <div class="cell"><span>Description (EN)</span></div>
+          <div class="cell"><span>Logic (compactified notation)</span></div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>RR-DE-0001</span></div>
+          <div class="cell">
+            <span
+              >The positive NAA test result (e.g., PCR) must be older than 28
+              days.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.r.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">external.validationClock</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">0</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">not-before</span>
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.r.0.fr</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">28</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>RR-DE-0002</span></div>
+          <div class="cell">
+            <span
+              >The positive NAA test result (e.g., PCR) must be no older than
+              6 months.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.r.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">external.validationClock</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">0</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">not-after</span>
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.r.0.fr</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">180</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>TR-DE-0001</span></div>
+          <div class="cell">
+            <span
+              >This must be an antigen test (e.g., rapid test) or NAA test
+              (e.g., PCR).</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.t.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <span class="keyword">/</span
+                      ><span class="path">payload.t.0.tt</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">in</span>
+                    <div class="array">
+                      <span class="keyword push-right">[</span>
+                      <div class="inline">
+                        <span class="simple-value">LP217198-3</span>
+                      </div>
+                      <div class="inline">
+                        <span class="push-right">,</span
+                        ><span class="simple-value">LP6464-4</span>
+                      </div>
+                      <span class="keyword push-left">]</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>TR-DE-0002</span></div>
+          <div class="cell">
+            <span
+              >The sample for an antigen test (e.g., rapid test) must have been
+              taken no longer than 48 hours ago.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.t.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <span class="keyword push-both">if</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.t.0.tt</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">===</span
+                      ><span class="simple-value">LP217198-3</span>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">then</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">external.validationClock</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">0</span
+                        ><span class="push-left keyword">days</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">not-after</span>
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">payload.t.0.sc</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">48</span
+                        ><span class="push-left keyword">hours</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">else</span
+                  ><span class="simple-value">true</span>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>TR-DE-0003</span></div>
+          <div class="cell">
+            <span
+              >The sample for an NAA test (e.g., PCR) must have been taken no
+              longer than 72 hours ago.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.t.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <span class="keyword push-both">if</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.t.0.tt</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">===</span
+                      ><span class="simple-value">LP6464-4</span>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">then</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">external.validationClock</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">0</span
+                        ><span class="push-left keyword">days</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">not-after</span>
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">payload.t.0.sc</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">72</span
+                        ><span class="push-left keyword">hours</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">else</span
+                  ><span class="simple-value">true</span>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>TR-DE-0004</span></div>
+          <div class="cell"><span>The test result must be negative.</span></div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.t.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <span class="keyword">/</span
+                      ><span class="path">payload.t.0.tr</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">===</span
+                    ><span class="simple-value">260415000</span>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>TR-DE-0005</span></div>
+          <div class="cell">
+            <span
+              >The antigen test (e.g., rapid test) must be included in the EU’s
+              &quot;Common list of COVID-19 rapid antigen tests&quot;.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.t.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <span class="keyword push-both">if</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.t.0.tt</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">===</span
+                      ><span class="simple-value">LP217198-3</span>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">then</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.t.0.ma</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">in</span>
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path"
+                          >external.valueSets.covid-19-lab-test-manufacturer-and-name</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">else</span
+                  ><span class="simple-value">true</span>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>VR-DE-0001</span></div>
+          <div class="cell">
+            <span
+              >The vaccination schedule must be complete (e.g., 1/1, 2/2).</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.v.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <span class="keyword">/</span
+                      ><span class="path">payload.v.0.dn</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">&gt;=</span>
+                    <div class="operation">
+                      <span class="keyword">/</span
+                      ><span class="path">payload.v.0.sd</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>VR-DE-0002</span></div>
+          <div class="cell">
+            <span
+              >Only the following vaccines are accepted: AstraZeneca, Biontech,
+              Janssen, Moderna.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.v.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <span class="keyword">/</span
+                      ><span class="path">payload.v.0.mp</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">in</span>
+                    <div class="array">
+                      <span class="keyword push-right">[</span>
+                      <div class="inline">
+                        <span class="simple-value">EU/1/20/1528</span>
+                      </div>
+                      <div class="inline">
+                        <span class="push-right">,</span
+                        ><span class="simple-value">EU/1/20/1507</span>
+                      </div>
+                      <div class="inline">
+                        <span class="push-right">,</span
+                        ><span class="simple-value">EU/1/21/1529</span>
+                      </div>
+                      <div class="inline">
+                        <span class="push-right">,</span
+                        ><span class="simple-value">EU/1/20/1525</span>
+                      </div>
+                      <span class="keyword push-left">]</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>VR-DE-0003</span></div>
+          <div class="cell">
+            <span
+              >At least 14 days must have elapsed since completing the primary
+              course of immunization. A booster shot or vaccination of someone
+              who recovered from COVID-19 is valid immediately as long as it is
+              clearly identified as such.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.v.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <span class="keyword push-both">if</span>
+                  <div class="operation">
+                    <div class="inline">
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">external.validationClock</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">0</span
+                        ><span class="push-left keyword">days</span>
+                      </div>
+                    </div>
+                    <div class="inline">
+                      <span class="keyword push-both">not-before</span>
+                      <div class="operation">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">payload.v.0.dt</span>
+                        </div>
+                        <span class="keyword push-both">+</span
+                        ><span class="simple-value">15</span
+                        ><span class="push-left keyword">days</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="keyword push-both">then</span
+                  ><span class="simple-value">true</span
+                  ><span class="keyword push-both">else</span>
+                  <div class="operation">
+                    <span class="keyword push-both">if</span>
+                    <div class="operation">
+                      <div class="inline">
+                        <div class="operation">
+                          <span class="keyword">/</span
+                          ><span class="path">payload.v.0.dn</span>
+                        </div>
+                      </div>
+                      <div class="inline">
+                        <span class="keyword push-both">&gt;</span
+                        ><span class="simple-value">2</span>
+                      </div>
+                    </div>
+                    <span class="keyword push-both">then</span
+                    ><span class="simple-value">true</span
+                    ><span class="keyword push-both">else</span>
+                    <div class="operation">
+                      <span class="keyword push-both">if</span>
+                      <div class="operation">
+                        <div class="operation">
+                          <div class="inline">
+                            <div class="operation">
+                              <span class="keyword">/</span
+                              ><span class="path">payload.v.0.dn</span>
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <span class="keyword push-both">&gt;</span
+                            ><span class="simple-value">1</span>
+                          </div>
+                        </div>
+                        <span class="keyword push-both">and</span>
+                        <div class="operation">
+                          <div class="inline">
+                            <div class="operation">
+                              <span class="keyword">/</span
+                              ><span class="path">payload.v.0.mp</span>
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <span class="keyword push-both">===</span
+                            ><span class="simple-value">EU/1/20/1525</span>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="keyword push-both">then</span
+                      ><span class="simple-value">true</span
+                      ><span class="keyword push-both">else</span>
+                      <div class="operation">
+                        <div class="operation">
+                          <div class="operation">
+                            <div class="inline">
+                              <div class="operation">
+                                <span class="keyword">/</span
+                                ><span class="path">payload.v.0.sd</span>
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <span class="keyword push-both">===</span
+                              ><span class="simple-value">1</span>
+                            </div>
+                          </div>
+                          <span class="keyword push-both">and</span>
+                          <div class="operation">
+                            <div class="inline">
+                              <div class="operation">
+                                <span class="keyword">/</span
+                                ><span class="path">payload.v.0.dn</span>
+                              </div>
+                            </div>
+                            <div class="inline">
+                              <span class="keyword push-both">===</span
+                              ><span class="simple-value">1</span>
+                            </div>
+                          </div>
+                        </div>
+                        <span class="keyword push-both">and</span>
+                        <div class="operation">
+                          <div class="inline">
+                            <div class="operation">
+                              <span class="keyword">/</span
+                              ><span class="path">payload.v.0.mp</span>
+                            </div>
+                          </div>
+                          <div class="inline">
+                            <span class="keyword push-both">in</span>
+                            <div class="array">
+                              <span class="keyword push-right">[</span>
+                              <div class="inline">
+                                <span class="simple-value">EU/1/20/1528</span>
+                              </div>
+                              <div class="inline">
+                                <span class="push-right">,</span
+                                ><span class="simple-value">EU/1/20/1507</span>
+                              </div>
+                              <div class="inline">
+                                <span class="push-right">,</span
+                                ><span class="simple-value">EU/1/21/1529</span>
+                              </div>
+                              <span class="keyword push-left">]</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>VR-DE-0004</span></div>
+          <div class="cell">
+            <span
+              >The vaccine must have been administered no longer than one year
+              ago.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.v.0</span>
+                </div>
+                <span class="keyword push-both">then</span>
+                <div class="operation">
+                  <div class="inline">
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">external.validationClock</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">0</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                  <div class="inline">
+                    <span class="keyword push-both">not-after</span>
+                    <div class="operation">
+                      <div class="operation">
+                        <span class="keyword">/</span
+                        ><span class="path">payload.v.0.dt</span>
+                      </div>
+                      <span class="keyword push-both">+</span
+                      ><span class="simple-value">365</span
+                      ><span class="push-left keyword">days</span>
+                    </div>
+                  </div>
+                </div>
+                <span class="keyword push-both">else</span
+                ><span class="simple-value">true</span>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

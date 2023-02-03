@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="styling.css" rel="stylesheet" />
+    <title>All rule sets with tests and results</title>
+  </head>
+  <body>
+    <h1>All rule sets with tests and results</h1>
+    <p>Index of all rule sets:</p>
+    <ol>
+      <li><a href="#rule-set-EU">EU</a></li>
+      <li><a href="#rule-set-AT">AT</a></li>
+      <li><a href="#rule-set-CH">CH</a></li>
+      <li><a href="#rule-set-CY">CY</a></li>
+      <li><a href="#rule-set-CZ">CZ</a></li>
+      <li><a href="#rule-set-DE">DE</a></li>
+      <li><a href="#rule-set-ES">ES</a></li>
+      <li><a href="#rule-set-FI">FI</a></li>
+      <li><a href="#rule-set-FR">FR</a></li>
+      <li><a href="#rule-set-HR">HR</a></li>
+      <li><a href="#rule-set-IE">IE</a></li>
+      <li><a href="#rule-set-LU">LU</a></li>
+      <li><a href="#rule-set-MT">MT</a></li>
+      <li><a href="#rule-set-NL">NL</a></li>
+      <li><a href="#rule-set-PL">PL</a></li>
+      <li><a href="#rule-set-RO">RO</a></li>
+    </ol>
+    <div>
+      <h2 id="rule-set-EU">Rule set for: EU</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-EU-0000</span></div>
+            <div class="cell"><span>Exactly one type of event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-EU-0001</span></div>
+            <div class="cell">
+              <span
+                >The &quot;disease or agent targeted&quot; must be COVID-19 of
+                the value set list.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-EU-0000</span></div>
+            <div class="cell"><span>At most one r-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-EU-0001</span></div>
+            <div class="cell">
+              <span
+                >The Verification Datetime must be between &quot;Certificate
+                Valid From&quot; and &quot;Certificate Valid Until&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-EU-0002</span></div>
+            <div class="cell">
+              <span
+                >The validity start date must be greater than or equal to the
+                first positive test date +11 days and validity end date must be
+                less than or equal to the first postive test date +180.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0000</span></div>
+            <div class="cell"><span>At most one t-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0001</span></div>
+            <div class="cell">
+              <span
+                >The test type must be one of the value set list (RAT OR
+                NAA).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0002</span></div>
+            <div class="cell">
+              <span
+                >If the test type is &quot;RAT&quot; then the &quot;test product
+                and manufacturer&quot; MUST be in the valueset list, if
+                it&#x27;s NAA return true.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0004</span></div>
+            <div class="cell">
+              <span
+                >Test result must be negative (&quot;not detected&quot;).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0005</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 48 hours before
+                the Verification Datetime for a test of type RAT (rapid antigen
+                test).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-EU-0006</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 72 hours before
+                the Verification Datetime for a test of type NAA (PCR
+                test).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-EU-0000</span></div>
+            <div class="cell"><span>At most one v-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-EU-0001</span></div>
+            <div class="cell">
+              <span
+                >Only vaccines in the allowed valueset that have been approved
+                by the EMA are allowed.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-EU-0002</span></div>
+            <div class="cell">
+              <span
+                >Vaccination doses must be equal or greater than expected
+                doses.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-AT">Rule set for: AT</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-AT-0000</span></div>
+            <div class="cell"><span>Exactly one type of event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-AT-0001</span></div>
+            <div class="cell">
+              <span
+                >The &quot;disease or agent targeted&quot; must be COVID-19 of
+                the value set list.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-AT-0000</span></div>
+            <div class="cell"><span>At most one r-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-AT-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be older than 11
+                days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-AT-0002</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be no older than
+                180 days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0000</span></div>
+            <div class="cell"><span>At most one t-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0001</span></div>
+            <div class="cell">
+              <span
+                >The test type must be one of the value set list (RAT OR
+                NAA).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0002</span></div>
+            <div class="cell">
+              <span
+                >If the test type is &quot;RAT&quot; then the &quot;test product
+                and manufacturer&quot; MUST be in the valueset list, if
+                it&#x27;s NAA return true.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0004</span></div>
+            <div class="cell">
+              <span
+                >Test result must be negative (&quot;not detected&quot;).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0005</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 48 hours before
+                the Verification Datetime for a test of type RAT (rapid antigen
+                test).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-AT-0006</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 72 hours before
+                the Verification Datetime for a test of type NAA (PCR
+                test).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-AT-0000</span></div>
+            <div class="cell"><span>At most one v-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-AT-0001</span></div>
+            <div class="cell">
+              <span
+                >Only vaccines in the allowed valueset are allowed, additionally
+                limited by the Austrian Einreiseverordung</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-AT-0004</span></div>
+            <div class="cell">
+              <span
+                >If (sequencenumber &lt; total number of doses) (AT:
+                &#x27;Erstimpfung&#x27;) Verification Datetime must be more than
+                22 days and less than 90 days after the date of
+                vaccination.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-AT-0005</span></div>
+            <div class="cell">
+              <span
+                >If (total number of doses &gt; 1) and (sequencenumber &gt;=
+                total number of doses) (AT: &#x27;Zweitimpfung&#x27;)
+                Verification Datetime must be less than 270 days after
+                vaccination date (and vaccination date not in the future).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-AT-0006</span></div>
+            <div class="cell">
+              <span
+                >If (total number of doses === 1) and (sequencenumber &gt;=
+                total number of doses) (AT: &#x27;vollst. Immunisierung bei
+                1/1&#x27;) Verification Datetime must be more than 22 days and
+                less than 270 days after vaccination date (and vaccination date
+                not in the future).</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-CH">Rule set for: CH</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-CH-0001</span></div>
+            <div class="cell">
+              <span
+                >The targeted disease agent must be COVID-19 of the value set
+                list.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CH-0000</span></div>
+            <div class="cell"><span>At most one r-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CH-0001</span></div>
+            <div class="cell">
+              <span>Date of first positive test must exist</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CH-0002</span></div>
+            <div class="cell">
+              <span
+                >The validation date must be after the date of first positive
+                test plus 10 days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CH-0003</span></div>
+            <div class="cell">
+              <span
+                >The validation date must be less than the date of first
+                positive test plus 179 days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0000</span></div>
+            <div class="cell"><span>At most one t-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0001</span></div>
+            <div class="cell">
+              <span
+                >Test result must be negative (&quot;not detected&quot;).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0002</span></div>
+            <div class="cell">
+              <span
+                >The test type must be one of the value set list (RAT OR
+                NAA).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0004</span></div>
+            <div class="cell">
+              <span>Date of sample collection must exist</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0005</span></div>
+            <div class="cell">
+              <span
+                >The date of sample collection must be before the validation
+                date</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0006</span></div>
+            <div class="cell">
+              <span
+                >If the test type is &quot;RAT&quot; then the validation date
+                must be before the date of sample collection plus 48 hours</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CH-0007</span></div>
+            <div class="cell">
+              <span
+                >If the test type is &quot;PCR&quot; then the validation date
+                must be before the date of sample collection plus 72 hours</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0000</span></div>
+            <div class="cell"><span>At most one v-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0001</span></div>
+            <div class="cell">
+              <span
+                >Vaccination doses must be equal or greater than expected
+                doses.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0002</span></div>
+            <div class="cell">
+              <span
+                >Only vaccines in the allowed valueset that have been approved
+                by the EMA are allowed.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0003</span></div>
+            <div class="cell"><span>Date of vaccination must exist</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0004</span></div>
+            <div class="cell">
+              <span
+                >If the vaccine requires two doses, the vaccination date must be
+                before today</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0005</span></div>
+            <div class="cell">
+              <span
+                >If the vaccine requires one dose, and only one dose was
+                administered, it is valid after 21 days
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0006</span></div>
+            <div class="cell">
+              <span
+                >Today must be less than the vaccination date plus 364
+                days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CH-0007</span></div>
+            <div class="cell">
+              <span
+                >If the vaccine requires only one dose but more than one dose
+                was administered, it is valid from today
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-CY">Rule set for: CY</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-CY-0000</span></div>
+            <div class="cell"><span>Exactly one type of event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-CY-0001</span></div>
+            <div class="cell">
+              <span
+                >The disease or agent targeted must be COVID-19 of the value set
+                list.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CY-0000</span></div>
+            <div class="cell"><span>At most one r-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CY-0001</span></div>
+            <div class="cell">
+              <span
+                >The Verification Datetime must be between Certificate Valid
+                From and Certificate Valid Until.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CY-0003</span></div>
+            <div class="cell">
+              <span
+                >The validity start date must be before the validity end
+                date.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CY-0004</span></div>
+            <div class="cell">
+              <span
+                >The validity start date must be greater than or equal to the
+                first positive test date +10 days and validity end date must be
+                less than or equal to the first postive test date +183.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0000</span></div>
+            <div class="cell"><span>At most one t-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0001</span></div>
+            <div class="cell">
+              <span
+                >The test type must be one of the value set list (RAT OR
+                NAA).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0002</span></div>
+            <div class="cell">
+              <span
+                >If the test type is RAT then the test product and manufacturer
+                MUST be in the valueset list, if it&#x27;s NAA return
+                true.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0004</span></div>
+            <div class="cell">
+              <span>Test result must be negative (not detected).</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0005</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 72 hours before
+                the Verification Datetime if Age &lt; 16</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CY-0006</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 72 hours before
+                the Verification Datetime if Age &gt;= 16</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CY-0000</span></div>
+            <div class="cell"><span>At most one v-event.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CY-0001</span></div>
+            <div class="cell">
+              <span
+                >Only vaccines in the allowed valueset that have been approved
+                by the Cyprus Goverment are allowed.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CY-0002</span></div>
+            <div class="cell">
+              <span
+                >A finished vaccination course when total number of doses is 1
+                is considered protective earliest from 14 days after the date of
+                Vaccination.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CY-0003</span></div>
+            <div class="cell">
+              <span
+                >A finished vaccination course is considered protective earliest
+                when the total number of doses is equal or less (booster) to the
+                actual dose number</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CY-0004</span></div>
+            <div class="cell">
+              <span
+                >The vaccine must have been administered no longer than one year
+                ago.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-CZ">Rule set for: CZ</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CZ-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive PCR test result must be older than 10 days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-CZ-0002</span></div>
+            <div class="cell">
+              <span
+                >The positive PCR test result may not be older than 180
+                days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0001</span></div>
+            <div class="cell">
+              <span>The antigen test may not be older than 48 hours ago</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0002</span></div>
+            <div class="cell">
+              <span>The PCR test may ot be older than 72 hours ago</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0003</span></div>
+            <div class="cell">
+              <span
+                >The antigen test must be included in the EU’s Common list of
+                COVID-19 rapid antigen tests</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0004</span></div>
+            <div class="cell">
+              <span>The test result must be negative</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0005</span></div>
+            <div class="cell">
+              <span>The Antigen test must have a certificate issuer. </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-CZ-0006</span></div>
+            <div class="cell">
+              <span>The PCR test must have a certificate issuer</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0001</span></div>
+            <div class="cell"><span>Only approved vaccines allowed</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0011</span></div>
+            <div class="cell">
+              <span>Vaccination SPIKEVAX may not be older than 1440 days</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0012</span></div>
+            <div class="cell">
+              <span>Vaccination SPIKEVAX must must be older than 14 days</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0013</span></div>
+            <div class="cell">
+              <span
+                >The certificate of the first dose of SPIKEVAX is not
+                accepted</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0021</span></div>
+            <div class="cell">
+              <span
+                >Vaccination COVID-19 Vaccine Janssen may not be older than 1440
+                days</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-CZ-0022</span></div>
+            <div class="cell">
+              <span
+                >Vaccination COVID-19 Vaccine Janssen must must be older than 14
+                days</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-DE">Rule set for: DE</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-DE-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be older than 28
+                days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-DE-0002</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be no older than
+                6 months.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-DE-0001</span></div>
+            <div class="cell">
+              <span
+                >This must be an antigen test (e.g., rapid test) or NAA test
+                (e.g., PCR).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-DE-0002</span></div>
+            <div class="cell">
+              <span
+                >The sample for an antigen test (e.g., rapid test) must have
+                been taken no longer than 48 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-DE-0003</span></div>
+            <div class="cell">
+              <span
+                >The sample for an NAA test (e.g., PCR) must have been taken no
+                longer than 72 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-DE-0004</span></div>
+            <div class="cell">
+              <span>The test result must be negative.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-DE-0005</span></div>
+            <div class="cell">
+              <span
+                >The antigen test (e.g., rapid test) must be included in the
+                EU’s &quot;Common list of COVID-19 rapid antigen
+                tests&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-DE-0001</span></div>
+            <div class="cell">
+              <span
+                >The vaccination schedule must be complete (e.g., 1/1,
+                2/2).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-DE-0002</span></div>
+            <div class="cell">
+              <span
+                >Only the following vaccines are accepted: AstraZeneca,
+                Biontech, Janssen, Moderna.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-DE-0003</span></div>
+            <div class="cell">
+              <span
+                >At least 14 days must have elapsed since completing the primary
+                course of immunization. A booster shot or vaccination of someone
+                who recovered from COVID-19 is valid immediately as long as it
+                is clearly identified as such.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-DE-0004</span></div>
+            <div class="cell">
+              <span
+                >The vaccine must have been administered no longer than one year
+                ago.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-ES">Rule set for: ES</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-ES-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be older than 11
+                days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-ES-0002</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be no older than
+                6 months.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-ES-0001</span></div>
+            <div class="cell">
+              <span
+                >This must be an antigen test (e.g., rapid test) or NAA test
+                (e.g., PCR).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-ES-0002</span></div>
+            <div class="cell">
+              <span
+                >The sample for an antigen test (e.g., rapid test) must have
+                been taken no longer than 24 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-ES-0003</span></div>
+            <div class="cell">
+              <span
+                >The sample for an NAA test (e.g., PCR) must have been taken no
+                longer than 72 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-ES-0004</span></div>
+            <div class="cell">
+              <span>The test result must be negative.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-ES-0005</span></div>
+            <div class="cell">
+              <span
+                >The antigen test (e.g., rapid test) must be included in the
+                EU’s &quot;Common list of COVID-19 rapid antigen
+                tests&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-ES-0001</span></div>
+            <div class="cell">
+              <span
+                >The vaccination schedule must be complete (e.g., 1/1,
+                2/2).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-ES-0002</span></div>
+            <div class="cell">
+              <span
+                >Only the following vaccines are accepted (EMA or WHO):
+                AstraZeneca, Biontech, Janssen, Moderna, CoronaVac,
+                Inactivated-SARS-CoV-2-Vero-Cell, Covishield, BBIBP-CorV,
+                Covaxin, Nuvaxovid, Covovax, WIBP-CorV.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-ES-0003</span></div>
+            <div class="cell">
+              <span
+                >Verification Datetime must be more than 14 days and less than
+                270 days after the last date of vaccination. No Booster</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-ES-0004</span></div>
+            <div class="cell">
+              <span
+                >Verification Datetime must be more than 0 days and less than
+                270 days after the last date of vaccination. Booster DN &gt;
+                SD</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-ES-0005</span></div>
+            <div class="cell">
+              <span
+                >Verification Datetime must be more than 0 days and less than
+                270 days after the last date of vaccination. Booster DN = SD
+                &amp;&amp; SD &gt; 2</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-FI">Rule set for: FI</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-FI-0000</span></div>
+            <div class="cell">
+              <span>Certificate contains multiple certificate types</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-FI-0001</span></div>
+            <div class="cell"><span>Certificate is not for COVID-19</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-FI-0002</span></div>
+            <div class="cell"><span>Tourist pass expired (30 days)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-FI-0000</span></div>
+            <div class="cell">
+              <span>Recovery certificate has more than one entry</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-FI-0001</span></div>
+            <div class="cell">
+              <span>Recovery certificate is not valid yet or has expired</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-FI-0002</span></div>
+            <div class="cell">
+              <span
+                >The recovery issue date is not before the validity date</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-FI-0003</span></div>
+            <div class="cell">
+              <span>Recovery certificate is not valid</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FI-0000</span></div>
+            <div class="cell">
+              <span>Test certificate has more than one entry</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FI-0001</span></div>
+            <div class="cell"><span>Test type is not RAT or NAAT</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FI-0002</span></div>
+            <div class="cell"><span>Test has expired (72 h)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FI-0003</span></div>
+            <div class="cell"><span>Test result must be negative</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0000</span></div>
+            <div class="cell">
+              <span>Vaccination certificate has more than one entry</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0001</span></div>
+            <div class="cell"><span>Vaccination series is not full</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0002</span></div>
+            <div class="cell"><span>Vaccination date is invalid</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0003</span></div>
+            <div class="cell">
+              <span>Full vaccination series is not valid yet (7 days)</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0004</span></div>
+            <div class="cell">
+              <span>Full vaccination series has expired (270 days)</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FI-0005</span></div>
+            <div class="cell">
+              <span>Vaccination product is not accepted</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-FR">Rule set for: FR</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-FR-0000</span></div>
+            <div class="cell">
+              <span
+                >Only a vaccine or test is allowed, and in a EU standard
+                format.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-FR-0001</span></div>
+            <div class="cell">
+              <span
+                >The &quot;disease or agent targeted&quot; must be COVID-19 of
+                the value set list.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FR-0000</span></div>
+            <div class="cell"><span>Test format is not EU standard.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FR-0001</span></div>
+            <div class="cell">
+              <span
+                >The test type must be one of the value set list (RAT OR
+                NAA).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FR-0002</span></div>
+            <div class="cell">
+              <span
+                >DateTime of Sample Collection must be less than 48 hours before
+                the Verification Datetime.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FR-0003</span></div>
+            <div class="cell"><span>Test result must be negative.</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-FR-0004</span></div>
+            <div class="cell">
+              <span
+                >The antigen test (e.g., rapid test) must be included in the
+                EU’s &quot;Common list of COVID-19 rapid antigen
+                tests&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0000</span></div>
+            <div class="cell">
+              <span>Vaccin format is not EU standard.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0001</span></div>
+            <div class="cell">
+              <span
+                >Only vaccines in the allowed valueset that have been approved
+                by the ANSM or Covishield, R-COVI and Fiocruz-covid-19 vaccines
+                are allowed.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0002</span></div>
+            <div class="cell">
+              <span
+                >Vaccination doses must be equal or greater than expected
+                doses.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0003</span></div>
+            <div class="cell">
+              <span>Date of vaccination must be before the current date.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0004</span></div>
+            <div class="cell">
+              <span
+                >With Jansen vaccine, a finished vaccination course is
+                considered protective earliest from 28 days after the date of
+                the last vaccination.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0008</span></div>
+            <div class="cell">
+              <span
+                >With not Jansen vaccine, a finished vaccination course is
+                considered protective earliest from 7 days after the date of the
+                last vaccination.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0009</span></div>
+            <div class="cell">
+              <span
+                >Only manufacturers in the allowed valueset that have been
+                approved by the EMA are allowed.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-FR-0010</span></div>
+            <div class="cell">
+              <span
+                >Only prophylactic agents in the allowed valueset that have been
+                approved by the EMA are allowed.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-HR">Rule set for: HR</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-HR-0001</span></div>
+            <div class="cell">
+              <span
+                >Rezultat pozitivnog testa mora biti stariji od 10 dana.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-HR-0002</span></div>
+            <div class="cell">
+              <span
+                >Pozitivni rezultat testa ne smije biti stariji od 180
+                dana.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-HR-0001</span></div>
+            <div class="cell">
+              <span>Test mora biti brzi antigenski ili PCR.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-HR-0002</span></div>
+            <div class="cell">
+              <span
+                >Uzorak za brzi antigenski test mora biti uzet u posljednih 24
+                sata.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-HR-0003</span></div>
+            <div class="cell">
+              <span>Uzorak za PCR test ne smije biti stariji od 72 sata.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-HR-0004</span></div>
+            <div class="cell">
+              <span>Rezultat testa mora biti negativan.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-HR-0005</span></div>
+            <div class="cell">
+              <span
+                >Antigenski test mora biti na listi EU odobrenih testova
+                &quot;Common list of COVID-19 rapid antigen tests&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-HR-0001</span></div>
+            <div class="cell">
+              <span
+                >Raspored cijepljenja mora biti potpun (npr., 1/1, 2/2).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-HR-0002</span></div>
+            <div class="cell">
+              <span
+                >Samo sljedeća cijepiva su prihvaćena: Pfizer, Moderna,
+                AstaZeneca, Gamaleya, Sinopharm, Novavax, Serum Institute of
+                India, Bharat Biotech, Sinovac, JJohnson&amp;Johnson.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-HR-0003</span></div>
+            <div class="cell">
+              <span
+                >Mora proći najmanje 14 dana od cijepljenja. Buster doza ili
+                cijepljenje osobe koja je preboljela COVID-19 je valjano
+                odmah.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-HR-0004</span></div>
+            <div class="cell">
+              <span
+                >Primarno cijepljenje može biti prije najviše 270 dana. Buster
+                doze vrijede beskonačno.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-IE">Rule set for: IE</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-IE-0000</span></div>
+            <div class="cell">
+              <span>Certificate relates to more than one health event</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-IE-0001</span></div>
+            <div class="cell">
+              <span>Certificate relates to a disease other than COVID-19.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-IE-0000</span></div>
+            <div class="cell">
+              <span
+                >Recovery Certificate can only relate to a single Recovery from
+                C-19</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-IE-0001</span></div>
+            <div class="cell">
+              <span
+                >Check date is not within recovery certificate validity
+                window</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-IE-0002</span></div>
+            <div class="cell">
+              <span
+                >Check date is not within recovery certificate validity
+                window</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-IE-0001</span></div>
+            <div class="cell">
+              <span
+                >Test Certificate must be for a NAA Test performed via PCR</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-IE-0000</span></div>
+            <div class="cell">
+              <span
+                >Test Certificate can only relate to a single Test for
+                C-19</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-IE-0004</span></div>
+            <div class="cell">
+              <span
+                >Test Certificate result must indicate a negative test COVID-19
+                not detected</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-IE-0006</span></div>
+            <div class="cell">
+              <span>Test Certificate has expired for entry</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0000</span></div>
+            <div class="cell">
+              <span
+                >Vaccine Certificate can only relate to a single Vaccine event
+                for Covid-19</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0001</span></div>
+            <div class="cell">
+              <span>Unapproved Vaccine listed in Vaccine Certificate</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0002</span></div>
+            <div class="cell">
+              <span
+                >Dosage information is less than expected number of doses</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0003</span></div>
+            <div class="cell">
+              <span
+                >Vaccine certificate is invalid for entry at this time as the
+                date is outside the window.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0004</span></div>
+            <div class="cell">
+              <span
+                >Vaccine certificate is invalid for entry at this time as the
+                date is outside the window.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0005</span></div>
+            <div class="cell">
+              <span
+                >Vaccine certificate is invalid for entry at this time as the
+                date is outside the window.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-IE-0006</span></div>
+            <div class="cell">
+              <span
+                >Vaccine certificate is invalid for entry at this time as the
+                date is outside the window.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-LU">Rule set for: LU</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-LU-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be older than 11
+                days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-LU-0002</span></div>
+            <div class="cell">
+              <span
+                >The positive NAA test result (e.g., PCR) must be no older than
+                180 days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-LU-0001</span></div>
+            <div class="cell">
+              <span
+                >This must be an antigen test (e.g., rapid test) or NAA test
+                (e.g., PCR).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-LU-0002</span></div>
+            <div class="cell">
+              <span
+                >The sample for an antigen test (e.g., rapid test) must have
+                been taken no longer than 48 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-LU-0003</span></div>
+            <div class="cell">
+              <span
+                >The sample for an NAA test (e.g., PCR) must have been taken no
+                longer than 72 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-LU-0004</span></div>
+            <div class="cell">
+              <span>The test result must be negative.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-LU-0005</span></div>
+            <div class="cell">
+              <span
+                >The antigen test (e.g., rapid test) must be included in the
+                EU’s &quot;Common list of COVID-19 rapid antigen
+                tests&quot;.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-LU-0001</span></div>
+            <div class="cell">
+              <span
+                >The vaccination schedule must be complete (e.g., 1/1, 2/2, 3/3)
+                and be older than 14 days in the case 1/1.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-LU-0002</span></div>
+            <div class="cell">
+              <span
+                >Only the following vaccines are accepted: AstraZeneca,
+                Biontech, Janssen, Moderna.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-LU-0003</span></div>
+            <div class="cell">
+              <span
+                >The vaccine must have been administered no longer than one year
+                ago.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-MT">Rule set for: MT</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-NL">Rule set for: NL</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-NL-0002</span></div>
+            <div class="cell">
+              <span
+                >The Dutch government has decided to lift all entry restrictions
+                due to COVID-19 as of September 17, 2022.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-PL">Rule set for: PL</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-PL-0000</span></div>
+            <div class="cell">
+              <span>Wymagany dokładnie jeden typ zdarzenia.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>GR-PL-0001</span></div>
+            <div class="cell">
+              <span
+                >Wartość &quot;disease or agent targeted&quot; musi być COVID-19
+                i pochodzić z listy zestawu wartości.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-PL-0000</span></div>
+            <div class="cell">
+              <span
+                >Dodatni wynik testu NAA (np. PCR) musi być starszy niż 11
+                dni.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-PL-0001</span></div>
+            <div class="cell">
+              <span
+                >Dodatni wynik testu NAA (np. PCR) nie może być starszy niż 180
+                dni.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-PL-0000</span></div>
+            <div class="cell">
+              <span
+                >Typ testu musi być jednym z listy zestawów wartości (RAT lub
+                NAAT).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-PL-0001</span></div>
+            <div class="cell">
+              <span
+                >Szybki test antygenowy (RAT) musi znajdować się na unijnej
+                liście &quot;testów i producentów&quot; (&quot;test product and
+                manufacturer&quot;).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-PL-0002</span></div>
+            <div class="cell">
+              <span
+                >Wynik testu musi być ujemny (&quot;not detected&quot;).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-PL-0003</span></div>
+            <div class="cell">
+              <span
+                >Data i godzina pobrania próbki musi być mniejsza niż 48 godzin
+                przed datą weryfikacji w przypadku testu typu RAT (szybki test
+                antygenowy).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-PL-0004</span></div>
+            <div class="cell">
+              <span
+                >Data i godzina pobrania próbki musi być mniejsza niż 48 godzin
+                przed datą weryfikacji w przypadku testu typu NAA (test
+                PCR).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-PL-0000</span></div>
+            <div class="cell">
+              <span
+                >Akceptowane są tylko szczepionki z zestawu wartości, które
+                zostały zatwierdzone przez EMA: Comirnaty (Pfizer), Moderna
+                (Spikevax), Vaxzevria (AstraZeneca), Jannsen, Nuvaxovid.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-PL-0001</span></div>
+            <div class="cell">
+              <span
+                >Ilość dawek szczepionki musi być równa lub większa od ilości
+                dawek oczekiwanych.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-PL-0002</span></div>
+            <div class="cell">
+              <span
+                >Musi upłynąć co najmniej 14 dni od zakończenia podstawowego
+                cyklu szczepień. Szczepienie przypominające lub uzupełniające
+                jest ważne natychmiast, jeśli można je jednoznacznie
+                zidentyfikować.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-PL-0003</span></div>
+            <div class="cell">
+              <span
+                >Od daty szczepienia może upłynąć nie więcej niż 270 dni.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 id="rule-set-RO">Rule set for: RO</h2>
+      <div class="table">
+        <div class="table-body">
+          <div class="row header">
+            <div class="cell identifier"><span>Identifier</span></div>
+            <div class="cell"><span>Description (EN)</span></div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-RO-0001</span></div>
+            <div class="cell">
+              <span
+                >The positive test result must be no older than 180 days.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>RR-RO-0002</span></div>
+            <div class="cell">
+              <span>The positive test result must be older than 14 days.</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-RO-0001</span></div>
+            <div class="cell">
+              <span>This must be a NAA test (e.g., PCR).</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>TR-RO-0002</span></div>
+            <div class="cell">
+              <span
+                >The sample for an NAA test (e.g. PCR) must have been taken no
+                longer than 72 hours ago.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-RO-0001</span></div>
+            <div class="cell">
+              <span
+                >Only the following vaccines are accepted: AstraZeneca,
+                Biontech, Covishield, Janssen, Moderna.</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-RO-0002</span></div>
+            <div class="cell">
+              <span
+                >The vaccination series must be complete (e.g. 1/1, 2/2).</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="cell identifier"><span>VR-RO-0003</span></div>
+            <div class="cell">
+              <span
+                >The vaccine must have been administered at least 10 days
+                ago.</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link href="styling.css" rel="stylesheet" />
+    <title>Rule set: NL</title>
+  </head>
+  <body>
+    <h1>Rule set: NL</h1>
+    <div class="table">
+      <div class="table-body">
+        <div class="row header">
+          <div class="cell"><span>Identifier</span></div>
+          <div class="cell"><span>Description (EN)</span></div>
+          <div class="cell"><span>Logic (compactified notation)</span></div>
+        </div>
+        <div class="row">
+          <div class="cell"><span>GR-NL-0002</span></div>
+          <div class="cell">
+            <span
+              >The Dutch government has decided to lift all entry restrictions
+              due to COVID-19 as of September 17, 2022.</span
+            >
+          </div>
+          <div class="cell">
+            <div>
+              <span class="keyword"
+                >Given a DCC and some external parameters,</span
+              >
+            </div>
+            <div>
+              <span class="keyword">when </span>
+              <div class="operation">
+                <span class="keyword push-both">if</span
+                ><span class="simple-value">true</span
+                ><span class="keyword push-both">then</span
+                ><span class="simple-value">true</span
+                ><span class="keyword push-both">else</span>
+                <div class="operation">
+                  <span class="keyword">/</span
+                  ><span class="path">payload.v</span>
+                </div>
+              </div>
+              <span>,</span>
+            </div>
+            <div>
+              <span class="keyword">then that DCC is </span><span>Accepted</span
+              ><span>.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
