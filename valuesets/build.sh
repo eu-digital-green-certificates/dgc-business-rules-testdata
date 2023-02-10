@@ -8,6 +8,7 @@ valueSets="country-2-codes.json \
   vaccine-mah-manf.json\
   vaccine-medicinal-product.json\
   vaccine-prophylaxis.json\
+  vaccine-encoding-instructions.json\
 "
 
 for vs in $valueSets; do
