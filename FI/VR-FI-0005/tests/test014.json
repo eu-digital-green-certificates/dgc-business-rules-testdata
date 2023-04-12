@@ -1,13 +1,13 @@
 {
-    "name": "FALSE if Vaccine Medicinal Product =  Pfizer",
+    "name": "TRUE if Vaccine Medicinal Product =  EU/1/21/1624 (Valneva)",
     "payload": {
       "v": [
         {
-            "mp": "Pfizer"
+            "mp": "EU/1/21/1624"
         }
       ]
     },
-    "expected": false,
+    "expected": true,
     "external": {
       "validationClock": "2023-05-10T00:00:00+00:00"
     }

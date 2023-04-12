@@ -1,10 +1,10 @@
 {
-  "name": "TRUE if Dose Number = 2, Total Series of Dose = 1, Date of Vaccination = 22-06-08, current time = 2023-03-04",
+  "name": "TRUE if Dose Number = 2, Total Series of Dose = 1, Date of Vaccination = 2022-08-08, current time = 2023-05-04",
   "payload": {
     "dob": "1992-11-08",
     "v": [
       {
-        "dt": "2022-06-08",
+        "dt": "2022-08-08",
         "dn": 2,
         "sd": 1
       }
@@ -12,6 +12,6 @@
   },
   "expected": true,
   "external": {
-    "validationClock": "2023-03-04T00:00:00Z"
+    "validationClock": "2023-05-04T00:00:00Z"
   }
 }

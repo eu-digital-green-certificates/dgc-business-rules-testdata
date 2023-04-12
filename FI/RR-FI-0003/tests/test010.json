@@ -3,15 +3,15 @@
   "payload": {
     "r": [
       {
-        "fr": "2022-05-01",
-        "df": "2022-06-01",
-        "du": "2022-12-01"
+        "fr": "2023-05-01",
+        "df": "2023-06-01",
+        "du": "2023-12-01"
       }
     ]
   },
   "expected": false,
   "external": {
-    "validationClock": "2022-11-30T00:00:00Z",
+    "validationClock": "2023-11-30T00:00:00Z",
     "valueSets": {
       "country-2-codes": [
         "AD",
