@@ -2,7 +2,7 @@
   "Identifier": "RR-FI-0002",
   "Type": "Acceptance",
   "Country": "FI",
-  "Version": "1.0.4",
+  "Version": "1.0.6",
   "SchemaVersion": "1.0.0",
   "Engine": "CERTLOGIC",
   "EngineVersion": "0.7.5",
@@ -21,7 +21,7 @@
       "desc": "Giltighetstiderna i intyget om tillfrisknande från covid-19 strider mot varandra"
     }
   ],
-  "ValidFrom": "2022-04-10T23:59:59Z",
+  "ValidFrom":"2023-04-15T00:00:00Z",
   "ValidTo": "2030-06-01T00:00:00Z",
   "AffectedFields": [
     "r.0",

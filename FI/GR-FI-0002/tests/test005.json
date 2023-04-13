@@ -3,14 +3,14 @@
     "payload": {
       "v": [
         {
-          "dt": "2022-03-15",
+          "dt": "2023-04-01",
           "ci": "Joint Authority of the Helsinki and Uusimaa Hospital District"
         }
       ]
     },
     "expected": true,
     "external": {
-      "validationClock": "2022-04-10T23:59:59+00:00"
+      "validationClock": "2023-04-15T00:00:00+00:00"
     }
   }
   

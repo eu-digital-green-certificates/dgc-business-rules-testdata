@@ -1,9 +1,9 @@
 {
-  "name": "TRUE if Vaccine Medicinal Product = EU/1/20/1528, Dose number = 3, Total Serties of Doses = 3, Date of vaccination = 2023-02-11, current time = 2023-02-11",
+  "name": "TRUE if Vaccine Medicinal Product = EU/1/20/1528, Dose number = 3, Total Serties of Doses = 3, Date of vaccination = 2023-09-11, current time = 2023-09-11",
   "payload": {
     "v": [
       {
-        "dt": "2023-02-11",
+        "dt": "2023-09-11",
         "dn": 3,
         "sd": 3
       }
@@ -11,6 +11,6 @@
   },
   "expected": true,
   "external": {
-    "validationClock": "2023-02-11T00:00:00+01:00"
+    "validationClock": "2023-09-11T00:00:00+01:00"
   }
 }
