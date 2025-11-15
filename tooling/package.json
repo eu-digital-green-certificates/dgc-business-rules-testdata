@@ -33,7 +33,7 @@
     "@types/react-dom": "^18.0.10",
     "@types/semver": "^7.3.13",
     "chai": "^4.3.7",
-    "mocha": "^9.2.2",
+    "mocha": "^11.7.5",
     "typescript": "^4.9.5"
   }
 }
